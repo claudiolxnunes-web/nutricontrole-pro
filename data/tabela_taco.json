@@ -1,0 +1,18 @@
+[
+  {
+    "nome": "Arroz cozido",
+    "proteina": 2.5,
+    "carbo": 28,
+    "gordura": 0.3,
+    "calorias": 130,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Feijão carioca cozido",
+    "proteina": 4.8,
+    "carbo": 13.6,
+    "gordura": 0.5,
+    "calorias": 76,
+    "fonte": "TACO"
+  }
+]
