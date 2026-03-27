@@ -1,4 +1,4 @@
-const CACHE = "nutricontrole-v3";
+const CACHE = "nutricontrole-v4";
 
 const ARQUIVOS_ESTATICOS = [
   "/icon.svg",
