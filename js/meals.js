@@ -81,7 +81,7 @@ function renderizarRefeicaoAtual() {
 
       <div class="field">
         <label for="quantidadeAlimento">Quantidade (g)</label>
-        <input id="quantidadeAlimento" type="number" value="100">
+        <input id="quantidadeAlimento" type="number" inputmode="decimal" min="1" step="1" value="100">
       </div>
 
       <div class="action-row">
@@ -94,10 +94,10 @@ function renderizarRefeicaoAtual() {
         <h3 id="tituloCadastro">Novo alimento</h3>
         <input type="hidden" id="editandoNomeOriginal">
         <div class="field"><label>Nome</label><input id="novoNome" placeholder="Nome do alimento"></div>
-        <div class="field"><label>Proteína (g/100g)</label><input id="novoProt" type="number" placeholder="0"></div>
-        <div class="field"><label>Carboidrato (g/100g)</label><input id="novoCarb" type="number" placeholder="0"></div>
-        <div class="field"><label>Gordura (g/100g)</label><input id="novoGord" type="number" placeholder="0"></div>
-        <div class="field"><label>Calorias (kcal/100g)</label><input id="novoCal" type="number" placeholder="0"></div>
+        <div class="field"><label>Proteína (g/100g)</label><input id="novoProt" type="number" inputmode="decimal" min="0" step="0.1" placeholder="0"></div>
+        <div class="field"><label>Carboidrato (g/100g)</label><input id="novoCarb" type="number" inputmode="decimal" min="0" step="0.1" placeholder="0"></div>
+        <div class="field"><label>Gordura (g/100g)</label><input id="novoGord" type="number" inputmode="decimal" min="0" step="0.1" placeholder="0"></div>
+        <div class="field"><label>Calorias (kcal/100g)</label><input id="novoCal" type="number" inputmode="decimal" min="0" step="0.1" placeholder="0"></div>
         <div class="action-row">
           <button onclick="salvarNovoAlimento()">Salvar</button>
           <button onclick="fecharCadastro()" style="background:#475569;">Cancelar</button>
