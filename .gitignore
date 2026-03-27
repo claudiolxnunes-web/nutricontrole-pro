@@ -1,0 +1,9 @@
+node_modules/
+.env
+.DS_Store
+Thumbs.db
+*.log
+temp_app.js
+tabela_taco.csv
+tabela_taco_macros.csv
+"metas de proteina e energia x atividade e objetivo.docx"

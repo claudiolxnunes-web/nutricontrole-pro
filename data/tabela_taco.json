@@ -1,18 +1,4778 @@
 [
   {
-    "nome": "Arroz cozido",
-    "proteina": 2.5,
-    "carbo": 28,
-    "gordura": 0.3,
-    "calorias": 130,
+    "nome": "Arroz, integral, cozido",
+    "proteina": 2.59,
+    "carbo": 25.81,
+    "gordura": 1.0,
+    "calorias": 123.53,
     "fonte": "TACO"
   },
   {
-    "nome": "Feijão carioca cozido",
+    "nome": "Arroz, integral, cru",
+    "proteina": 7.32,
+    "carbo": 77.45,
+    "gordura": 1.86,
+    "calorias": 359.68,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Arroz, tipo 1, cozido",
+    "proteina": 2.52,
+    "carbo": 28.06,
+    "gordura": 0.23,
+    "calorias": 128.26,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Arroz, tipo 1, cru",
+    "proteina": 7.16,
+    "carbo": 78.76,
+    "gordura": 0.34,
+    "calorias": 357.79,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Arroz, tipo 2, cozido",
+    "proteina": 2.57,
+    "carbo": 28.19,
+    "gordura": 0.36,
+    "calorias": 130.12,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Arroz, tipo 2, cru",
+    "proteina": 7.24,
+    "carbo": 78.88,
+    "gordura": 0.28,
+    "calorias": 358.12,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Aveia, flocos, crua",
+    "proteina": 13.92,
+    "carbo": 66.64,
+    "gordura": 8.5,
+    "calorias": 393.82,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Biscoito, doce, maisena",
+    "proteina": 8.07,
+    "carbo": 75.23,
+    "gordura": 11.97,
+    "calorias": 442.82,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Biscoito, doce, recheado com chocolate",
+    "proteina": 6.4,
+    "carbo": 70.55,
+    "gordura": 19.58,
+    "calorias": 471.82,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Biscoito, doce, recheado com morango",
+    "proteina": 5.72,
+    "carbo": 71.01,
+    "gordura": 19.57,
+    "calorias": 471.17,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Biscoito, doce, wafer, recheado de chocolate",
+    "proteina": 5.56,
+    "carbo": 67.54,
+    "gordura": 24.67,
+    "calorias": 502.46,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Biscoito, doce, wafer, recheado de morango",
+    "proteina": 4.52,
+    "carbo": 67.35,
+    "gordura": 26.4,
+    "calorias": 513.45,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Biscoito, salgado, cream cracker",
+    "proteina": 10.06,
+    "carbo": 68.73,
+    "gordura": 14.44,
+    "calorias": 431.73,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Bolo, mistura para",
+    "proteina": 6.16,
+    "carbo": 84.71,
+    "gordura": 6.13,
+    "calorias": 418.63,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Bolo, pronto, aipim",
+    "proteina": 4.42,
+    "carbo": 47.86,
+    "gordura": 12.75,
+    "calorias": 323.85,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Bolo, pronto, chocolate",
+    "proteina": 6.22,
+    "carbo": 54.72,
+    "gordura": 18.47,
+    "calorias": 410.01,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Bolo, pronto, coco",
+    "proteina": 5.67,
+    "carbo": 52.28,
+    "gordura": 11.3,
+    "calorias": 333.44,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Bolo, pronto, milho",
     "proteina": 4.8,
-    "carbo": 13.6,
+    "carbo": 45.11,
+    "gordura": 12.42,
+    "calorias": 311.39,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Canjica, branca, crua",
+    "proteina": 7.2,
+    "carbo": 78.06,
+    "gordura": 0.97,
+    "calorias": 357.6,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Canjica, com leite integral",
+    "proteina": 2.36,
+    "carbo": 23.63,
+    "gordura": 1.24,
+    "calorias": 112.46,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Cereais, milho, flocos, com sal",
+    "proteina": 7.29,
+    "carbo": 80.84,
+    "gordura": 1.6,
+    "calorias": 369.6,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Cereais, milho, flocos, sem sal",
+    "proteina": 6.88,
+    "carbo": 80.45,
+    "gordura": 1.18,
+    "calorias": 363.34,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Cereais, mingau, milho, infantil",
+    "proteina": 6.43,
+    "carbo": 87.27,
+    "gordura": 1.09,
+    "calorias": 394.43,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Cereais, mistura para vitamina, trigo, cevada e aveia",
+    "proteina": 8.9,
+    "carbo": 81.62,
+    "gordura": 2.12,
+    "calorias": 381.13,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Cereal matinal, milho",
+    "proteina": 7.16,
+    "carbo": 83.82,
+    "gordura": 0.96,
+    "calorias": 365.35,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Cereal matinal, milho, açúcar",
+    "proteina": 4.74,
+    "carbo": 88.84,
+    "gordura": 0.67,
+    "calorias": 376.56,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Creme de arroz, pó",
+    "proteina": 7.03,
+    "carbo": 83.87,
+    "gordura": 1.23,
+    "calorias": 386.0,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Creme de milho, pó",
+    "proteina": 4.82,
+    "carbo": 86.15,
+    "gordura": 1.64,
+    "calorias": 333.03,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Curau, milho verde",
+    "proteina": 2.36,
+    "carbo": 13.94,
+    "gordura": 1.64,
+    "calorias": 78.43,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Curau, milho verde, mistura para",
+    "proteina": 2.22,
+    "carbo": 79.82,
+    "gordura": 13.37,
+    "calorias": 402.29,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Farinha, de arroz, enriquecida",
+    "proteina": 1.27,
+    "carbo": 85.5,
+    "gordura": 0.3,
+    "calorias": 363.06,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Farinha, de centeio, integral",
+    "proteina": 12.52,
+    "carbo": 73.3,
+    "gordura": 1.75,
+    "calorias": 335.78,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Farinha, de milho, amarela",
+    "proteina": 7.19,
+    "carbo": 79.08,
+    "gordura": 1.47,
+    "calorias": 350.59,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Farinha, de rosca",
+    "proteina": 11.38,
+    "carbo": 75.79,
+    "gordura": 1.46,
+    "calorias": 370.58,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Farinha, de trigo",
+    "proteina": 9.79,
+    "carbo": 75.09,
+    "gordura": 1.37,
+    "calorias": 360.47,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Farinha, láctea, de cereais",
+    "proteina": 11.88,
+    "carbo": 77.77,
+    "gordura": 5.79,
+    "calorias": 414.85,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Lasanha, massa fresca, cozida",
+    "proteina": 5.81,
+    "carbo": 32.52,
+    "gordura": 1.16,
+    "calorias": 163.76,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Lasanha, massa fresca, crua",
+    "proteina": 7.01,
+    "carbo": 45.06,
+    "gordura": 1.34,
+    "calorias": 220.31,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Macarrão, instantâneo",
+    "proteina": 8.79,
+    "carbo": 62.43,
+    "gordura": 17.24,
+    "calorias": 435.86,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Macarrão, trigo, cru",
+    "proteina": 10.0,
+    "carbo": 77.94,
+    "gordura": 1.3,
+    "calorias": 371.12,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Macarrão, trigo, cru, com ovos",
+    "proteina": 10.32,
+    "carbo": 76.62,
+    "gordura": 1.97,
+    "calorias": 370.57,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Milho, amido, cru",
+    "proteina": 0.6,
+    "carbo": 87.15,
+    "gordura": 0.0,
+    "calorias": 361.37,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Milho, fubá, cru",
+    "proteina": 7.21,
+    "carbo": 78.87,
+    "gordura": 1.9,
+    "calorias": 353.48,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Milho, verde, cru",
+    "proteina": 6.59,
+    "carbo": 28.56,
+    "gordura": 0.61,
+    "calorias": 138.17,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Milho, verde, enlatado, drenado",
+    "proteina": 3.23,
+    "carbo": 17.14,
+    "gordura": 2.35,
+    "calorias": 97.56,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Mingau tradicional, pó",
+    "proteina": 0.58,
+    "carbo": 89.34,
+    "gordura": 0.37,
+    "calorias": 373.42,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Pamonha, barra para cozimento, pré-cozida",
+    "proteina": 2.55,
+    "carbo": 30.68,
+    "gordura": 4.85,
+    "calorias": 171.22,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Pão, aveia, forma",
+    "proteina": 12.35,
+    "carbo": 59.57,
+    "gordura": 5.69,
+    "calorias": 343.09,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Pão, de soja",
+    "proteina": 11.34,
+    "carbo": 56.51,
+    "gordura": 3.58,
+    "calorias": 308.73,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Pão, glúten, forma",
+    "proteina": 11.95,
+    "carbo": 44.12,
+    "gordura": 2.73,
+    "calorias": 252.99,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Pão, milho, forma",
+    "proteina": 8.3,
+    "carbo": 56.4,
+    "gordura": 3.11,
+    "calorias": 292.01,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Pão, trigo, forma, integral",
+    "proteina": 9.43,
+    "carbo": 49.94,
+    "gordura": 3.65,
+    "calorias": 253.19,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Pão, trigo, francês",
+    "proteina": 7.95,
+    "carbo": 58.65,
+    "gordura": 3.1,
+    "calorias": 299.81,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Pão, trigo, sovado",
+    "proteina": 8.4,
+    "carbo": 61.45,
+    "gordura": 2.84,
+    "calorias": 310.96,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Pastel, de carne, cru",
+    "proteina": 10.74,
+    "carbo": 42.02,
+    "gordura": 8.79,
+    "calorias": 288.7,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Pastel, de carne, frito",
+    "proteina": 10.1,
+    "carbo": 43.77,
+    "gordura": 20.14,
+    "calorias": 388.37,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Pastel, de queijo, cru",
+    "proteina": 9.85,
+    "carbo": 45.95,
+    "gordura": 9.63,
+    "calorias": 308.47,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Pastel, de queijo, frito",
+    "proteina": 8.71,
+    "carbo": 48.13,
+    "gordura": 22.67,
+    "calorias": 422.11,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Pastel, massa, crua",
+    "proteina": 6.9,
+    "carbo": 57.38,
+    "gordura": 5.48,
+    "calorias": 310.2,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Pastel, massa, frita",
+    "proteina": 6.02,
+    "carbo": 49.34,
+    "gordura": 40.86,
+    "calorias": 569.67,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Pipoca, com óleo de soja, sem sal",
+    "proteina": 9.93,
+    "carbo": 70.31,
+    "gordura": 15.94,
+    "calorias": 448.33,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Polenta, pré-cozida",
+    "proteina": 2.29,
+    "carbo": 23.31,
+    "gordura": 0.3,
+    "calorias": 102.74,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Torrada, pão francês",
+    "proteina": 10.52,
+    "carbo": 74.56,
+    "gordura": 3.3,
+    "calorias": 377.42,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Abóbora, cabotian, cozida",
+    "proteina": 1.44,
+    "carbo": 10.76,
+    "gordura": 0.73,
+    "calorias": 48.04,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Abóbora, cabotian, crua",
+    "proteina": 1.75,
+    "carbo": 8.36,
+    "gordura": 0.54,
+    "calorias": 38.6,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Abóbora, menina brasileira, crua",
+    "proteina": 0.61,
+    "carbo": 3.3,
+    "gordura": 0.0,
+    "calorias": 13.61,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Abóbora, moranga, crua",
+    "proteina": 0.96,
+    "carbo": 2.67,
+    "gordura": 0.06,
+    "calorias": 12.36,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Abóbora, moranga, refogada",
+    "proteina": 0.39,
+    "carbo": 5.98,
+    "gordura": 0.8,
+    "calorias": 29.0,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Abóbora, pescoço, crua",
+    "proteina": 0.67,
+    "carbo": 6.12,
+    "gordura": 0.12,
+    "calorias": 24.47,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Abobrinha, italiana, cozida",
+    "proteina": 1.13,
+    "carbo": 2.98,
+    "gordura": 0.2,
+    "calorias": 15.04,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Abobrinha, italiana, crua",
+    "proteina": 1.14,
+    "carbo": 4.29,
+    "gordura": 0.14,
+    "calorias": 19.28,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Abobrinha, italiana, refogada",
+    "proteina": 1.07,
+    "carbo": 4.19,
+    "gordura": 0.82,
+    "calorias": 24.43,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Abobrinha, paulista, crua",
+    "proteina": 0.64,
+    "carbo": 7.87,
+    "gordura": 0.14,
+    "calorias": 30.81,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Acelga, crua",
+    "proteina": 1.44,
+    "carbo": 4.63,
+    "gordura": 0.11,
+    "calorias": 20.94,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Agrião, cru",
+    "proteina": 2.69,
+    "carbo": 2.25,
+    "gordura": 0.24,
+    "calorias": 16.58,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Aipo, cru",
+    "proteina": 0.76,
+    "carbo": 4.27,
+    "gordura": 0.07,
+    "calorias": 19.09,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Alface, americana, crua",
+    "proteina": 0.61,
+    "carbo": 1.75,
+    "gordura": 0.13,
+    "calorias": 8.79,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Alface, crespa, crua",
+    "proteina": 1.35,
+    "carbo": 1.7,
+    "gordura": 0.16,
+    "calorias": 10.68,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Alface, lisa, crua",
+    "proteina": 1.69,
+    "carbo": 2.43,
+    "gordura": 0.12,
+    "calorias": 13.82,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Alface, roxa, crua",
+    "proteina": 0.91,
+    "carbo": 2.49,
+    "gordura": 0.19,
+    "calorias": 12.72,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Alfavaca, crua",
+    "proteina": 2.66,
+    "carbo": 5.24,
+    "gordura": 0.48,
+    "calorias": 29.18,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Alho, cru",
+    "proteina": 7.01,
+    "carbo": 23.91,
+    "gordura": 0.22,
+    "calorias": 113.13,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Alho-poró, cru",
+    "proteina": 1.41,
+    "carbo": 6.88,
+    "gordura": 0.14,
+    "calorias": 31.51,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Almeirão, cru",
+    "proteina": 1.77,
+    "carbo": 3.34,
+    "gordura": 0.22,
+    "calorias": 18.03,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Almeirão, refogado",
+    "proteina": 1.7,
+    "carbo": 5.7,
+    "gordura": 4.85,
+    "calorias": 65.08,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Batata, baroa, cozida",
+    "proteina": 0.85,
+    "carbo": 18.95,
+    "gordura": 0.17,
+    "calorias": 80.12,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Batata, baroa, crua",
+    "proteina": 1.05,
+    "carbo": 23.98,
+    "gordura": 0.17,
+    "calorias": 100.98,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Batata, doce, cozida",
+    "proteina": 0.64,
+    "carbo": 18.42,
+    "gordura": 0.09,
+    "calorias": 76.76,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Batata, doce, crua",
+    "proteina": 1.26,
+    "carbo": 28.2,
+    "gordura": 0.13,
+    "calorias": 118.24,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Batata, frita, tipo chips, industrializada",
+    "proteina": 5.58,
+    "carbo": 51.22,
+    "gordura": 36.62,
+    "calorias": 542.73,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Batata, inglesa, cozida",
+    "proteina": 1.16,
+    "carbo": 11.94,
+    "gordura": 0,
+    "calorias": 51.59,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Batata, inglesa, crua",
+    "proteina": 1.77,
+    "carbo": 14.69,
+    "gordura": 0,
+    "calorias": 64.37,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Batata, inglesa, frita",
+    "proteina": 4.97,
+    "carbo": 35.64,
+    "gordura": 13.11,
+    "calorias": 267.16,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Batata, inglesa, sauté",
+    "proteina": 1.29,
+    "carbo": 14.09,
+    "gordura": 0.9,
+    "calorias": 67.89,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Berinjela, cozida",
+    "proteina": 0.68,
+    "carbo": 4.47,
+    "gordura": 0.15,
+    "calorias": 18.85,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Berinjela, crua",
+    "proteina": 1.22,
+    "carbo": 4.43,
+    "gordura": 0.1,
+    "calorias": 19.63,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Beterraba, cozida",
+    "proteina": 1.29,
+    "carbo": 7.23,
+    "gordura": 0.09,
+    "calorias": 32.15,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Beterraba, crua",
+    "proteina": 1.95,
+    "carbo": 11.11,
+    "gordura": 0.09,
+    "calorias": 48.83,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Biscoito, polvilho doce",
+    "proteina": 1.29,
+    "carbo": 80.54,
+    "gordura": 12.25,
+    "calorias": 437.55,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Brócolis, cozido",
+    "proteina": 2.13,
+    "carbo": 4.37,
+    "gordura": 0.46,
+    "calorias": 24.64,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Brócolis, cru",
+    "proteina": 3.64,
+    "carbo": 4.03,
+    "gordura": 0.27,
+    "calorias": 25.5,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Cará, cozido",
+    "proteina": 1.53,
+    "carbo": 18.85,
+    "gordura": 0.11,
+    "calorias": 77.58,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Cará, cru",
+    "proteina": 2.28,
+    "carbo": 22.95,
+    "gordura": 0.14,
+    "calorias": 95.63,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Caruru, cru",
+    "proteina": 3.2,
+    "carbo": 5.97,
+    "gordura": 0.59,
+    "calorias": 34.03,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Catalonha, crua",
+    "proteina": 1.87,
+    "carbo": 4.75,
+    "gordura": 0.28,
+    "calorias": 23.89,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Catalonha, refogada",
+    "proteina": 1.95,
+    "carbo": 4.81,
+    "gordura": 4.81,
+    "calorias": 63.45,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Cebola, crua",
+    "proteina": 1.71,
+    "carbo": 8.85,
+    "gordura": 0.08,
+    "calorias": 39.42,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Cebolinha, crua",
+    "proteina": 1.87,
+    "carbo": 3.37,
+    "gordura": 0.35,
+    "calorias": 19.52,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Cenoura, cozida",
+    "proteina": 0.85,
+    "carbo": 6.69,
+    "gordura": 0.22,
+    "calorias": 29.86,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Cenoura, crua",
+    "proteina": 1.32,
+    "carbo": 7.66,
+    "gordura": 0.17,
+    "calorias": 34.14,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Chicória, crua",
+    "proteina": 1.14,
+    "carbo": 2.85,
+    "gordura": 0.14,
+    "calorias": 13.84,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Chuchu, cozido",
+    "proteina": 0.41,
+    "carbo": 4.79,
+    "gordura": 0,
+    "calorias": 18.54,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Chuchu, cru",
+    "proteina": 0.7,
+    "carbo": 4.14,
+    "gordura": 0.06,
+    "calorias": 16.98,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Coentro, folhas desidratadas",
+    "proteina": 20.88,
+    "carbo": 47.96,
+    "gordura": 10.39,
+    "calorias": 309.07,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Couve, manteiga, crua",
+    "proteina": 2.87,
+    "carbo": 4.33,
+    "gordura": 0.55,
+    "calorias": 27.06,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Couve, manteiga, refogada",
+    "proteina": 1.67,
+    "carbo": 8.71,
+    "gordura": 6.59,
+    "calorias": 90.34,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Couve-flor, crua",
+    "proteina": 1.91,
+    "carbo": 4.52,
+    "gordura": 0.21,
+    "calorias": 22.56,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Couve-flor, cozida",
+    "proteina": 1.24,
+    "carbo": 3.88,
+    "gordura": 0.27,
+    "calorias": 19.11,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Espinafre, Nova Zelândia, cru",
+    "proteina": 2.0,
+    "carbo": 2.57,
+    "gordura": 0.24,
+    "calorias": 16.1,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Espinafre, Nova Zelândia, refogado",
+    "proteina": 2.72,
+    "carbo": 4.24,
+    "gordura": 5.43,
+    "calorias": 67.25,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Farinha, de mandioca, crua",
+    "proteina": 1.55,
+    "carbo": 87.9,
+    "gordura": 0.28,
+    "calorias": 360.87,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Farinha, de mandioca, torrada",
+    "proteina": 1.23,
+    "carbo": 89.19,
+    "gordura": 0.29,
+    "calorias": 365.27,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Farinha, de puba",
+    "proteina": 1.62,
+    "carbo": 87.29,
+    "gordura": 0.47,
+    "calorias": 360.18,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Fécula, de mandioca",
+    "proteina": 0.52,
+    "carbo": 81.15,
+    "gordura": 0.28,
+    "calorias": 330.85,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Feijão, broto, cru",
+    "proteina": 4.17,
+    "carbo": 7.76,
+    "gordura": 0.1,
+    "calorias": 38.72,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Inhame, cru",
+    "proteina": 2.05,
+    "carbo": 23.23,
+    "gordura": 0.21,
+    "calorias": 96.7,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Jiló, cru",
+    "proteina": 1.4,
+    "carbo": 6.19,
+    "gordura": 0.22,
+    "calorias": 27.37,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Jurubeba, crua",
+    "proteina": 4.41,
+    "carbo": 23.06,
+    "gordura": 3.91,
+    "calorias": 125.81,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Mandioca, cozida",
+    "proteina": 0.58,
+    "carbo": 30.09,
+    "gordura": 0.3,
+    "calorias": 125.36,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Mandioca, crua",
+    "proteina": 1.13,
+    "carbo": 36.17,
+    "gordura": 0.3,
+    "calorias": 151.42,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Mandioca, farofa, temperada",
+    "proteina": 2.06,
+    "carbo": 80.3,
+    "gordura": 9.12,
+    "calorias": 405.69,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Mandioca, frita",
+    "proteina": 1.38,
+    "carbo": 50.25,
+    "gordura": 11.2,
+    "calorias": 300.06,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Manjericão, cru",
+    "proteina": 1.99,
+    "carbo": 3.64,
+    "gordura": 0.39,
+    "calorias": 21.15,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Maxixe, cru",
+    "proteina": 1.39,
+    "carbo": 2.73,
+    "gordura": 0.07,
+    "calorias": 13.75,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Mostarda, folha, crua",
+    "proteina": 2.11,
+    "carbo": 3.24,
+    "gordura": 0.17,
+    "calorias": 18.11,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Nhoque, batata, cozido",
+    "proteina": 5.86,
+    "carbo": 36.78,
+    "gordura": 1.94,
+    "calorias": 180.78,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Nabo, cru",
+    "proteina": 1.2,
+    "carbo": 4.15,
+    "gordura": 0.05,
+    "calorias": 18.19,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Palmito, juçara, em conserva",
+    "proteina": 1.79,
+    "carbo": 4.33,
+    "gordura": 0.4,
+    "calorias": 23.2,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Palmito, pupunha, em conserva",
+    "proteina": 2.46,
+    "carbo": 5.51,
+    "gordura": 0.45,
+    "calorias": 29.43,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Pão, de queijo, assado",
+    "proteina": 5.12,
+    "carbo": 34.24,
+    "gordura": 24.57,
+    "calorias": 363.08,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Pão, de queijo, cru",
+    "proteina": 3.65,
+    "carbo": 38.51,
+    "gordura": 13.99,
+    "calorias": 294.54,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Pepino, cru",
+    "proteina": 0.87,
+    "carbo": 2.04,
+    "gordura": 0.0,
+    "calorias": 9.53,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Pimentão, amarelo, cru",
+    "proteina": 1.22,
+    "carbo": 5.96,
+    "gordura": 0.44,
+    "calorias": 27.93,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Pimentão, verde, cru",
+    "proteina": 1.05,
+    "carbo": 4.89,
+    "gordura": 0.15,
+    "calorias": 21.29,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Pimentão, vermelho, cru",
+    "proteina": 1.04,
+    "carbo": 5.47,
+    "gordura": 0.15,
+    "calorias": 23.28,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Polvilho, doce",
+    "proteina": 0.43,
+    "carbo": 86.77,
+    "gordura": 0.0,
+    "calorias": 351.23,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Quiabo, cru",
+    "proteina": 1.92,
+    "carbo": 6.37,
+    "gordura": 0.3,
+    "calorias": 29.94,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Rabanete, cru",
+    "proteina": 1.39,
+    "carbo": 2.73,
+    "gordura": 0.07,
+    "calorias": 13.74,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Repolho, branco, cru",
+    "proteina": 0.88,
+    "carbo": 3.86,
+    "gordura": 0.14,
+    "calorias": 17.12,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Repolho, roxo, cru",
+    "proteina": 1.91,
+    "carbo": 7.2,
+    "gordura": 0.06,
+    "calorias": 30.91,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Repolho, roxo, refogado",
+    "proteina": 1.8,
+    "carbo": 7.56,
+    "gordura": 1.24,
+    "calorias": 41.77,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Rúcula, crua",
+    "proteina": 1.77,
+    "carbo": 2.22,
+    "gordura": 0.11,
+    "calorias": 13.13,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Salsa, crua",
+    "proteina": 3.26,
+    "carbo": 5.71,
+    "gordura": 0.61,
+    "calorias": 33.42,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Seleta de legumes, enlatada",
+    "proteina": 3.42,
+    "carbo": 12.67,
+    "gordura": 0.35,
+    "calorias": 56.53,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Serralha, crua",
+    "proteina": 2.67,
+    "carbo": 4.95,
+    "gordura": 0.74,
+    "calorias": 30.4,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Taioba, crua",
+    "proteina": 2.9,
+    "carbo": 5.43,
+    "gordura": 0.93,
+    "calorias": 34.21,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Tomate, com semente, cru",
+    "proteina": 1.1,
+    "carbo": 3.14,
+    "gordura": 0.17,
+    "calorias": 15.34,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Tomate, extrato",
+    "proteina": 2.43,
+    "carbo": 14.96,
+    "gordura": 0.19,
+    "calorias": 60.93,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Tomate, molho industrializado",
+    "proteina": 1.38,
+    "carbo": 7.71,
+    "gordura": 0.9,
+    "calorias": 38.45,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Tomate, purê",
+    "proteina": 1.36,
+    "carbo": 6.89,
+    "gordura": 0.0,
+    "calorias": 27.94,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Tomate, salada",
+    "proteina": 0.81,
+    "carbo": 5.12,
+    "gordura": 0.0,
+    "calorias": 20.55,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Vagem, crua",
+    "proteina": 1.79,
+    "carbo": 5.35,
+    "gordura": 0.17,
+    "calorias": 24.9,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Abacate, cru",
+    "proteina": 1.24,
+    "carbo": 6.03,
+    "gordura": 8.4,
+    "calorias": 96.15,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Abacaxi, cru",
+    "proteina": 0.86,
+    "carbo": 12.33,
+    "gordura": 0.12,
+    "calorias": 48.32,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Abacaxi, polpa, congelada",
+    "proteina": 0.47,
+    "carbo": 7.8,
+    "gordura": 0.11,
+    "calorias": 30.59,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Abiu, cru",
+    "proteina": 0.83,
+    "carbo": 14.93,
+    "gordura": 0.7,
+    "calorias": 62.42,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Açaí, polpa, com xarope de guaraná e glucose",
+    "proteina": 0.72,
+    "carbo": 21.46,
+    "gordura": 3.66,
+    "calorias": 110.3,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Açaí, polpa, congelada",
+    "proteina": 0.8,
+    "carbo": 6.21,
+    "gordura": 3.94,
+    "calorias": 58.05,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Acerola, crua",
+    "proteina": 0.91,
+    "carbo": 7.97,
+    "gordura": 0.21,
+    "calorias": 33.46,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Acerola, polpa, congelada",
+    "proteina": 0.59,
+    "carbo": 5.54,
+    "gordura": 0.0,
+    "calorias": 21.94,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Ameixa, calda, enlatada",
+    "proteina": 0.41,
+    "carbo": 46.89,
+    "gordura": 0.0,
+    "calorias": 182.85,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Ameixa, crua",
+    "proteina": 0.77,
+    "carbo": 13.85,
+    "gordura": 0.0,
+    "calorias": 52.54,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Ameixa, em calda, enlatada, drenada",
+    "proteina": 1.03,
+    "carbo": 47.66,
+    "gordura": 0.28,
+    "calorias": 177.36,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Atemóia, crua",
+    "proteina": 0.97,
+    "carbo": 25.33,
+    "gordura": 0.3,
+    "calorias": 96.97,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Banana, da terra, crua",
+    "proteina": 1.43,
+    "carbo": 33.67,
+    "gordura": 0.24,
+    "calorias": 128.02,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Banana, doce em barra",
+    "proteina": 2.17,
+    "carbo": 75.67,
+    "gordura": 0.05,
+    "calorias": 280.11,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Banana, figo, crua",
+    "proteina": 1.13,
+    "carbo": 27.8,
+    "gordura": 0.14,
+    "calorias": 105.08,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Banana, maçã, crua",
+    "proteina": 1.75,
+    "carbo": 22.34,
+    "gordura": 0.06,
+    "calorias": 86.81,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Banana, nanica, crua",
+    "proteina": 1.4,
+    "carbo": 23.85,
+    "gordura": 0.12,
+    "calorias": 91.53,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Banana, ouro, crua",
+    "proteina": 1.48,
+    "carbo": 29.34,
+    "gordura": 0.21,
+    "calorias": 112.37,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Banana, pacova, crua",
+    "proteina": 1.23,
+    "carbo": 20.31,
+    "gordura": 0.08,
+    "calorias": 77.91,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Banana, prata, crua",
+    "proteina": 1.27,
+    "carbo": 25.96,
+    "gordura": 0.07,
+    "calorias": 98.25,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Cacau, cru",
+    "proteina": 0.95,
+    "carbo": 19.41,
+    "gordura": 0.14,
+    "calorias": 74.29,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Cajá-Manga, cru",
+    "proteina": 1.28,
+    "carbo": 11.43,
+    "gordura": 0.0,
+    "calorias": 45.58,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Cajá, polpa, congelada",
+    "proteina": 0.59,
+    "carbo": 6.37,
+    "gordura": 0.17,
+    "calorias": 26.33,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Caju, cru",
+    "proteina": 0.97,
+    "carbo": 10.29,
+    "gordura": 0.33,
+    "calorias": 43.07,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Caju, polpa, congelada",
+    "proteina": 0.48,
+    "carbo": 9.35,
+    "gordura": 0.15,
+    "calorias": 36.57,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Caju, suco concentrado, envasado",
+    "proteina": 0.4,
+    "carbo": 10.73,
+    "gordura": 0.2,
+    "calorias": 45.11,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Caqui, chocolate, cru",
+    "proteina": 0.36,
+    "carbo": 19.33,
+    "gordura": 0.07,
+    "calorias": 71.35,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Carambola, crua",
+    "proteina": 0.87,
+    "carbo": 11.48,
+    "gordura": 0.18,
+    "calorias": 45.74,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Ciriguela, crua",
+    "proteina": 1.4,
+    "carbo": 18.86,
+    "gordura": 0.36,
+    "calorias": 75.59,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Cupuaçu, cru",
+    "proteina": 1.16,
+    "carbo": 10.43,
+    "gordura": 0.95,
+    "calorias": 49.42,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Cupuaçu, polpa, congelada",
+    "proteina": 0.84,
+    "carbo": 11.39,
+    "gordura": 0.59,
+    "calorias": 48.8,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Figo, cru",
+    "proteina": 0.97,
+    "carbo": 10.25,
+    "gordura": 0.16,
+    "calorias": 41.45,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Figo, enlatado, em calda",
+    "proteina": 0.56,
+    "carbo": 50.34,
+    "gordura": 0.15,
+    "calorias": 184.36,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Fruta-pão, crua",
+    "proteina": 1.08,
+    "carbo": 17.17,
+    "gordura": 0.19,
+    "calorias": 67.05,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Goiaba, branca, com casca, crua",
+    "proteina": 0.9,
+    "carbo": 12.4,
+    "gordura": 0.49,
+    "calorias": 51.74,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Goiaba, doce em pasta",
+    "proteina": 0.58,
+    "carbo": 74.12,
+    "gordura": 0.0,
+    "calorias": 268.96,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Goiaba, doce, cascão",
+    "proteina": 0.41,
+    "carbo": 78.7,
+    "gordura": 0.1,
+    "calorias": 285.59,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Goiaba, vermelha, com casca, crua",
+    "proteina": 1.09,
+    "carbo": 13.01,
+    "gordura": 0.44,
+    "calorias": 54.17,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Graviola, crua",
+    "proteina": 0.85,
+    "carbo": 15.84,
+    "gordura": 0.21,
+    "calorias": 61.62,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Graviola, polpa, congelada",
+    "proteina": 0.57,
+    "carbo": 9.78,
+    "gordura": 0.14,
+    "calorias": 38.27,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Jabuticaba, crua",
+    "proteina": 0.61,
+    "carbo": 15.26,
+    "gordura": 0.13,
+    "calorias": 58.05,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Jaca, crua",
+    "proteina": 1.4,
+    "carbo": 22.5,
+    "gordura": 0.27,
+    "calorias": 87.92,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Jambo, cru",
+    "proteina": 0.89,
+    "carbo": 6.49,
+    "gordura": 0.07,
+    "calorias": 26.91,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Jamelão, cru",
+    "proteina": 0.55,
+    "carbo": 10.63,
+    "gordura": 0.11,
+    "calorias": 41.01,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Kiwi, cru",
+    "proteina": 1.34,
+    "carbo": 11.5,
+    "gordura": 0.63,
+    "calorias": 51.14,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Laranja, baía, crua",
+    "proteina": 0.98,
+    "carbo": 11.47,
+    "gordura": 0.1,
+    "calorias": 45.44,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Laranja, baía, suco",
+    "proteina": 0.65,
+    "carbo": 8.7,
+    "gordura": 0.0,
+    "calorias": 36.65,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Laranja, da terra, crua",
+    "proteina": 1.08,
+    "carbo": 12.86,
+    "gordura": 0.19,
+    "calorias": 51.47,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Laranja, da terra, suco",
+    "proteina": 0.67,
+    "carbo": 9.57,
+    "gordura": 0.14,
+    "calorias": 40.96,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Laranja, lima, crua",
+    "proteina": 1.06,
+    "carbo": 11.53,
+    "gordura": 0.08,
+    "calorias": 45.7,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Laranja, lima, suco",
+    "proteina": 0.71,
+    "carbo": 9.17,
+    "gordura": 0.12,
+    "calorias": 39.34,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Laranja, pêra, crua",
+    "proteina": 1.04,
+    "carbo": 8.95,
+    "gordura": 0.13,
+    "calorias": 36.77,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Laranja, pêra, suco",
+    "proteina": 0.74,
+    "carbo": 7.55,
+    "gordura": 0.07,
+    "calorias": 32.71,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Laranja, valência, crua",
+    "proteina": 0.77,
+    "carbo": 11.72,
+    "gordura": 0.16,
+    "calorias": 46.11,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Laranja, valência, suco",
+    "proteina": 0.48,
+    "carbo": 8.55,
+    "gordura": 0.12,
+    "calorias": 36.2,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Limão, cravo, suco",
+    "proteina": 0.33,
+    "carbo": 5.25,
+    "gordura": 0.0,
+    "calorias": 14.1,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Limão, galego, suco",
+    "proteina": 0.57,
+    "carbo": 7.32,
+    "gordura": 0.07,
+    "calorias": 22.23,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Limão, tahiti, cru",
+    "proteina": 0.94,
+    "carbo": 11.08,
+    "gordura": 0.14,
+    "calorias": 31.82,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Maçã, Argentina, com casca, crua",
+    "proteina": 0.23,
+    "carbo": 16.59,
+    "gordura": 0.25,
+    "calorias": 62.53,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Maçã, Fuji, com casca, crua",
+    "proteina": 0.29,
+    "carbo": 15.15,
+    "gordura": 0.0,
+    "calorias": 55.52,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Macaúba, crua",
+    "proteina": 2.08,
+    "carbo": 13.95,
+    "gordura": 40.66,
+    "calorias": 404.28,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Mamão, doce em calda, drenado",
+    "proteina": 0.19,
+    "carbo": 54.0,
+    "gordura": 0.07,
+    "calorias": 195.63,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Mamão, Formosa, cru",
+    "proteina": 0.82,
+    "carbo": 11.55,
+    "gordura": 0.12,
+    "calorias": 45.34,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Mamão, Papaia, cru",
+    "proteina": 0.46,
+    "carbo": 10.44,
+    "gordura": 0.12,
+    "calorias": 40.16,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Mamão verde, doce em calda, drenado",
+    "proteina": 0.32,
+    "carbo": 57.64,
+    "gordura": 0.1,
+    "calorias": 209.38,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Manga, Haden, crua",
+    "proteina": 0.41,
+    "carbo": 16.66,
+    "gordura": 0.26,
+    "calorias": 63.5,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Manga, Palmer, crua",
+    "proteina": 0.41,
+    "carbo": 19.35,
+    "gordura": 0.17,
+    "calorias": 72.49,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Manga, polpa, congelada",
+    "proteina": 0.38,
+    "carbo": 12.52,
+    "gordura": 0.23,
+    "calorias": 48.31,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Manga, Tommy Atkins, crua",
+    "proteina": 0.86,
+    "carbo": 12.77,
+    "gordura": 0.22,
+    "calorias": 50.69,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Maracujá, cru",
+    "proteina": 1.99,
+    "carbo": 12.26,
+    "gordura": 2.1,
+    "calorias": 68.44,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Maracujá, polpa, congelada",
+    "proteina": 0.81,
+    "carbo": 9.6,
+    "gordura": 0.18,
+    "calorias": 38.76,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Maracujá, suco concentrado, envasado",
+    "proteina": 0.77,
+    "carbo": 9.64,
+    "gordura": 0.19,
+    "calorias": 41.97,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Melancia, crua",
+    "proteina": 0.88,
+    "carbo": 8.14,
+    "gordura": 0.0,
+    "calorias": 32.61,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Melão, cru",
+    "proteina": 0.68,
+    "carbo": 7.53,
+    "gordura": 0.0,
+    "calorias": 29.37,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Mexerica, Murcote, crua",
+    "proteina": 0.88,
+    "carbo": 14.86,
+    "gordura": 0.13,
+    "calorias": 57.59,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Mexerica, Rio, crua",
+    "proteina": 0.65,
+    "carbo": 9.34,
+    "gordura": 0.13,
+    "calorias": 36.87,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Morango, cru",
+    "proteina": 0.89,
+    "carbo": 6.82,
+    "gordura": 0.31,
+    "calorias": 30.15,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Nêspera, crua",
+    "proteina": 0.31,
+    "carbo": 11.53,
+    "gordura": 0.0,
+    "calorias": 42.54,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Pequi, cru",
+    "proteina": 2.34,
+    "carbo": 12.97,
+    "gordura": 17.97,
+    "calorias": 204.97,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Pêra, Park, crua",
+    "proteina": 0.24,
+    "carbo": 16.07,
+    "gordura": 0.23,
+    "calorias": 60.59,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Pêra, Williams, crua",
+    "proteina": 0.57,
+    "carbo": 14.02,
+    "gordura": 0.11,
+    "calorias": 53.31,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Pêssego, Aurora, cru",
+    "proteina": 0.83,
+    "carbo": 9.32,
+    "gordura": 0.0,
+    "calorias": 36.33,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Pêssego, enlatado, em calda",
+    "proteina": 0.71,
+    "carbo": 16.88,
+    "gordura": 0.0,
+    "calorias": 63.14,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Pinha, crua",
+    "proteina": 1.49,
+    "carbo": 22.45,
+    "gordura": 0.32,
+    "calorias": 88.47,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Pitanga, crua",
+    "proteina": 0.93,
+    "carbo": 10.24,
+    "gordura": 0.17,
+    "calorias": 41.42,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Pitanga, polpa, congelada",
+    "proteina": 0.29,
+    "carbo": 4.76,
+    "gordura": 0.12,
+    "calorias": 19.11,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Romã, crua",
+    "proteina": 0.4,
+    "carbo": 15.11,
+    "gordura": 0.0,
+    "calorias": 55.74,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Tamarindo, cru",
+    "proteina": 3.21,
+    "carbo": 72.53,
+    "gordura": 0.46,
+    "calorias": 275.7,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Tangerina, Poncã, crua",
+    "proteina": 0.85,
+    "carbo": 9.61,
+    "gordura": 0.07,
+    "calorias": 37.83,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Tangerina, Poncã, suco",
+    "proteina": 0.52,
+    "carbo": 8.8,
+    "gordura": 0.0,
+    "calorias": 36.11,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Tucumã, cru",
+    "proteina": 2.09,
+    "carbo": 26.47,
+    "gordura": 19.08,
+    "calorias": 262.02,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Umbu, cru",
+    "proteina": 0.84,
+    "carbo": 9.4,
+    "gordura": 0.0,
+    "calorias": 37.02,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Umbu, polpa, congelada",
+    "proteina": 0.51,
+    "carbo": 8.79,
+    "gordura": 0.07,
+    "calorias": 33.94,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Uva, Itália, crua",
+    "proteina": 0.75,
+    "carbo": 13.57,
+    "gordura": 0.2,
+    "calorias": 52.87,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Uva, Rubi, crua",
+    "proteina": 0.61,
+    "carbo": 12.7,
+    "gordura": 0.16,
+    "calorias": 49.06,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Uva, suco concentrado, envasado",
+    "proteina": 0.0,
+    "carbo": 14.71,
+    "gordura": 0.0,
+    "calorias": 57.66,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Azeite, de dendê",
+    "proteina": 0.0,
+    "carbo": 0.0,
+    "gordura": 100.0,
+    "calorias": 884.0,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Azeite, de oliva, extra virgem",
+    "proteina": 0.0,
+    "carbo": 0.0,
+    "gordura": 100.0,
+    "calorias": 884.0,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Manteiga, com sal",
+    "proteina": 0.41,
+    "carbo": 0.06,
+    "gordura": 82.36,
+    "calorias": 725.97,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Manteiga, sem sal",
+    "proteina": 0.4,
+    "carbo": 0.0,
+    "gordura": 86.04,
+    "calorias": 757.54,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Margarina, com óleo hidrogenado, com sal (65% de lipídeos)",
+    "proteina": 0.0,
+    "carbo": 0.0,
+    "gordura": 67.43,
+    "calorias": 596.12,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Margarina, com óleo hidrogenado, sem sal (80% de lipídeos)",
+    "proteina": 0.0,
+    "carbo": 0.0,
+    "gordura": 81.73,
+    "calorias": 722.53,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Margarina, com óleo interesterificado, com sal (65%de lipídeos)",
+    "proteina": 0.0,
+    "carbo": 0.0,
+    "gordura": 67.25,
+    "calorias": 594.45,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Margarina, com óleo interesterificado, sem sal (65% de lipídeos)",
+    "proteina": 0.0,
+    "carbo": 0.0,
+    "gordura": 67.1,
+    "calorias": 593.14,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Óleo, de babaçu",
+    "proteina": 0.0,
+    "carbo": 0.0,
+    "gordura": 100.0,
+    "calorias": 884.0,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Óleo, de canola",
+    "proteina": 0.0,
+    "carbo": 0.0,
+    "gordura": 100.0,
+    "calorias": 884.0,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Óleo, de girassol",
+    "proteina": 0.0,
+    "carbo": 0.0,
+    "gordura": 100.0,
+    "calorias": 884.0,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Óleo, de milho",
+    "proteina": 0.0,
+    "carbo": 0.0,
+    "gordura": 100.0,
+    "calorias": 884.0,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Óleo, de pequi",
+    "proteina": 0.0,
+    "carbo": 0.0,
+    "gordura": 100.0,
+    "calorias": 884.0,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Óleo, de soja",
+    "proteina": 0.0,
+    "carbo": 0.0,
+    "gordura": 100.0,
+    "calorias": 884.0,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Abadejo, filé, congelado, assado",
+    "proteina": 23.53,
+    "carbo": 0.0,
+    "gordura": 1.24,
+    "calorias": 111.62,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Abadejo, filé, congelado,cozido",
+    "proteina": 19.35,
+    "carbo": 0.0,
+    "gordura": 0.94,
+    "calorias": 91.1,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Abadejo, filé, congelado, cru",
+    "proteina": 13.08,
+    "carbo": 0.0,
+    "gordura": 0.36,
+    "calorias": 59.11,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Abadejo, filé, congelado, grelhado",
+    "proteina": 27.61,
+    "carbo": 0.0,
+    "gordura": 1.3,
+    "calorias": 129.64,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Atum, conserva em óleo",
+    "proteina": 26.19,
+    "carbo": 0.0,
+    "gordura": 6.0,
+    "calorias": 165.91,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Atum, fresco, cru",
+    "proteina": 25.68,
+    "carbo": 0.0,
+    "gordura": 0.87,
+    "calorias": 117.5,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Bacalhau, salgado, cru",
+    "proteina": 29.04,
+    "carbo": 0.0,
+    "gordura": 1.32,
+    "calorias": 135.89,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Bacalhau, salgado, refogado",
+    "proteina": 23.98,
+    "carbo": 1.22,
+    "gordura": 3.61,
+    "calorias": 139.66,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Cação, posta, com farinha de trigo, frita",
+    "proteina": 24.95,
+    "carbo": 3.1,
+    "gordura": 9.95,
+    "calorias": 208.33,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Cação, posta, cozida",
+    "proteina": 25.59,
+    "carbo": 0.0,
+    "gordura": 0.75,
+    "calorias": 116.01,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Cação, posta, crua",
+    "proteina": 17.85,
+    "carbo": 0.0,
+    "gordura": 0.79,
+    "calorias": 83.33,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Camarão, Rio Grande, grande, cozido",
+    "proteina": 18.97,
+    "carbo": 0.0,
+    "gordura": 1.0,
+    "calorias": 90.01,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Camarão, Rio Grande, grande, cru",
+    "proteina": 9.99,
+    "carbo": 0.0,
     "gordura": 0.5,
-    "calorias": 76,
+    "calorias": 47.18,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Camarão, Sete Barbas, sem cabeça, com casca, frito",
+    "proteina": 18.39,
+    "carbo": 2.88,
+    "gordura": 15.62,
+    "calorias": 231.25,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Caranguejo, cozido",
+    "proteina": 18.48,
+    "carbo": 0.0,
+    "gordura": 0.42,
+    "calorias": 82.72,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Corimba, cru",
+    "proteina": 17.37,
+    "carbo": -0.03,
+    "gordura": 5.99,
+    "calorias": 128.16,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Corimbatá, assado",
+    "proteina": 19.9,
+    "carbo": 0.0,
+    "gordura": 19.57,
+    "calorias": 261.45,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Corimbatá, cozido",
+    "proteina": 20.13,
+    "carbo": 0.0,
+    "gordura": 16.93,
+    "calorias": 238.7,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Corvina de água doce, crua",
+    "proteina": 18.92,
+    "carbo": 0.0,
+    "gordura": 2.24,
+    "calorias": 101.01,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Corvina do mar, crua",
+    "proteina": 18.57,
+    "carbo": 0.0,
+    "gordura": 1.58,
+    "calorias": 94.0,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Corvina grande, assada",
+    "proteina": 26.77,
+    "carbo": 0.0,
+    "gordura": 3.57,
+    "calorias": 146.53,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Corvina grande, cozida",
+    "proteina": 23.44,
+    "carbo": 0.0,
+    "gordura": 2.56,
+    "calorias": 100.08,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Dourada de água doce, fresca",
+    "proteina": 18.81,
+    "carbo": 0.0,
+    "gordura": 5.64,
+    "calorias": 131.21,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Lambari, congelado, cru",
+    "proteina": 16.81,
+    "carbo": 0.0,
+    "gordura": 6.55,
+    "calorias": 130.84,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Lambari, congelado, frito",
+    "proteina": 28.43,
+    "carbo": 0.0,
+    "gordura": 22.78,
+    "calorias": 326.87,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Lambari, fresco, cru",
+    "proteina": 15.65,
+    "carbo": 0.0,
+    "gordura": 9.4,
+    "calorias": 151.6,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Manjuba, com farinha de trigo, frita",
+    "proteina": 23.45,
+    "carbo": 10.24,
+    "gordura": 22.59,
+    "calorias": 343.55,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Manjuba, frita",
+    "proteina": 30.14,
+    "carbo": 0.0,
+    "gordura": 24.46,
+    "calorias": 349.33,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Merluza, filé, assado",
+    "proteina": 26.6,
+    "carbo": 0.0,
+    "gordura": 0.92,
+    "calorias": 121.91,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Merluza, filé, cru",
+    "proteina": 16.61,
+    "carbo": 0.0,
+    "gordura": 2.02,
+    "calorias": 89.13,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Merluza, filé, frito",
+    "proteina": 26.93,
+    "carbo": 0.0,
+    "gordura": 8.5,
+    "calorias": 191.63,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Pescada, branca, crua",
+    "proteina": 16.26,
+    "carbo": 0.0,
+    "gordura": 4.59,
+    "calorias": 110.88,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Pescada, branca, frita",
+    "proteina": 27.36,
+    "carbo": 0.0,
+    "gordura": 11.78,
+    "calorias": 223.04,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Pescada, filé, com farinha de trigo, frito",
+    "proteina": 21.44,
+    "carbo": 5.03,
+    "gordura": 19.12,
+    "calorias": 283.43,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Pescada, filé, cru",
+    "proteina": 16.65,
+    "carbo": 0.0,
+    "gordura": 4.0,
+    "calorias": 107.21,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Pescada, filé, frito",
+    "proteina": 28.59,
+    "carbo": 0.0,
+    "gordura": 3.57,
+    "calorias": 154.27,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Pescada, filé, molho escabeche",
+    "proteina": 11.75,
+    "carbo": 5.02,
+    "gordura": 8.02,
+    "calorias": 141.96,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Pescadinha, crua",
+    "proteina": 15.48,
+    "carbo": 0.0,
+    "gordura": 1.14,
+    "calorias": 76.41,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Pintado, assado",
+    "proteina": 36.45,
+    "carbo": 0.0,
+    "gordura": 3.98,
+    "calorias": 191.56,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Pintado, cru",
+    "proteina": 18.56,
+    "carbo": 0.0,
+    "gordura": 1.31,
+    "calorias": 91.08,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Pintado, grelhado",
+    "proteina": 30.8,
+    "carbo": 0.0,
+    "gordura": 2.29,
+    "calorias": 152.19,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Porquinho, cru",
+    "proteina": 20.49,
+    "carbo": 0.0,
+    "gordura": 0.61,
+    "calorias": 93.02,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Salmão, filé, com pele, fresco,  grelhado",
+    "proteina": 23.92,
+    "carbo": 0.0,
+    "gordura": 14.04,
+    "calorias": 228.73,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Salmão, sem pele, fresco, cru",
+    "proteina": 19.25,
+    "carbo": 0.0,
+    "gordura": 9.71,
+    "calorias": 169.78,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Salmão, sem pele, fresco, grelhado",
+    "proteina": 26.14,
+    "carbo": 0.0,
+    "gordura": 14.53,
+    "calorias": 242.71,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Sardinha, assada",
+    "proteina": 32.18,
+    "carbo": 0.0,
+    "gordura": 2.99,
+    "calorias": 164.35,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Sardinha, conserva em óleo",
+    "proteina": 15.94,
+    "carbo": 0.0,
+    "gordura": 24.05,
+    "calorias": 284.98,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Sardinha, frita",
+    "proteina": 33.38,
+    "carbo": 0.0,
+    "gordura": 12.69,
+    "calorias": 257.04,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Sardinha, inteira, crua",
+    "proteina": 21.08,
+    "carbo": 0.0,
+    "gordura": 2.65,
+    "calorias": 113.9,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Tucunaré, filé, congelado, cru",
+    "proteina": 17.96,
+    "carbo": -0.05,
+    "gordura": 1.22,
+    "calorias": 87.69,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Apresuntado",
+    "proteina": 13.45,
+    "carbo": 2.86,
+    "gordura": 6.69,
+    "calorias": 128.86,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Caldo de carne, tablete",
+    "proteina": 7.82,
+    "carbo": 15.05,
+    "gordura": 16.57,
+    "calorias": 240.62,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Caldo de galinha, tablete",
+    "proteina": 6.28,
+    "carbo": 10.65,
+    "gordura": 20.42,
+    "calorias": 251.45,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Carne, bovina, acém, moído, cozido",
+    "proteina": 26.69,
+    "carbo": 0.0,
+    "gordura": 10.92,
+    "calorias": 212.42,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Carne, bovina, acém, moído, cru",
+    "proteina": 19.42,
+    "carbo": 0.0,
+    "gordura": 5.95,
+    "calorias": 136.56,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Carne, bovina, acém, sem gordura, cozido",
+    "proteina": 27.27,
+    "carbo": 0.0,
+    "gordura": 10.88,
+    "calorias": 214.61,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Carne, bovina, acém, sem gordura, cru",
+    "proteina": 20.82,
+    "carbo": 0.0,
+    "gordura": 6.11,
+    "calorias": 144.03,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Carne, bovina, almôndegas, cruas",
+    "proteina": 12.31,
+    "carbo": 9.79,
+    "gordura": 11.2,
+    "calorias": 189.26,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Carne, bovina, almôndegas, fritas",
+    "proteina": 18.16,
+    "carbo": 14.29,
+    "gordura": 15.78,
+    "calorias": 271.81,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Carne, bovina, bucho, cozido",
+    "proteina": 21.64,
+    "carbo": 0.0,
+    "gordura": 4.5,
+    "calorias": 133.02,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Carne, bovina, bucho, cru",
+    "proteina": 20.53,
+    "carbo": 0.0,
+    "gordura": 5.5,
+    "calorias": 137.3,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Carne, bovina, capa de contra-filé, com gordura, crua",
+    "proteina": 19.2,
+    "carbo": 0.0,
+    "gordura": 14.96,
+    "calorias": 216.91,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Carne, bovina, capa de contra-filé, com gordura, grelhada",
+    "proteina": 30.69,
+    "carbo": 0.0,
+    "gordura": 20.03,
+    "calorias": 311.7,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Carne, bovina, capa de contra-filé, sem gordura, crua",
+    "proteina": 21.54,
+    "carbo": 0.0,
+    "gordura": 4.33,
+    "calorias": 131.06,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Carne, bovina, capa de contra-filé, sem gordura, grelhada",
+    "proteina": 35.06,
+    "carbo": -0.01,
+    "gordura": 9.95,
+    "calorias": 239.44,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Carne, bovina, charque, cozido",
+    "proteina": 36.36,
+    "carbo": 0.0,
+    "gordura": 11.92,
+    "calorias": 262.78,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Carne, bovina, charque, cru",
+    "proteina": 22.71,
+    "carbo": 0.0,
+    "gordura": 16.84,
+    "calorias": 248.86,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Carne, bovina, contra-filé, à milanesa",
+    "proteina": 20.61,
+    "carbo": 12.17,
+    "gordura": 24.0,
+    "calorias": 351.59,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Carne, bovina, contra-filé de costela, cru",
+    "proteina": 19.8,
+    "carbo": 0.0,
+    "gordura": 13.07,
+    "calorias": 202.44,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Carne, bovina, contra-filé de costela, grelhado",
+    "proteina": 29.88,
+    "carbo": 0.0,
+    "gordura": 16.33,
+    "calorias": 274.91,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Carne, bovina, contra-filé, com gordura, cru",
+    "proteina": 21.15,
+    "carbo": 0.0,
+    "gordura": 12.81,
+    "calorias": 205.86,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Carne, bovina, contra-filé, com gordura, grelhado",
+    "proteina": 32.4,
+    "carbo": 0.0,
+    "gordura": 15.49,
+    "calorias": 278.05,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Carne, bovina, contra-filé, sem gordura, cru",
+    "proteina": 24.0,
+    "carbo": 0.0,
+    "gordura": 6.0,
+    "calorias": 156.62,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Carne, bovina, contra-filé, sem gordura, grelhado",
+    "proteina": 35.88,
+    "carbo": 0.0,
+    "gordura": 4.49,
+    "calorias": 193.69,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Carne, bovina, costela, assada",
+    "proteina": 28.81,
+    "carbo": 0.0,
+    "gordura": 27.72,
+    "calorias": 373.04,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Carne, bovina, costela, crua",
+    "proteina": 16.71,
+    "carbo": 0.0,
+    "gordura": 31.75,
+    "calorias": 357.72,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Carne, bovina, coxão duro, sem gordura, cozido",
+    "proteina": 31.88,
+    "carbo": 0.0,
+    "gordura": 8.92,
+    "calorias": 216.62,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Carne, bovina, coxão duro, sem gordura, cru",
+    "proteina": 21.51,
+    "carbo": 0.0,
+    "gordura": 6.22,
+    "calorias": 147.97,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Carne, bovina, coxão mole, sem gordura, cozido",
+    "proteina": 32.38,
+    "carbo": 0.0,
+    "gordura": 8.91,
+    "calorias": 218.68,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Carne, bovina, coxão mole, sem gordura, cru",
+    "proteina": 21.23,
+    "carbo": 0.0,
+    "gordura": 8.69,
+    "calorias": 169.07,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Carne, bovina, cupim, assado",
+    "proteina": 28.63,
+    "carbo": 0.0,
+    "gordura": 23.04,
+    "calorias": 330.1,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Carne, bovina, cupim, cru",
+    "proteina": 19.54,
+    "carbo": 0.0,
+    "gordura": 15.3,
+    "calorias": 221.4,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Carne, bovina, fígado, cru",
+    "proteina": 20.71,
+    "carbo": 1.11,
+    "gordura": 5.36,
+    "calorias": 141.05,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Carne, bovina, fígado, grelhado",
+    "proteina": 29.86,
+    "carbo": 4.2,
+    "gordura": 9.01,
+    "calorias": 225.03,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Carne, bovina, filé mingnon, sem gordura, cru",
+    "proteina": 21.6,
+    "carbo": 0.0,
+    "gordura": 5.61,
+    "calorias": 142.86,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Carne, bovina, filé mingnon, sem gordura, grelhado",
+    "proteina": 32.8,
+    "carbo": 0.0,
+    "gordura": 8.83,
+    "calorias": 219.7,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Carne, bovina, flanco, sem gordura, cozido",
+    "proteina": 29.38,
+    "carbo": 0.0,
+    "gordura": 7.77,
+    "calorias": 195.58,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Carne, bovina, flanco, sem gordura, cru",
+    "proteina": 20.0,
+    "carbo": 0.0,
+    "gordura": 6.22,
+    "calorias": 141.46,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Carne, bovina, fraldinha, com gordura, cozida",
+    "proteina": 24.24,
+    "carbo": 0.0,
+    "gordura": 26.05,
+    "calorias": 338.45,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Carne, bovina, fraldinha, com gordura, crua",
+    "proteina": 17.58,
+    "carbo": 0.0,
+    "gordura": 16.15,
+    "calorias": 220.72,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Carne, bovina, lagarto, cozido",
+    "proteina": 32.86,
+    "carbo": 0.0,
+    "gordura": 9.11,
+    "calorias": 222.47,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Carne, bovina, lagarto, cru",
+    "proteina": 20.54,
+    "carbo": 0.0,
+    "gordura": 5.23,
+    "calorias": 134.86,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Carne, bovina, língua, cozida",
+    "proteina": 21.37,
+    "carbo": 0.0,
+    "gordura": 24.8,
+    "calorias": 314.9,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Carne, bovina, língua, crua",
+    "proteina": 17.09,
+    "carbo": 0.0,
+    "gordura": 15.77,
+    "calorias": 215.25,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Carne, bovina, maminha, crua",
+    "proteina": 20.93,
+    "carbo": 0.0,
+    "gordura": 7.03,
+    "calorias": 152.77,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Carne, bovina, maminha, grelhada",
+    "proteina": 30.74,
+    "carbo": 0.0,
+    "gordura": 2.42,
+    "calorias": 153.09,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Carne, bovina, miolo de alcatra, sem gordura, cru",
+    "proteina": 21.61,
+    "carbo": 0.0,
+    "gordura": 7.83,
+    "calorias": 162.87,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Carne, bovina, miolo de alcatra, sem gordura, grelhado",
+    "proteina": 31.93,
+    "carbo": 0.0,
+    "gordura": 11.64,
+    "calorias": 241.36,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Carne, bovina, músculo, sem gordura, cozido",
+    "proteina": 31.23,
+    "carbo": 0.0,
+    "gordura": 6.7,
+    "calorias": 193.8,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Carne, bovina, músculo, sem gordura, cru",
+    "proteina": 21.56,
+    "carbo": 0.0,
+    "gordura": 5.49,
+    "calorias": 141.58,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Carne, bovina, paleta, com gordura, crua",
+    "proteina": 21.41,
+    "carbo": 0.0,
+    "gordura": 7.46,
+    "calorias": 158.71,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Carne, bovina, paleta, sem gordura, cozida",
+    "proteina": 29.72,
+    "carbo": 0.0,
+    "gordura": 7.4,
+    "calorias": 193.65,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Carne, bovina, paleta, sem gordura, crua",
+    "proteina": 21.03,
+    "carbo": 0.0,
+    "gordura": 5.67,
+    "calorias": 140.94,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Carne, bovina, patinho, sem gordura, cru",
+    "proteina": 21.72,
+    "carbo": 0.0,
+    "gordura": 4.51,
+    "calorias": 133.47,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Carne, bovina, patinho, sem gordura, grelhado",
+    "proteina": 35.9,
+    "carbo": 0.0,
+    "gordura": 7.31,
+    "calorias": 219.26,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Carne, bovina, peito, sem gordura, cozido",
+    "proteina": 22.25,
+    "carbo": 0.0,
+    "gordura": 26.99,
+    "calorias": 338.47,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Carne, bovina, peito, sem gordura, cru",
+    "proteina": 17.56,
+    "carbo": 0.0,
+    "gordura": 20.43,
+    "calorias": 259.28,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Carne, bovina, picanha, com gordura, crua",
+    "proteina": 18.82,
+    "carbo": 0.0,
+    "gordura": 14.69,
+    "calorias": 212.88,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Carne, bovina, picanha, com gordura, grelhada",
+    "proteina": 26.42,
+    "carbo": 0.0,
+    "gordura": 19.51,
+    "calorias": 288.77,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Carne, bovina, picanha, sem gordura, crua",
+    "proteina": 21.25,
+    "carbo": 0.0,
+    "gordura": 4.74,
+    "calorias": 133.52,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Carne, bovina, picanha, sem gordura, grelhada",
+    "proteina": 31.91,
+    "carbo": 0.0,
+    "gordura": 11.33,
+    "calorias": 238.47,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Carne, bovina, seca, cozida",
+    "proteina": 26.93,
+    "carbo": 0.0,
+    "gordura": 21.93,
+    "calorias": 312.8,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Carne, bovina, seca, crua",
+    "proteina": 19.66,
+    "carbo": 0.0,
+    "gordura": 25.37,
+    "calorias": 312.75,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Coxinha de frango, frita",
+    "proteina": 9.61,
+    "carbo": 34.52,
+    "gordura": 11.84,
+    "calorias": 283.05,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Croquete, de carne, cru",
+    "proteina": 12.04,
+    "carbo": 13.95,
+    "gordura": 15.56,
+    "calorias": 245.77,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Croquete, de carne, frito",
+    "proteina": 16.86,
+    "carbo": 18.15,
+    "gordura": 22.67,
+    "calorias": 346.74,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Empada de frango, pré-cozida, assada",
+    "proteina": 6.94,
+    "carbo": 47.49,
+    "gordura": 15.61,
+    "calorias": 358.19,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Empada, de frango, pré-cozida",
+    "proteina": 7.34,
+    "carbo": 35.53,
+    "gordura": 22.89,
+    "calorias": 377.48,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Frango, asa, com pele, crua",
+    "proteina": 18.1,
+    "carbo": 0.0,
+    "gordura": 15.07,
+    "calorias": 213.19,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Frango, caipira, inteiro, com pele, cozido",
+    "proteina": 23.88,
+    "carbo": 0.0,
+    "gordura": 15.62,
+    "calorias": 242.89,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Frango, caipira, inteiro, sem pele, cozido",
+    "proteina": 29.58,
+    "carbo": 0.0,
+    "gordura": 7.7,
+    "calorias": 195.76,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Frango, coração, cru",
+    "proteina": 12.58,
+    "carbo": 0.0,
+    "gordura": 18.6,
+    "calorias": 221.5,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Frango, coração, grelhado",
+    "proteina": 22.44,
+    "carbo": 0.61,
+    "gordura": 12.1,
+    "calorias": 207.27,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Frango, coxa, com pele, assada",
+    "proteina": 28.49,
+    "carbo": 0.06,
+    "gordura": 10.36,
+    "calorias": 215.12,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Frango, coxa, com pele, crua",
+    "proteina": 17.09,
+    "carbo": 0.0,
+    "gordura": 9.81,
+    "calorias": 161.47,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Frango, coxa, sem pele, cozida",
+    "proteina": 26.86,
+    "carbo": 0.0,
+    "gordura": 5.85,
+    "calorias": 167.43,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Frango, coxa, sem pele, crua",
+    "proteina": 17.81,
+    "carbo": 0.02,
+    "gordura": 4.86,
+    "calorias": 119.95,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Frango, fígado, cru",
+    "proteina": 17.59,
+    "carbo": -0.02,
+    "gordura": 3.49,
+    "calorias": 106.48,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Frango, filé, à milanesa",
+    "proteina": 28.46,
+    "carbo": 7.51,
+    "gordura": 7.79,
+    "calorias": 220.87,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Frango, inteiro, com pele, cru",
+    "proteina": 16.44,
+    "carbo": 0.0,
+    "gordura": 17.31,
+    "calorias": 226.32,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Frango, inteiro, sem pele, assado",
+    "proteina": 28.03,
+    "carbo": 0.0,
+    "gordura": 7.5,
+    "calorias": 187.34,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Frango, inteiro, sem pele, cozido",
+    "proteina": 24.99,
+    "carbo": 0.0,
+    "gordura": 7.06,
+    "calorias": 170.39,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Frango, inteiro, sem pele, cru",
+    "proteina": 20.59,
+    "carbo": 0.0,
+    "gordura": 4.57,
+    "calorias": 129.1,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Frango, peito, com pele, assado",
+    "proteina": 33.42,
+    "carbo": 0.0,
+    "gordura": 7.65,
+    "calorias": 211.68,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Frango, peito, com pele, cru",
+    "proteina": 20.78,
+    "carbo": 0.0,
+    "gordura": 6.73,
+    "calorias": 149.47,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Frango, peito, sem pele, cozido",
+    "proteina": 31.47,
+    "carbo": 0.0,
+    "gordura": 3.16,
+    "calorias": 162.87,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Frango, peito, sem pele, cru",
+    "proteina": 21.53,
+    "carbo": 0.0,
+    "gordura": 3.02,
+    "calorias": 119.16,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Frango, peito, sem pele, grelhado",
+    "proteina": 32.03,
+    "carbo": 0.0,
+    "gordura": 2.48,
+    "calorias": 159.19,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Frango, sobrecoxa, com pele, assada",
+    "proteina": 28.7,
+    "carbo": 0.0,
+    "gordura": 15.19,
+    "calorias": 259.6,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Frango, sobrecoxa, com pele, crua",
+    "proteina": 15.46,
+    "carbo": 0.0,
+    "gordura": 20.9,
+    "calorias": 254.53,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Frango, sobrecoxa, sem pele, assada",
+    "proteina": 29.18,
+    "carbo": 0.0,
+    "gordura": 12.01,
+    "calorias": 232.88,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Frango, sobrecoxa, sem pele, crua",
+    "proteina": 17.57,
+    "carbo": 0.0,
+    "gordura": 9.62,
+    "calorias": 161.8,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Hambúrguer, bovino, cru",
+    "proteina": 13.16,
+    "carbo": 4.15,
+    "gordura": 16.18,
+    "calorias": 214.84,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Hambúrguer, bovino, frito",
+    "proteina": 19.97,
+    "carbo": 6.32,
+    "gordura": 17.01,
+    "calorias": 258.28,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Hambúrguer, bovino, grelhado",
+    "proteina": 13.16,
+    "carbo": 11.33,
+    "gordura": 12.43,
+    "calorias": 209.83,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Lingüiça, frango, crua",
+    "proteina": 14.24,
+    "carbo": 0.0,
+    "gordura": 17.44,
+    "calorias": 218.11,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Lingüiça, frango, frita",
+    "proteina": 18.32,
+    "carbo": 0.0,
+    "gordura": 18.54,
+    "calorias": 245.46,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Lingüiça, frango, grelhada",
+    "proteina": 18.19,
+    "carbo": 0.0,
+    "gordura": 18.4,
+    "calorias": 243.66,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Lingüiça, porco, crua",
+    "proteina": 16.06,
+    "carbo": 0.0,
+    "gordura": 17.58,
+    "calorias": 227.2,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Lingüiça, porco, frita",
+    "proteina": 20.45,
+    "carbo": 0.0,
+    "gordura": 21.31,
+    "calorias": 279.54,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Lingüiça, porco, grelhada",
+    "proteina": 23.17,
+    "carbo": 0.0,
+    "gordura": 21.9,
+    "calorias": 296.49,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Mortadela",
+    "proteina": 11.95,
+    "carbo": 5.82,
+    "gordura": 21.65,
+    "calorias": 268.82,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Peru, congelado, assado",
+    "proteina": 26.2,
+    "carbo": 0.0,
+    "gordura": 5.68,
+    "calorias": 163.07,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Peru, congelado, cru",
+    "proteina": 18.08,
+    "carbo": 0.0,
+    "gordura": 1.83,
+    "calorias": 93.72,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Porco, bisteca, crua",
+    "proteina": 21.5,
+    "carbo": 0.0,
+    "gordura": 8.02,
+    "calorias": 164.12,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Porco, bisteca, frita",
+    "proteina": 33.75,
+    "carbo": 0.0,
+    "gordura": 18.52,
+    "calorias": 311.17,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Porco, bisteca, grelhada",
+    "proteina": 28.89,
+    "carbo": 0.0,
+    "gordura": 17.38,
+    "calorias": 280.08,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Porco, costela, assada",
+    "proteina": 30.22,
+    "carbo": 0.0,
+    "gordura": 30.28,
+    "calorias": 402.17,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Porco, costela, crua",
+    "proteina": 18.0,
+    "carbo": 0.0,
+    "gordura": 19.82,
+    "calorias": 255.61,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Porco, lombo, assado",
+    "proteina": 35.73,
+    "carbo": 0.0,
+    "gordura": 6.4,
+    "calorias": 210.23,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Porco, lombo, cru",
+    "proteina": 22.6,
+    "carbo": 0.0,
+    "gordura": 8.77,
+    "calorias": 175.63,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Porco, orelha, salgada, crua",
+    "proteina": 18.52,
+    "carbo": 0.0,
+    "gordura": 19.89,
+    "calorias": 258.49,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Porco, pernil, assado",
+    "proteina": 32.13,
+    "carbo": 0.0,
+    "gordura": 13.86,
+    "calorias": 262.26,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Porco, pernil, cru",
+    "proteina": 20.13,
+    "carbo": 0.0,
+    "gordura": 11.1,
+    "calorias": 186.06,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Porco, rabo, salgado, cru",
+    "proteina": 15.58,
+    "carbo": 0.0,
+    "gordura": 34.47,
+    "calorias": 377.42,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Presunto, com capa de gordura",
+    "proteina": 14.37,
+    "carbo": 1.4,
+    "gordura": 6.77,
+    "calorias": 127.85,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Presunto, sem capa de gordura",
+    "proteina": 14.29,
+    "carbo": 2.15,
+    "gordura": 2.71,
+    "calorias": 93.74,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Quibe, assado",
+    "proteina": 14.59,
+    "carbo": 12.86,
+    "gordura": 2.68,
+    "calorias": 136.23,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Quibe, cru",
+    "proteina": 12.35,
+    "carbo": 10.77,
+    "gordura": 1.67,
+    "calorias": 109.49,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Quibe, frito",
+    "proteina": 14.89,
+    "carbo": 12.34,
+    "gordura": 15.8,
+    "calorias": 253.83,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Salame",
+    "proteina": 25.81,
+    "carbo": 2.91,
+    "gordura": 30.64,
+    "calorias": 397.84,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Toucinho, cru",
+    "proteina": 11.48,
+    "carbo": 0.0,
+    "gordura": 60.26,
+    "calorias": 592.53,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Toucinho, frito",
+    "proteina": 27.28,
+    "carbo": 0.0,
+    "gordura": 64.31,
+    "calorias": 696.56,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Bebida láctea, pêssego",
+    "proteina": 2.13,
+    "carbo": 7.57,
+    "gordura": 1.91,
+    "calorias": 55.16,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Creme de Leite",
+    "proteina": 1.51,
+    "carbo": 4.51,
+    "gordura": 22.48,
+    "calorias": 221.48,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Iogurte, natural",
+    "proteina": 4.06,
+    "carbo": 1.92,
+    "gordura": 3.04,
+    "calorias": 51.49,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Iogurte, natural, desnatado",
+    "proteina": 3.83,
+    "carbo": 5.77,
+    "gordura": 0.32,
+    "calorias": 41.49,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Iogurte, sabor abacaxi",
+    "proteina": 0,
+    "carbo": 0,
+    "gordura": 0,
+    "calorias": 0,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Iogurte, sabor morango",
+    "proteina": 2.71,
+    "carbo": 9.69,
+    "gordura": 2.33,
+    "calorias": 69.57,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Iogurte, sabor pêssego",
+    "proteina": 2.53,
+    "carbo": 9.43,
+    "gordura": 2.34,
+    "calorias": 67.85,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Leite, condensado",
+    "proteina": 7.67,
+    "carbo": 57.0,
+    "gordura": 6.74,
+    "calorias": 312.57,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Leite, de cabra",
+    "proteina": 3.07,
+    "carbo": 5.25,
+    "gordura": 3.75,
+    "calorias": 66.42,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Leite, de vaca, achocolatado",
+    "proteina": 2.1,
+    "carbo": 14.16,
+    "gordura": 2.17,
+    "calorias": 82.82,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Leite, de vaca, desnatado, pó",
+    "proteina": 34.69,
+    "carbo": 53.04,
+    "gordura": 0.93,
+    "calorias": 361.61,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Leite, de vaca, desnatado, UHT",
+    "proteina": 0,
+    "carbo": 0,
+    "gordura": 0,
+    "calorias": 0,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Leite, de vaca, integral",
+    "proteina": 0,
+    "carbo": 0,
+    "gordura": 0,
+    "calorias": 0,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Leite, de vaca, integral, pó",
+    "proteina": 25.42,
+    "carbo": 39.18,
+    "gordura": 26.9,
+    "calorias": 496.65,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Leite, fermentado",
+    "proteina": 1.89,
+    "carbo": 15.67,
+    "gordura": 0.1,
+    "calorias": 69.62,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Queijo, minas, frescal",
+    "proteina": 17.41,
+    "carbo": 3.24,
+    "gordura": 20.18,
+    "calorias": 264.27,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Queijo, minas, meia cura",
+    "proteina": 21.21,
+    "carbo": 3.57,
+    "gordura": 24.61,
+    "calorias": 320.72,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Queijo, mozarela",
+    "proteina": 22.65,
+    "carbo": 3.05,
+    "gordura": 25.18,
+    "calorias": 329.87,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Queijo, parmesão",
+    "proteina": 35.55,
+    "carbo": 1.66,
+    "gordura": 33.53,
+    "calorias": 452.96,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Queijo, pasteurizado",
+    "proteina": 9.36,
+    "carbo": 5.68,
+    "gordura": 27.44,
+    "calorias": 303.08,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Queijo, petit suisse, morango",
+    "proteina": 5.79,
+    "carbo": 18.46,
+    "gordura": 2.84,
+    "calorias": 121.11,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Queijo, prato",
+    "proteina": 22.66,
+    "carbo": 1.88,
+    "gordura": 29.11,
+    "calorias": 359.88,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Queijo, requeijão, cremoso",
+    "proteina": 9.63,
+    "carbo": 2.43,
+    "gordura": 23.44,
+    "calorias": 256.58,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Queijo, ricota",
+    "proteina": 12.6,
+    "carbo": 3.79,
+    "gordura": 8.11,
+    "calorias": 139.73,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Bebida isotônica, sabores variados",
+    "proteina": 0.0,
+    "carbo": 6.4,
+    "gordura": 0.0,
+    "calorias": 25.61,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Café, infusão 10%",
+    "proteina": 0.71,
+    "carbo": 1.48,
+    "gordura": 0.07,
+    "calorias": 9.07,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Cana, aguardente 1",
+    "proteina": 0.0,
+    "carbo": 0.0,
+    "gordura": 0.0,
+    "calorias": 215.66,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Cana, caldo de",
+    "proteina": 0.0,
+    "carbo": 18.15,
+    "gordura": 0.0,
+    "calorias": 65.34,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Cerveja, pilsen 2",
+    "proteina": 0.56,
+    "carbo": 3.32,
+    "gordura": 0.0,
+    "calorias": 40.72,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Chá, erva-doce, infusão 5%",
+    "proteina": 0.0,
+    "carbo": 0.39,
+    "gordura": 0.0,
+    "calorias": 1.4,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Chá, mate, infusão 5%",
+    "proteina": 0.0,
+    "carbo": 0.64,
+    "gordura": 0.05,
+    "calorias": 2.73,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Chá, preto, infusão 5%",
+    "proteina": 0.0,
+    "carbo": 0.63,
+    "gordura": 0.0,
+    "calorias": 2.25,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Coco, água de",
+    "proteina": 0.0,
+    "carbo": 5.28,
+    "gordura": 0.0,
+    "calorias": 21.51,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Refrigerante, tipo água tônica",
+    "proteina": 0.0,
+    "carbo": 7.95,
+    "gordura": 0.0,
+    "calorias": 30.78,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Refrigerante, tipo cola",
+    "proteina": 0.0,
+    "carbo": 8.66,
+    "gordura": 0.0,
+    "calorias": 33.51,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Refrigerante, tipo guaraná",
+    "proteina": 0.0,
+    "carbo": 10.0,
+    "gordura": 0.0,
+    "calorias": 38.7,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Refrigerante, tipo laranja",
+    "proteina": 0.0,
+    "carbo": 11.79,
+    "gordura": 0.0,
+    "calorias": 45.63,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Refrigerante, tipo limão",
+    "proteina": 0.0,
+    "carbo": 10.26,
+    "gordura": 0.0,
+    "calorias": 39.72,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Omelete, de queijo",
+    "proteina": 15.57,
+    "carbo": 0.44,
+    "gordura": 22.01,
+    "calorias": 268.01,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Ovo, de codorna, inteiro, cru",
+    "proteina": 13.69,
+    "carbo": 0.77,
+    "gordura": 12.68,
+    "calorias": 176.89,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Ovo, de galinha, clara, cozida/10minutos",
+    "proteina": 13.45,
+    "carbo": 0.0,
+    "gordura": 0.09,
+    "calorias": 59.44,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Ovo, de galinha, gema, cozida/10minutos",
+    "proteina": 15.9,
+    "carbo": 1.56,
+    "gordura": 30.78,
+    "calorias": 352.67,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Ovo, de galinha, inteiro, cozido/10minutos",
+    "proteina": 13.29,
+    "carbo": 0.61,
+    "gordura": 9.48,
+    "calorias": 145.7,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Ovo, de galinha, inteiro, cru",
+    "proteina": 13.03,
+    "carbo": 1.64,
+    "gordura": 8.9,
+    "calorias": 143.11,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Ovo, de galinha, inteiro, frito",
+    "proteina": 15.62,
+    "carbo": 1.19,
+    "gordura": 18.59,
+    "calorias": 240.19,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Achocolatado, pó",
+    "proteina": 4.2,
+    "carbo": 91.18,
+    "gordura": 2.17,
+    "calorias": 401.02,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Açúcar, cristal",
+    "proteina": 0.32,
+    "carbo": 99.61,
+    "gordura": 0,
+    "calorias": 386.85,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Açúcar, mascavo",
+    "proteina": 0.76,
+    "carbo": 94.45,
+    "gordura": 0.09,
+    "calorias": 368.55,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Açúcar, refinado",
+    "proteina": 0.32,
+    "carbo": 99.54,
+    "gordura": 0,
+    "calorias": 386.57,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Chocolate, ao leite",
+    "proteina": 7.22,
+    "carbo": 59.58,
+    "gordura": 30.27,
+    "calorias": 539.59,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Chocolate, ao leite, com castanha do Pará",
+    "proteina": 7.41,
+    "carbo": 55.38,
+    "gordura": 34.19,
+    "calorias": 558.88,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Chocolate, ao leite, dietético",
+    "proteina": 6.9,
+    "carbo": 56.32,
+    "gordura": 33.77,
+    "calorias": 556.82,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Chocolate, meio amargo",
+    "proteina": 4.86,
+    "carbo": 62.42,
+    "gordura": 29.86,
+    "calorias": 474.92,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Cocada branca",
+    "proteina": 1.12,
+    "carbo": 81.38,
+    "gordura": 13.59,
+    "calorias": 448.85,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Doce, de abóbora, cremoso",
+    "proteina": 0.92,
+    "carbo": 54.61,
+    "gordura": 0.21,
+    "calorias": 198.94,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Doce, de leite, cremoso",
+    "proteina": 5.48,
+    "carbo": 59.49,
+    "gordura": 5.99,
+    "calorias": 306.31,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Geléia, mocotó, natural",
+    "proteina": 2.13,
+    "carbo": 24.23,
+    "gordura": 0.07,
+    "calorias": 106.09,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Glicose de milho",
+    "proteina": 0.0,
+    "carbo": 79.38,
+    "gordura": 0.0,
+    "calorias": 292.12,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Maria mole",
+    "proteina": 3.81,
+    "carbo": 73.55,
+    "gordura": 0.19,
+    "calorias": 301.24,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Maria mole, coco queimado",
+    "proteina": 3.93,
+    "carbo": 75.06,
+    "gordura": 0.09,
+    "calorias": 306.63,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Marmelada",
+    "proteina": 0.4,
+    "carbo": 70.76,
+    "gordura": 0.14,
+    "calorias": 257.24,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Mel, de abelha",
+    "proteina": 0.0,
+    "carbo": 84.03,
+    "gordura": 0.0,
+    "calorias": 309.24,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Melado",
+    "proteina": 0.0,
+    "carbo": 76.62,
+    "gordura": 0.0,
+    "calorias": 296.51,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Quindim",
+    "proteina": 4.74,
+    "carbo": 46.3,
+    "gordura": 24.43,
+    "calorias": 411.35,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Rapadura",
+    "proteina": 0.99,
+    "carbo": 90.79,
+    "gordura": 0.07,
+    "calorias": 351.96,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Café, pó, torrado",
+    "proteina": 14.7,
+    "carbo": 65.75,
+    "gordura": 11.95,
+    "calorias": 418.62,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Capuccino, pó",
+    "proteina": 11.31,
+    "carbo": 73.61,
+    "gordura": 8.63,
+    "calorias": 417.41,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Fermento em pó, químico",
+    "proteina": 0.48,
+    "carbo": 43.91,
+    "gordura": 0.07,
+    "calorias": 89.72,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Fermento, biológico, levedura, tablete",
+    "proteina": 16.96,
+    "carbo": 7.7,
+    "gordura": 1.52,
+    "calorias": 89.79,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Gelatina, sabores variados, pó",
+    "proteina": 8.89,
+    "carbo": 89.22,
+    "gordura": 0,
+    "calorias": 380.22,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Sal, dietético",
+    "proteina": 0.0,
+    "carbo": 0.0,
+    "gordura": 0.0,
+    "calorias": 0.0,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Sal, grosso",
+    "proteina": 0.0,
+    "carbo": 0.0,
+    "gordura": 0.0,
+    "calorias": 0.0,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Shoyu",
+    "proteina": 3.31,
+    "carbo": 11.65,
+    "gordura": 0.33,
+    "calorias": 60.93,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Tempero a base de sal",
+    "proteina": 2.67,
+    "carbo": 2.07,
+    "gordura": 0.26,
+    "calorias": 21.33,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Azeitona, preta, conserva",
+    "proteina": 1.16,
+    "carbo": 5.54,
+    "gordura": 20.35,
+    "calorias": 194.15,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Azeitona, verde, conserva",
+    "proteina": 0.95,
+    "carbo": 4.1,
+    "gordura": 14.22,
+    "calorias": 136.94,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Chantilly, spray, com gordura vegetal",
+    "proteina": 0.53,
+    "carbo": 16.86,
+    "gordura": 27.27,
+    "calorias": 314.96,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Leite, de coco",
+    "proteina": 1.01,
+    "carbo": 2.19,
+    "gordura": 18.36,
+    "calorias": 166.16,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Maionese, tradicional com ovos",
+    "proteina": 0.58,
+    "carbo": 7.9,
+    "gordura": 30.5,
+    "calorias": 302.15,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Acarajé",
+    "proteina": 8.35,
+    "carbo": 19.11,
+    "gordura": 19.93,
+    "calorias": 289.21,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Arroz carreteiro",
+    "proteina": 10.83,
+    "carbo": 11.58,
+    "gordura": 7.12,
+    "calorias": 153.77,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Baião de dois, arroz e feijão-de-corda",
+    "proteina": 6.24,
+    "carbo": 20.42,
+    "gordura": 3.23,
+    "calorias": 135.68,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Barreado",
+    "proteina": 18.27,
+    "carbo": 0.24,
+    "gordura": 9.53,
+    "calorias": 164.98,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Bife à cavalo, com contra filé",
+    "proteina": 23.66,
+    "carbo": 0.0,
+    "gordura": 21.15,
+    "calorias": 291.23,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Bolinho de arroz",
+    "proteina": 8.04,
+    "carbo": 41.68,
+    "gordura": 8.29,
+    "calorias": 273.51,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Camarão à baiana",
+    "proteina": 7.94,
+    "carbo": 3.17,
+    "gordura": 5.97,
+    "calorias": 100.78,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Charuto, de repolho",
+    "proteina": 6.78,
+    "carbo": 10.13,
+    "gordura": 1.12,
+    "calorias": 78.23,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Cuscuz, de milho, cozido com sal",
+    "proteina": 2.16,
+    "carbo": 25.28,
+    "gordura": 0.68,
+    "calorias": 113.46,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Cuscuz, paulista",
+    "proteina": 2.56,
+    "carbo": 22.51,
+    "gordura": 4.65,
+    "calorias": 142.12,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Cuxá, molho",
+    "proteina": 5.64,
+    "carbo": 5.74,
+    "gordura": 3.59,
+    "calorias": 80.09,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Dobradinha",
+    "proteina": 19.77,
+    "carbo": 0.0,
+    "gordura": 4.44,
+    "calorias": 124.5,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Estrogonofe de carne",
+    "proteina": 15.03,
+    "carbo": 2.98,
+    "gordura": 10.8,
+    "calorias": 173.14,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Estrogonofe de frango",
+    "proteina": 17.55,
+    "carbo": 2.59,
+    "gordura": 7.96,
+    "calorias": 156.81,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Feijão tropeiro mineiro",
+    "proteina": 10.17,
+    "carbo": 19.58,
+    "gordura": 6.79,
+    "calorias": 151.56,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Feijoada",
+    "proteina": 8.67,
+    "carbo": 11.64,
+    "gordura": 6.48,
+    "calorias": 116.93,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Frango, com açafrão",
+    "proteina": 9.7,
+    "carbo": 4.06,
+    "gordura": 6.17,
+    "calorias": 112.78,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Macarrão, molho bolognesa",
+    "proteina": 4.93,
+    "carbo": 22.52,
+    "gordura": 0.89,
+    "calorias": 119.53,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Maniçoba",
+    "proteina": 9.96,
+    "carbo": 3.42,
+    "gordura": 8.7,
+    "calorias": 134.22,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Quibebe",
+    "proteina": 8.56,
+    "carbo": 6.64,
+    "gordura": 2.67,
+    "calorias": 86.35,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Salada, de legumes, com maionese",
+    "proteina": 1.05,
+    "carbo": 8.92,
+    "gordura": 7.04,
+    "calorias": 96.1,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Salada, de legumes, cozida no vapor",
+    "proteina": 2.01,
+    "carbo": 7.09,
+    "gordura": 0.31,
+    "calorias": 35.41,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Salpicão, de frango",
+    "proteina": 13.93,
+    "carbo": 4.57,
+    "gordura": 7.84,
+    "calorias": 147.86,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Sarapatel",
+    "proteina": 18.47,
+    "carbo": 1.09,
+    "gordura": 4.42,
+    "calorias": 122.98,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Tabule",
+    "proteina": 2.05,
+    "carbo": 10.58,
+    "gordura": 1.21,
+    "calorias": 57.45,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Tacacá",
+    "proteina": 6.96,
+    "carbo": 3.39,
+    "gordura": 0.36,
+    "calorias": 46.89,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Tapioca, com manteiga",
+    "proteina": 0.09,
+    "carbo": 63.59,
+    "gordura": 10.91,
+    "calorias": 347.83,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Tucupi, com pimenta-de-cheiro",
+    "proteina": 2.06,
+    "carbo": 4.74,
+    "gordura": 0.28,
+    "calorias": 27.18,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Vaca atolada",
+    "proteina": 5.12,
+    "carbo": 10.06,
+    "gordura": 9.32,
+    "calorias": 144.9,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Vatapá",
+    "proteina": 6.0,
+    "carbo": 9.75,
+    "gordura": 23.23,
+    "calorias": 254.89,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Virado à paulista",
+    "proteina": 10.18,
+    "carbo": 14.11,
+    "gordura": 25.59,
+    "calorias": 306.95,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Yakisoba",
+    "proteina": 7.52,
+    "carbo": 18.25,
+    "gordura": 2.61,
+    "calorias": 112.8,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Amendoim, grão, cru",
+    "proteina": 27.19,
+    "carbo": 20.31,
+    "gordura": 43.85,
+    "calorias": 544.05,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Amendoim, torrado, salgado",
+    "proteina": 22.48,
+    "carbo": 18.7,
+    "gordura": 53.96,
+    "calorias": 605.78,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Ervilha, em vagem",
+    "proteina": 7.45,
+    "carbo": 14.23,
+    "gordura": 0.47,
+    "calorias": 88.09,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Ervilha, enlatada, drenada",
+    "proteina": 4.6,
+    "carbo": 13.44,
+    "gordura": 0.38,
+    "calorias": 73.84,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Feijão, carioca, cozido",
+    "proteina": 4.78,
+    "carbo": 13.59,
+    "gordura": 0.54,
+    "calorias": 76.42,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Feijão, carioca, cru",
+    "proteina": 19.98,
+    "carbo": 61.22,
+    "gordura": 1.26,
+    "calorias": 329.03,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Feijão, fradinho, cozido",
+    "proteina": 5.09,
+    "carbo": 13.5,
+    "gordura": 0.64,
+    "calorias": 78.01,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Feijão, fradinho, cru",
+    "proteina": 20.21,
+    "carbo": 61.24,
+    "gordura": 2.37,
+    "calorias": 339.16,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Feijão, jalo, cozido",
+    "proteina": 6.14,
+    "carbo": 16.5,
+    "gordura": 0.51,
+    "calorias": 92.74,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Feijão, jalo, cru",
+    "proteina": 20.1,
+    "carbo": 61.48,
+    "gordura": 0.95,
+    "calorias": 327.91,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Feijão, preto, cozido",
+    "proteina": 4.48,
+    "carbo": 14.01,
+    "gordura": 0.54,
+    "calorias": 77.03,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Feijão, preto, cru",
+    "proteina": 21.34,
+    "carbo": 58.75,
+    "gordura": 1.24,
+    "calorias": 323.57,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Feijão, rajado, cozido",
+    "proteina": 5.54,
+    "carbo": 15.27,
+    "gordura": 0.4,
+    "calorias": 84.7,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Feijão, rajado, cru",
+    "proteina": 17.27,
+    "carbo": 62.93,
+    "gordura": 1.17,
+    "calorias": 325.84,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Feijão, rosinha, cozido",
+    "proteina": 4.54,
+    "carbo": 11.82,
+    "gordura": 0.48,
+    "calorias": 67.87,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Feijão, rosinha, cru",
+    "proteina": 20.92,
+    "carbo": 62.22,
+    "gordura": 1.33,
+    "calorias": 336.96,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Feijão, roxo, cozido",
+    "proteina": 5.72,
+    "carbo": 12.91,
+    "gordura": 0.54,
+    "calorias": 76.89,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Feijão, roxo, cru",
+    "proteina": 22.17,
+    "carbo": 59.99,
+    "gordura": 1.24,
+    "calorias": 331.41,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Grão-de-bico, cru",
+    "proteina": 21.23,
+    "carbo": 57.88,
+    "gordura": 5.43,
+    "calorias": 354.7,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Guandu, cru",
+    "proteina": 18.96,
+    "carbo": 64.0,
+    "gordura": 2.13,
+    "calorias": 344.13,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Lentilha, cozida",
+    "proteina": 6.31,
+    "carbo": 16.3,
+    "gordura": 0.52,
+    "calorias": 92.64,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Lentilha, crua",
+    "proteina": 23.15,
+    "carbo": 62.0,
+    "gordura": 0.77,
+    "calorias": 339.14,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Paçoca, amendoim",
+    "proteina": 16.0,
+    "carbo": 52.38,
+    "gordura": 26.08,
+    "calorias": 486.93,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Pé-de-moleque, amendoim",
+    "proteina": 13.16,
+    "carbo": 54.73,
+    "gordura": 28.05,
+    "calorias": 503.19,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Soja, farinha",
+    "proteina": 36.03,
+    "carbo": 38.44,
+    "gordura": 14.63,
+    "calorias": 403.96,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Soja, extrato solúvel, natural, fluido",
+    "proteina": 2.38,
+    "carbo": 4.28,
+    "gordura": 1.61,
+    "calorias": 39.1,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Soja, extrato solúvel, pó",
+    "proteina": 35.69,
+    "carbo": 28.48,
+    "gordura": 26.18,
+    "calorias": 458.9,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Soja, queijo (tofu)",
+    "proteina": 6.55,
+    "carbo": 2.13,
+    "gordura": 3.95,
+    "calorias": 64.49,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Tremoço, cru",
+    "proteina": 33.58,
+    "carbo": 43.79,
+    "gordura": 10.34,
+    "calorias": 381.28,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Tremoço, em conserva",
+    "proteina": 11.11,
+    "carbo": 12.39,
+    "gordura": 3.78,
+    "calorias": 120.64,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Amêndoa, torrada, salgada",
+    "proteina": 18.55,
+    "carbo": 29.55,
+    "gordura": 47.32,
+    "calorias": 580.75,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Castanha-de-caju, torrada, salgada",
+    "proteina": 18.51,
+    "carbo": 29.13,
+    "gordura": 46.28,
+    "calorias": 570.17,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Castanha-do-Brasil, crua",
+    "proteina": 14.54,
+    "carbo": 15.08,
+    "gordura": 63.46,
+    "calorias": 642.96,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Coco, cru",
+    "proteina": 3.69,
+    "carbo": 10.4,
+    "gordura": 41.98,
+    "calorias": 406.49,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Coco,  verde, cru",
+    "proteina": 0.0,
+    "carbo": 0.0,
+    "gordura": 0.0,
+    "calorias": 0.0,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Farinha, de mesocarpo de babaçu, crua",
+    "proteina": 1.41,
+    "carbo": 79.17,
+    "gordura": 0.2,
+    "calorias": 328.77,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Gergelim, semente",
+    "proteina": 21.16,
+    "carbo": 21.62,
+    "gordura": 50.43,
+    "calorias": 583.55,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Linhaça, semente",
+    "proteina": 14.08,
+    "carbo": 43.31,
+    "gordura": 32.25,
+    "calorias": 495.1,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Pinhão, cozido",
+    "proteina": 2.98,
+    "carbo": 43.92,
+    "gordura": 0.75,
+    "calorias": 174.37,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Pupunha, cozida",
+    "proteina": 2.52,
+    "carbo": 29.57,
+    "gordura": 12.76,
+    "calorias": 218.53,
+    "fonte": "TACO"
+  },
+  {
+    "nome": "Noz, crua",
+    "proteina": 13.97,
+    "carbo": 18.36,
+    "gordura": 59.36,
+    "calorias": 620.06,
     "fonte": "TACO"
   }
 ]

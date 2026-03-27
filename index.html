@@ -6,19 +6,63 @@
   <title>Nutricontrole Pro 6.1</title>
 
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" type="image/svg+xml" href="icon.svg">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#14532d">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="NutriControle">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
 
-<div class="app-shell">
+<!-- ================= TELA DE LOGIN ================= -->
+<div id="telaLogin" class="tela-login">
+  <div class="login-box">
+    <img src="icon.svg" alt="Logo" class="login-logo">
+    <h1 class="login-titulo">NutriControle Pro</h1>
+    <p class="login-subtitulo">Controle nutricional e de saúde</p>
+
+    <!-- LOGIN -->
+    <div id="areaLogin" style="display:flex; flex-direction:column; gap:12px; width:100%;">
+      <input id="loginEmail" type="email" placeholder="E-mail" autocomplete="email">
+      <input id="loginSenha" type="password" placeholder="Senha" autocomplete="current-password"
+             onkeydown="if(event.key==='Enter') fazerLogin()">
+      <button id="btnEntrar" class="btn-login" onclick="fazerLogin()">Entrar</button>
+      <button class="btn-login-sec" onclick="recuperarSenha()">Esqueci minha senha</button>
+      <p class="login-switch">Não tem conta? <a href="#" onclick="alternarCadastro()">Criar conta</a></p>
+    </div>
+
+    <!-- CADASTRO -->
+    <div id="areaCadastro" style="display:none; flex-direction:column; gap:12px; width:100%;">
+      <input id="cadEmail" type="email" placeholder="E-mail" oninput="document.getElementById('loginEmail').value=this.value">
+      <input id="cadSenha" type="password" placeholder="Senha (mín. 6 caracteres)" oninput="document.getElementById('loginSenha').value=this.value">
+      <button class="btn-login" onclick="fazerCadastro()">Criar conta</button>
+      <p class="login-switch">Já tem conta? <a href="#" onclick="alternarCadastro()">Entrar</a></p>
+    </div>
+
+    <div id="loginErro" class="login-msg" style="display:none;"></div>
+  </div>
+</div>
+
+<!-- ================= APP PRINCIPAL ================= -->
+<div id="appShell" class="app-shell" style="display:none;">
 
   <!-- TOPO -->
   <header class="top-header">
-    <div class="brand">Nutricontrole Pro 6.1</div>
+    <div class="brand">
+      <img src="icon.svg" alt="Logo" class="brand-logo">
+      <span>Nutricontrole Pro 6.1</span>
+    </div>
 
     <div class="date-box">
       <input type="date" id="dataRegistro">
+    </div>
+    <div class="user-box">
+      <span id="usuarioEmail" class="user-email"></span>
+      <button class="btn-logout" onclick="fazerLogout()" title="Sair">&#x2192;</button>
     </div>
   </header>
 
@@ -35,9 +79,10 @@
     <!-- ================= PAINEL ================= -->
     <div id="painel" class="tela">
 
+      <!-- LINHA 1: KPIs + Evolução lado a lado -->
       <section class="dashboard-grid">
 
-        <!-- ESQUERDA -->
+        <!-- ESQUERDA: KPIs e metas -->
         <div class="left-column">
 
           <section class="panel card">
@@ -46,7 +91,6 @@
                 <span class="mini-title">Calorias</span>
                 <strong id="kpiCalorias">0</strong>
               </div>
-
               <div class="mini-card">
                 <span class="mini-title">Proteínas</span>
                 <strong id="kpiProteinas">0g</strong>
@@ -57,7 +101,6 @@
               <span>Meta Proteica</span>
               <span id="metaProteinaTexto">0 g</span>
             </div>
-
             <div class="progress-bar">
               <div class="progress-fill" id="barraProteina"></div>
             </div>
@@ -66,38 +109,9 @@
               <span>Meta Energética</span>
               <span id="metaEnergiaTexto">0 kcal</span>
             </div>
-
             <div class="progress-bar">
               <div class="progress-fill energy-fill" id="barraEnergia"></div>
             </div>
-          </section>
-
-          <section class="card">
-            <h2>Dados do dia</h2>
-
-            <div class="form-grid">
-              <input id="peso" type="number" placeholder="Peso">
-              <input id="altura" type="number" placeholder="Altura">
-              <input id="glicose" type="number" placeholder="Glicose">
-              <input id="ps" type="number" placeholder="Pressão sistólica">
-              <input id="pd" type="number" placeholder="Pressão diastólica">
-
-              <select id="nivelAtividade">
-                <option value="sedentario">Sedentário</option>
-                <option value="leve">Leve</option>
-                <option value="moderado">Moderado</option>
-                <option value="alto">Alto</option>
-                <option value="muito_alto">Muito alto</option>
-              </select>
-
-              <select id="objetivo">
-                <option value="perder_gordura">Perder gordura</option>
-                <option value="manter">Manter</option>
-                <option value="ganhar_massa">Ganhar massa</option>
-              </select>
-            </div>
-
-            <button onclick="salvar()">Salvar</button>
           </section>
 
           <section class="summary-grid">
@@ -105,39 +119,106 @@
               <span>IMC</span>
               <strong id="imc">-</strong>
             </div>
-
             <div class="card summary-box">
               <span>Classificação</span>
               <strong id="classificacao">-</strong>
             </div>
           </section>
 
+          <section class="card">
+            <h2>Consumo vs metas</h2>
+            <canvas id="graficoNutricao" height="200"></canvas>
+          </section>
+
         </div>
 
-        <!-- DIREITA -->
+        <!-- DIREITA: Evolução -->
         <div class="right-column">
           <section class="card">
             <h2>Evolução</h2>
-
             <div class="chart-toolbar">
               <button onclick="trocarGrafico('peso')">Peso</button>
               <button onclick="trocarGrafico('imc')">IMC</button>
               <button onclick="trocarGrafico('glicose')">Glicose</button>
               <button onclick="trocarGrafico('pressao')">Pressão</button>
             </div>
-
             <div class="chart-toolbar">
               <button onclick="trocarPeriodoGrafico(7)">7 dias</button>
               <button onclick="trocarPeriodoGrafico(30)">30 dias</button>
               <button onclick="trocarPeriodoGrafico(90)">90 dias</button>
               <button onclick="trocarPeriodoGrafico(0)">Todos</button>
             </div>
-
             <canvas id="graficoPainel"></canvas>
           </section>
         </div>
 
       </section>
+
+      <!-- LINHA 2: Dados do dia — largura total -->
+      <section class="card top-space">
+        <h2>Dados do dia</h2>
+
+        <div class="form-grid">
+          <div class="field">
+            <label for="peso">Peso (kg)</label>
+            <input id="peso" type="number" placeholder="0">
+          </div>
+          <div class="field">
+            <label for="glicose">Glicose (mg/dL)</label>
+            <input id="glicose" type="number" placeholder="0">
+          </div>
+          <div class="field">
+            <label for="ps">Pressão sistólica</label>
+            <input id="ps" type="number" placeholder="0">
+          </div>
+          <div class="field">
+            <label for="pd">Pressão diastólica</label>
+            <input id="pd" type="number" placeholder="0">
+          </div>
+          <div class="field">
+            <label for="nivelAtividade">Nível de atividade</label>
+            <select id="nivelAtividade">
+              <option value="sedentario">Sedentário</option>
+              <option value="leve">Leve</option>
+              <option value="moderado">Moderado</option>
+              <option value="alto">Alto</option>
+              <option value="muito_alto">Muito alto</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="objetivo">Objetivo</label>
+            <select id="objetivo">
+              <option value="perder_gordura">Perder gordura</option>
+              <option value="manter">Manter</option>
+              <option value="ganhar_massa">Ganhar massa</option>
+            </select>
+          </div>
+        </div>
+
+        <h3 class="perfil-titulo">Perfil <span class="perfil-hint">(salvo automaticamente)</span></h3>
+        <div class="form-grid">
+          <div class="field">
+            <label for="altura">Altura (cm)</label>
+            <input id="altura" type="number" placeholder="0">
+          </div>
+          <div class="field">
+            <label for="idade">Idade (anos)</label>
+            <input id="idade" type="number" placeholder="0">
+          </div>
+          <div class="field">
+            <label for="sexo">Sexo</label>
+            <select id="sexo">
+              <option value="">Selecione</option>
+              <option value="masculino">Masculino</option>
+              <option value="feminino">Feminino</option>
+            </select>
+          </div>
+        </div>
+
+        <button class="btn-salvar-dia" onclick="salvar()">&#10003; Salvar dia</button>
+
+      </section>
+
     </div>
 
     <!-- ================= DIÁRIO ================= -->
@@ -195,10 +276,19 @@
   console.log("INDEX HTML CARREGADO");
 </script>
 
+<script src="./js/supabase-config.js"></script>
+<script src="./js/auth.js"></script>
 <script src="./js/config.js"></script>
 <script src="./js/meals.js"></script>
 <script src="./js/charts.js"></script>
 <script src="./js/app.js"></script>
+
+<script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("./sw.js").catch(() => {});
+  }
+  document.addEventListener("DOMContentLoaded", inicializarSessao);
+</script>
 
 </body>
 </html>

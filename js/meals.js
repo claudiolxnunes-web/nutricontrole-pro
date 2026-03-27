@@ -1,4 +1,5 @@
 let refeicaoAtual = null;
+let _editandoItemIdx = null;
 
 const alimentosBase = [
   { nome: "Arroz", proteina: 2.5, carbo: 28, gordura: 0.3, calorias: 130, fonte: "BASE" },
@@ -27,24 +28,18 @@ function obterFonteAtiva() {
 function definirFonteAtiva() {
   const select = document.getElementById("fonteAlimentos");
   if (!select) return;
-
   localStorage.setItem("fonteAtivaAlimentos", select.value);
   atualizarListaAlimentos();
 }
 
 function trocarRefeicao(tipo, botao) {
   refeicaoAtual = tipo;
-
-  document.querySelectorAll(".meal-tab").forEach(t => {
-    t.classList.remove("active");
-  });
-
+  document.querySelectorAll(".meal-tab").forEach(t => t.classList.remove("active"));
   if (botao) botao.classList.add("active");
-
-  if (typeof renderizarRefeicaoAtual === "function") {
-    renderizarRefeicaoAtual();
-  }
+  if (typeof renderizarRefeicaoAtual === "function") renderizarRefeicaoAtual();
 }
+
+// ─── RENDERIZAR REFEIÇÃO ────────────────────────────────────────────────────
 
 function renderizarRefeicaoAtual() {
   const alvo = document.getElementById("refeicaoContent");
@@ -53,6 +48,24 @@ function renderizarRefeicaoAtual() {
   const data = obterDataAtualRegistro();
   const banco = JSON.parse(localStorage.getItem("refeicoesPorData") || "{}");
   const itens = banco[data]?.[refeicaoAtual] || [];
+
+  const listaHTML = itens.length
+    ? `<h3>Itens da refeição</h3>
+       <ul class="lista-refeicao">
+         ${itens.map((item, idx) => `
+           <li class="item-refeicao" id="item-refeicao-${idx}">
+             <div class="item-info">
+               <span class="item-nome">${item.nome}</span>
+               <span class="item-detalhe">${item.quantidade}g &bull; ${item.proteina.toFixed(1)}g prot &bull; ${item.calorias.toFixed(0)} kcal</span>
+             </div>
+             <div class="item-acoes">
+               <button class="btn-icone btn-editar" onclick="editarItemRefeicao(${idx})" title="Editar">&#9998;</button>
+               <button class="btn-icone btn-excluir" onclick="excluirItemRefeicao(${idx})" title="Excluir">&#128465;</button>
+             </div>
+           </li>
+         `).join("")}
+       </ul>`
+    : "<p>Nenhum alimento adicionado nesta refeição.</p>";
 
   alvo.innerHTML = `
     <div class="meal-box">
@@ -72,144 +85,78 @@ function renderizarRefeicaoAtual() {
       </div>
 
       <div class="action-row">
-        <button onclick="confirmarAlimento()">Adicionar</button>
+        <button id="btnAdicionarAlimento" onclick="confirmarAlimento()">Adicionar</button>
         <button onclick="mostrarCadastro()">Novo alimento</button>
+        <button onclick="mostrarGerenciarAlimentos()">Meus alimentos</button>
       </div>
 
       <div id="cadastroAlimento" style="display:none; margin-top:15px;">
-        <h3>Novo alimento</h3>
-        <input id="novoNome" placeholder="Nome"><br><br>
-        <input id="novoProt" placeholder="Proteína"><br><br>
-        <input id="novoCarb" placeholder="Carbo"><br><br>
-        <input id="novoGord" placeholder="Gordura"><br><br>
-        <input id="novoCal" placeholder="Calorias"><br><br>
-        <button onclick="salvarNovoAlimento()">Salvar alimento</button>
+        <h3 id="tituloCadastro">Novo alimento</h3>
+        <input type="hidden" id="editandoNomeOriginal">
+        <div class="field"><label>Nome</label><input id="novoNome" placeholder="Nome do alimento"></div>
+        <div class="field"><label>Proteína (g/100g)</label><input id="novoProt" type="number" placeholder="0"></div>
+        <div class="field"><label>Carboidrato (g/100g)</label><input id="novoCarb" type="number" placeholder="0"></div>
+        <div class="field"><label>Gordura (g/100g)</label><input id="novoGord" type="number" placeholder="0"></div>
+        <div class="field"><label>Calorias (kcal/100g)</label><input id="novoCal" type="number" placeholder="0"></div>
+        <div class="action-row">
+          <button onclick="salvarNovoAlimento()">Salvar</button>
+          <button onclick="fecharCadastro()" style="background:#475569;">Cancelar</button>
+        </div>
       </div>
 
-      <div id="listaItensRefeicao" style="margin-top:20px;">
-        ${
-          itens.length
-            ? `
-              <h3>Itens da refeição</h3>
-              <ul>
-                ${itens.map(item => `
-                  <li>${item.nome} - ${item.quantidade}g - ${item.proteina.toFixed(1)}g prot - ${item.calorias.toFixed(0)} kcal</li>
-                `).join("")}
-              </ul>
-            `
-            : "<p>Nenhum alimento adicionado nesta refeição.</p>"
-        }
+      <div id="gerenciarAlimentos" style="display:none; margin-top:15px;">
+        <h3>Meus alimentos personalizados</h3>
+        <div id="listaAlimentosPersonalizados"></div>
       </div>
+
+      <div id="listaItensRefeicao" style="margin-top:20px;">${listaHTML}</div>
     </div>
   `;
 
+  _editandoItemIdx = null;
   atualizarListaAlimentos();
 }
 
-function mapearObjetoAlimento(obj, nomeArquivo = "") {
-  const nomeArquivoLower = (nomeArquivo || "").toLowerCase();
+// ─── EDITAR / EXCLUIR ITENS DA REFEIÇÃO ────────────────────────────────────
 
-  let fonte = "PERSONALIZADO";
-  if (nomeArquivoLower.includes("taco")) fonte = "TACO";
-  if (nomeArquivoLower.includes("tbca")) fonte = "TBCA";
-  if (obj.fonte) fonte = String(obj.fonte).toUpperCase();
-
-  const nome =
-    obj.nome ||
-    obj.Nome ||
-    obj.alimento ||
-    obj.Alimento ||
-    obj.descricao ||
-    obj.Descricao ||
-    obj["Descrição"] ||
-    "";
-
-  return {
-    nome: String(nome).trim(),
-    proteina: normalizarNumero(
-      obj.proteina ||
-      obj.Proteina ||
-      obj["Proteína"] ||
-      obj["Proteina (g)"] ||
-      obj["Proteína (g)"]
-    ),
-    carbo: normalizarNumero(
-      obj.carbo ||
-      obj.carboidrato ||
-      obj.Carboidrato ||
-      obj["Carboidrato (g)"] ||
-      obj["Carboidratos (g)"]
-    ),
-    gordura: normalizarNumero(
-      obj.gordura ||
-      obj.Gordura ||
-      obj.Lipidos ||
-      obj["Lipídios"] ||
-      obj["Lipidos (g)"] ||
-      obj["Lipídios (g)"]
-    ),
-    calorias: normalizarNumero(
-      obj.calorias ||
-      obj.Calorias ||
-      obj.energia ||
-      obj.Energia ||
-      obj["Energia (kcal)"] ||
-      obj.kcal
-    ),
-    fonte
-  };
+function excluirItemRefeicao(idx) {
+  if (!confirm("Remover este item da refeição?")) return;
+  const data = obterDataAtualRegistro();
+  const banco = JSON.parse(localStorage.getItem("refeicoesPorData") || "{}");
+  if (banco[data]?.[refeicaoAtual]) {
+    banco[data][refeicaoAtual].splice(idx, 1);
+    localStorage.setItem("refeicoesPorData", JSON.stringify(banco));
+  }
+  renderizarRefeicaoAtual();
+  if (typeof atualizarKPIs === "function") atualizarKPIs();
+  if (typeof renderizarGraficoNutricao === "function") renderizarGraficoNutricao();
 }
 
-function obterTodosAlimentosSemFiltro() {
-  const importados = JSON.parse(localStorage.getItem("alimentosImportados") || "[]");
-  const personalizados = JSON.parse(localStorage.getItem("alimentos") || "[]");
-  return [...alimentosBase, ...importados, ...personalizados];
+function editarItemRefeicao(idx) {
+  const data = obterDataAtualRegistro();
+  const banco = JSON.parse(localStorage.getItem("refeicoesPorData") || "{}");
+  const item = banco[data]?.[refeicaoAtual]?.[idx];
+  if (!item) return;
+
+  _editandoItemIdx = idx;
+
+  const qtdInput = document.getElementById("quantidadeAlimento");
+  if (qtdInput) qtdInput.value = item.quantidade;
+
+  const busca = document.getElementById("buscaAlimento");
+  if (busca) {
+    busca.value = item.nome;
+    filtrarAlimentos();
+  }
+
+  const btn = document.getElementById("btnAdicionarAlimento");
+  if (btn) btn.textContent = "Atualizar";
+
+  const itemEl = document.getElementById(`item-refeicao-${idx}`);
+  if (itemEl) itemEl.classList.add("item-editando");
 }
 
-function obterTodosAlimentos() {
-  const todos = obterTodosAlimentosSemFiltro();
-  const fonte = obterFonteAtiva();
-
-  if (fonte === "todos") return todos;
-  return todos.filter(item => (item.fonte || "PERSONALIZADO") === fonte);
-}
-
-function atualizarListaAlimentos(lista = null) {
-  const select = document.getElementById("selectAlimento");
-  if (!select) return;
-
-  select.innerHTML = "";
-  const alimentos = lista || obterTodosAlimentos();
-
-  alimentos.forEach((a, i) => {
-    const option = document.createElement("option");
-    option.value = String(i);
-    option.text = '${a.nome} | Prot ${Number(a.proteina || 0).toFixed(1)}g | Kcal ${Number(a.calorias || 0).toFixed(0)} | ${a.fonte || "PERSONALIZADO"}';
-    select.appendChild(option);
-  });
-}
-
-function filtrarAlimentos() {
-  const termo = document.getElementById("buscaAlimento")?.value?.toLowerCase() || "";
-  const filtrados = obterTodosAlimentos().filter(a =>
-    String(a.nome || "").toLowerCase().includes(termo)
-  );
-
-  atualizarListaAlimentos(filtrados);
-}
-
-function abrirModal(refeicao) {
-  refeicaoAtual = refeicao;
-  atualizarListaAlimentos();
-
-  const modal = document.getElementById("modalAlimento");
-  if (modal) modal.style.display = "block";
-}
-
-function fecharModal() {
-  const modal = document.getElementById("modalAlimento");
-  if (modal) modal.style.display = "none";
-}
+// Sobrescreve confirmarAlimento para suportar edição
 
 function confirmarAlimento() {
   const select = document.getElementById("selectAlimento");
@@ -241,138 +188,272 @@ function confirmarAlimento() {
   };
 
   const banco = JSON.parse(localStorage.getItem("refeicoesPorData") || "{}");
-
   if (!banco[data]) banco[data] = {};
   if (!banco[data][refeicaoAtual]) banco[data][refeicaoAtual] = [];
 
-  banco[data][refeicaoAtual].push(item);
-  localStorage.setItem("refeicoesPorData", JSON.stringify(banco));
+  if (_editandoItemIdx !== null) {
+    banco[data][refeicaoAtual][_editandoItemIdx] = item;
+  } else {
+    banco[data][refeicaoAtual].push(item);
+  }
 
-  if (typeof renderizarRefeicaoAtual === "function") renderizarRefeicaoAtual();
+  localStorage.setItem("refeicoesPorData", JSON.stringify(banco));
+  if (typeof sincronizarRefeicao === "function") {
+    sincronizarRefeicao(data, refeicaoAtual, banco[data][refeicaoAtual]);
+  }
+
+  renderizarRefeicaoAtual();
   if (typeof atualizarKPIs === "function") atualizarKPIs();
-  if (typeof atualizarPainelNutricional === "function") atualizarPainelNutricional();
-  if (typeof renderizarRefeicoesDia === "function") renderizarRefeicoesDia();
-  if (typeof renderizarTabelaHistorico === "function") renderizarTabelaHistorico();
+  if (typeof renderizarGraficoNutricao === "function") renderizarGraficoNutricao();
 }
+
+// ─── BANCO DE ALIMENTOS PERSONALIZADOS ─────────────────────────────────────
 
 function mostrarCadastro() {
   const cadastro = document.getElementById("cadastroAlimento");
+  const gerenciar = document.getElementById("gerenciarAlimentos");
+  if (gerenciar) gerenciar.style.display = "none";
+  if (cadastro) {
+    cadastro.style.display = "block";
+    document.getElementById("tituloCadastro").textContent = "Novo alimento";
+    document.getElementById("editandoNomeOriginal").value = "";
+    ["novoNome","novoProt","novoCarb","novoGord","novoCal"].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.value = "";
+    });
+  }
+}
+
+function fecharCadastro() {
+  const cadastro = document.getElementById("cadastroAlimento");
+  if (cadastro) cadastro.style.display = "none";
+}
+
+function mostrarGerenciarAlimentos() {
+  const cadastro = document.getElementById("cadastroAlimento");
+  const gerenciar = document.getElementById("gerenciarAlimentos");
+  if (cadastro) cadastro.style.display = "none";
+  if (!gerenciar) return;
+
+  if (gerenciar.style.display !== "none") {
+    gerenciar.style.display = "none";
+    return;
+  }
+
+  renderizarListaPersonalizados();
+  gerenciar.style.display = "block";
+}
+
+function renderizarListaPersonalizados() {
+  const container = document.getElementById("listaAlimentosPersonalizados");
+  if (!container) return;
+
+  const lista = JSON.parse(localStorage.getItem("alimentos") || "[]");
+
+  if (!lista.length) {
+    container.innerHTML = "<p>Nenhum alimento personalizado cadastrado.</p>";
+    return;
+  }
+
+  container.innerHTML = `
+    <ul class="lista-refeicao">
+      ${lista.map((a, idx) => `
+        <li class="item-refeicao">
+          <div class="item-info">
+            <span class="item-nome">${a.nome}</span>
+            <span class="item-detalhe">${a.proteina}g prot &bull; ${a.calorias} kcal &bull; ${a.carbo}g carbo &bull; ${a.gordura}g gord</span>
+          </div>
+          <div class="item-acoes">
+            <button class="btn-icone btn-editar" onclick="editarAlimentoPersonalizado(${idx})" title="Editar">&#9998;</button>
+            <button class="btn-icone btn-excluir" onclick="excluirAlimentoPersonalizado(${idx})" title="Excluir">&#128465;</button>
+          </div>
+        </li>
+      `).join("")}
+    </ul>
+  `;
+}
+
+function editarAlimentoPersonalizado(idx) {
+  const lista = JSON.parse(localStorage.getItem("alimentos") || "[]");
+  const a = lista[idx];
+  if (!a) return;
+
+  const gerenciar = document.getElementById("gerenciarAlimentos");
+  const cadastro = document.getElementById("cadastroAlimento");
+  if (gerenciar) gerenciar.style.display = "none";
   if (cadastro) cadastro.style.display = "block";
+
+  document.getElementById("tituloCadastro").textContent = "Editar alimento";
+  document.getElementById("editandoNomeOriginal").value = a.nome;
+  document.getElementById("novoNome").value = a.nome;
+  document.getElementById("novoProt").value = a.proteina;
+  document.getElementById("novoCarb").value = a.carbo;
+  document.getElementById("novoGord").value = a.gordura;
+  document.getElementById("novoCal").value = a.calorias;
+}
+
+function excluirAlimentoPersonalizado(idx) {
+  if (!confirm("Excluir este alimento do banco?")) return;
+  const lista = JSON.parse(localStorage.getItem("alimentos") || "[]");
+  lista.splice(idx, 1);
+  localStorage.setItem("alimentos", JSON.stringify(lista));
+  atualizarListaAlimentos();
+  renderizarListaPersonalizados();
 }
 
 function salvarNovoAlimento() {
-  const novo = {
-    nome: document.getElementById("novoNome")?.value.trim(),
-    proteina: Number(document.getElementById("novoProt")?.value || 0),
-    carbo: Number(document.getElementById("novoCarb")?.value || 0),
-    gordura: Number(document.getElementById("novoGord")?.value || 0),
-    calorias: Number(document.getElementById("novoCal")?.value || 0),
-    fonte: "PERSONALIZADO"
-  };
+  const nomeOriginal = document.getElementById("editandoNomeOriginal")?.value || "";
+  const nome     = document.getElementById("novoNome")?.value.trim();
+  const proteina = parseFloat(document.getElementById("novoProt")?.value || 0);
+  const carbo    = parseFloat(document.getElementById("novoCarb")?.value || 0);
+  const gordura  = parseFloat(document.getElementById("novoGord")?.value || 0);
+  const calorias = parseFloat(document.getElementById("novoCal")?.value  || 0);
 
-  if (!novo.nome) {
+  if (!nome) {
     alert("Informe o nome do alimento.");
     return;
   }
 
-  const lista = JSON.parse(localStorage.getItem("alimentos") || "[]");
-  lista.push(novo);
-  localStorage.setItem("alimentos", JSON.stringify(lista));
-
-  if (document.getElementById("novoNome")) document.getElementById("novoNome").value = "";
-  if (document.getElementById("novoProt")) document.getElementById("novoProt").value = "";
-  if (document.getElementById("novoCarb")) document.getElementById("novoCarb").value = "";
-  if (document.getElementById("novoGord")) document.getElementById("novoGord").value = "";
-  if (document.getElementById("novoCal")) document.getElementById("novoCal").value = "";
-
-  atualizarListaAlimentos();
-  alert("Alimento salvo.");
-}
-
-function importarCSV(texto, nomeArquivo = "") {
-  if (typeof texto !== "string") {
-    console.error("Conteúdo inválido:", texto);
-    return [];
+  if (proteina === 0 && calorias === 0 && carbo === 0 && gordura === 0) {
+    if (!confirm("Todos os nutrientes estão zerados. Deseja salvar mesmo assim?")) return;
   }
 
-  const linhas = texto
-    .split(/\r?\n/)
-    .map(l => l.trim())
-    .filter(Boolean);
+  const novo = { nome, proteina, carbo, gordura, calorias, fonte: "PERSONALIZADO" };
 
+  const lista = JSON.parse(localStorage.getItem("alimentos") || "[]");
+
+  if (nomeOriginal) {
+    const idx = lista.findIndex(a => a.nome === nomeOriginal);
+    if (idx >= 0) lista[idx] = novo; else lista.push(novo);
+  } else {
+    lista.push(novo);
+  }
+
+  localStorage.setItem("alimentos", JSON.stringify(lista));
+  if (typeof sincronizarAlimentosPersonalizados === "function") sincronizarAlimentosPersonalizados();
+  fecharCadastro();
+  atualizarListaAlimentos();
+  alert(nomeOriginal ? "Alimento atualizado." : "Alimento salvo.");
+}
+
+// ─── BUSCA / LISTA ──────────────────────────────────────────────────────────
+
+function mapearObjetoAlimento(obj, nomeArquivo = "") {
+  const nomeArquivoLower = (nomeArquivo || "").toLowerCase();
+  let fonte = "PERSONALIZADO";
+  if (nomeArquivoLower.includes("taco")) fonte = "TACO";
+  if (nomeArquivoLower.includes("tbca")) fonte = "TBCA";
+  if (obj.fonte) fonte = String(obj.fonte).toUpperCase();
+
+  const nome =
+    obj.nome || obj.Nome || obj.alimento || obj.Alimento ||
+    obj.descricao || obj.Descricao || obj["Descrição"] || "";
+
+  return {
+    nome: String(nome).trim(),
+    proteina: normalizarNumero(obj.proteina || obj.Proteina || obj["Proteína"] || obj["Proteina (g)"] || obj["Proteína (g)"]),
+    carbo: normalizarNumero(obj.carbo || obj.carboidrato || obj.Carboidrato || obj["Carboidrato (g)"] || obj["Carboidratos (g)"]),
+    gordura: normalizarNumero(obj.gordura || obj.Gordura || obj.Lipidos || obj["Lipídios"] || obj["Lipidos (g)"] || obj["Lipídios (g)"]),
+    calorias: normalizarNumero(obj.calorias || obj.Calorias || obj.energia || obj.Energia || obj["Energia (kcal)"] || obj.kcal),
+    fonte
+  };
+}
+
+function obterTodosAlimentosSemFiltro() {
+  const importados = JSON.parse(localStorage.getItem("alimentosImportados") || "[]");
+  const personalizados = JSON.parse(localStorage.getItem("alimentos") || "[]");
+  return [...alimentosBase, ...importados, ...personalizados];
+}
+
+function obterTodosAlimentos() {
+  const todos = obterTodosAlimentosSemFiltro();
+  const fonte = obterFonteAtiva();
+  if (fonte === "todos") return todos;
+  return todos.filter(item => (item.fonte || "PERSONALIZADO") === fonte);
+}
+
+function atualizarListaAlimentos(lista = null) {
+  const select = document.getElementById("selectAlimento");
+  if (!select) return;
+  select.innerHTML = "";
+  const alimentos = lista || obterTodosAlimentos();
+  alimentos.forEach((a, i) => {
+    const option = document.createElement("option");
+    option.value = String(i);
+    const semNutrientes = !a.proteina && !a.calorias && !a.carbo && !a.gordura;
+    option.text = `${semNutrientes ? "⚠ " : ""}${a.nome} | Prot ${Number(a.proteina || 0).toFixed(1)}g | Kcal ${Number(a.calorias || 0).toFixed(0)} | ${a.fonte || "PERSONALIZADO"}`;
+    select.appendChild(option);
+  });
+}
+
+function filtrarAlimentos() {
+  const termo = document.getElementById("buscaAlimento")?.value?.toLowerCase() || "";
+  const filtrados = obterTodosAlimentos().filter(a =>
+    String(a.nome || "").toLowerCase().includes(termo)
+  );
+  atualizarListaAlimentos(filtrados);
+}
+
+function abrirModal(refeicao) {
+  refeicaoAtual = refeicao;
+  atualizarListaAlimentos();
+  const modal = document.getElementById("modalAlimento");
+  if (modal) modal.style.display = "block";
+}
+
+function fecharModal() {
+  const modal = document.getElementById("modalAlimento");
+  if (modal) modal.style.display = "none";
+}
+
+// ─── IMPORTAÇÃO ─────────────────────────────────────────────────────────────
+
+function importarCSV(texto, nomeArquivo = "") {
+  if (typeof texto !== "string") return [];
+  const linhas = texto.split(/\r?\n/).map(l => l.trim()).filter(Boolean);
   if (linhas.length < 2) return [];
-
   const separador = linhas[0].includes(";") ? ";" : ",";
   const cabecalhos = linhas[0].split(separador).map(h => h.trim());
-
   const itens = [];
-
   for (let i = 1; i < linhas.length; i++) {
     const colunas = linhas[i].split(separador).map(c => c.trim());
     const obj = {};
-
-    cabecalhos.forEach((cab, idx) => {
-      obj[cab] = colunas[idx] || "";
-    });
-
+    cabecalhos.forEach((cab, idx) => { obj[cab] = colunas[idx] || ""; });
     const alimento = mapearObjetoAlimento(obj, nomeArquivo);
     if (alimento.nome) itens.push(alimento);
   }
-
   return itens;
 }
 
 function importarTabelaAlimentos(event) {
   const arquivo = event.target.files && event.target.files[0];
   if (!arquivo) return;
-
   const reader = new FileReader();
-
   reader.onload = function (e) {
     try {
       const conteudo = e.target.result;
       let alimentos = [];
-
       if (arquivo.name.toLowerCase().endsWith(".csv")) {
         alimentos = importarCSV(conteudo, arquivo.name);
       } else if (arquivo.name.toLowerCase().endsWith(".json")) {
         const json = JSON.parse(conteudo);
         const lista = Array.isArray(json) ? json : (json.alimentos || []);
-        alimentos = lista
-          .map(item => mapearObjetoAlimento(item, arquivo.name))
-          .filter(a => a.nome);
+        alimentos = lista.map(item => mapearObjetoAlimento(item, arquivo.name)).filter(a => a.nome);
       } else {
         alert("Use CSV ou JSON.");
         return;
       }
-
-      if (!alimentos.length) {
-        alert("Nenhum alimento válido encontrado no arquivo.");
-        return;
-      }
-
+      if (!alimentos.length) { alert("Nenhum alimento válido encontrado."); return; }
       const existentes = JSON.parse(localStorage.getItem("alimentosImportados") || "[]");
       const mapa = new Map();
-
       [...existentes, ...alimentos].forEach(item => {
-        const chave = '${item.nome}|${item.fonte}';
-        mapa.set(chave, item);
+        mapa.set(`${item.nome}|${item.fonte}`, item);
       });
-
       const finalLista = Array.from(mapa.values()).slice(0, 2000);
       localStorage.setItem("alimentosImportados", JSON.stringify(finalLista));
-
+      localStorage.setItem("fonteAtivaAlimentos", "todos");
       const status = document.getElementById("statusImportacao");
-      if (status) {
-        status.innerText = '${alimentos.length} alimentos importados de ${arquivo.name}.';
-      }
-
-      const fonteSelect = document.getElementById("fonteAlimentos");
-      if (fonteSelect && arquivo.name.toLowerCase().includes("taco")) {
-        fonteSelect.value = "TACO";
-        localStorage.setItem("fonteAtivaAlimentos", "TACO");
-      }
-
+      if (status) status.innerText = `${alimentos.length} alimentos importados de ${arquivo.name}.`;
       atualizarListaAlimentos();
       if (typeof renderizarRefeicaoAtual === "function") renderizarRefeicaoAtual();
       alert("Importação concluída.");
@@ -383,7 +464,6 @@ function importarTabelaAlimentos(event) {
       event.target.value = "";
     }
   };
-
   reader.readAsText(arquivo, "utf-8");
 }
 
@@ -391,24 +471,14 @@ async function carregarTacoJSON() {
   try {
     const resposta = await fetch("data/tabela_taco.json");
     if (!resposta.ok) throw new Error("Não foi possível carregar tabela_taco.json");
-
     const dados = await resposta.json();
-
-    if (!Array.isArray(dados)) {
-      throw new Error("Formato inválido do JSON");
-    }
-
+    if (!Array.isArray(dados)) throw new Error("Formato inválido do JSON");
     localStorage.setItem("alimentosImportados", JSON.stringify(dados));
-    localStorage.setItem("fonteAtivaAlimentos", "TACO");
-
+    localStorage.setItem("fonteAtivaAlimentos", "todos");
     const fonteSelect = document.getElementById("fonteAlimentos");
     if (fonteSelect) fonteSelect.value = "TACO";
-
     const status = document.getElementById("statusImportacao");
-    if (status) {
-      status.innerText = '${dados.length} alimentos TACO carregados.';
-    }
-
+    if (status) status.innerText = `${dados.length} alimentos TACO carregados.`;
     atualizarListaAlimentos();
     if (typeof renderizarRefeicaoAtual === "function") renderizarRefeicaoAtual();
     alert("Tabela TACO carregada com sucesso.");
@@ -418,46 +488,61 @@ async function carregarTacoJSON() {
   }
 }
 
+// ─── KPIs ────────────────────────────────────────────────────────────────────
+
 function atualizarKPIs() {
   const data = obterDataAtualRegistro();
   const banco = JSON.parse(localStorage.getItem("refeicoesPorData") || "{}");
   const refeicoesDia = banco[data] || {};
-
-  let totalProteina = 0;
-  let totalCalorias = 0;
-
+  let totalProteina = 0, totalCalorias = 0;
   Object.values(refeicoesDia).forEach(lista => {
     lista.forEach(item => {
       totalProteina += Number(item.proteina || 0);
       totalCalorias += Number(item.calorias || 0);
     });
   });
-
   const kpiProteinas = document.getElementById("kpiProteinas");
   const kpiCalorias = document.getElementById("kpiCalorias");
-
-  if (kpiProteinas) kpiProteinas.innerText = '${totalProteina.toFixed(0)}g';
-  if (kpiCalorias) kpiCalorias.innerText = '${totalCalorias.toFixed(0)}';
-
+  if (kpiProteinas) kpiProteinas.innerText = `${totalProteina.toFixed(0)}g`;
+  if (kpiCalorias) kpiCalorias.innerText = `${totalCalorias.toFixed(0)}`;
   const metaProt = Number(localStorage.getItem("metaProteinaCalculada") || 0);
   const metaEnergia = Number(localStorage.getItem("metaEnergiaCalculada") || 0);
-
   const barraProt = document.getElementById("barraProteina");
   const barraEnergia = document.getElementById("barraEnergia");
-
   if (barraProt) {
     const pct = metaProt > 0 ? Math.min((totalProteina / metaProt) * 100, 100) : 0;
-    barraProt.style.width = '${pct}%';
+    barraProt.style.width = `${pct}%`;
   }
-
   if (barraEnergia) {
     const pct = metaEnergia > 0 ? Math.min((totalCalorias / metaEnergia) * 100, 100) : 0;
-    barraEnergia.style.width = '${pct}%';
+    barraEnergia.style.width = `${pct}%`;
+  }
+}
+
+// ─── INICIALIZAÇÃO ───────────────────────────────────────────────────────────
+
+async function inicializarAlimentos() {
+  if (localStorage.getItem("fonteAtivaAlimentos") !== "todos") {
+    localStorage.setItem("fonteAtivaAlimentos", "todos");
+  }
+  if (localStorage.getItem("tacoCarregada")) return;
+  try {
+    const resposta = await fetch("data/tabela_taco.json");
+    if (!resposta.ok) throw new Error("Falha ao carregar tabela_taco.json");
+    const dados = await resposta.json();
+    if (!Array.isArray(dados) || !dados.length) throw new Error("JSON vazio ou inválido");
+    localStorage.setItem("alimentosImportados", JSON.stringify(dados));
+    localStorage.setItem("fonteAtivaAlimentos", "todos");
+    localStorage.setItem("tacoCarregada", "1");
+    atualizarListaAlimentos();
+    if (typeof renderizarRefeicaoAtual === "function") renderizarRefeicaoAtual();
+  } catch (erro) {
+    console.warn("Não foi possível carregar tabela TACO automaticamente:", erro.message);
   }
 }
 
 document.addEventListener("DOMContentLoaded", function () {
   refeicaoAtual = "cafe";
-  if (typeof renderizarRefeicaoAtual === "function") renderizarRefeicaoAtual();
-  atualizarKPIs();
+  // A inicialização dos alimentos é chamada por mostrarApp() em auth.js
+  // após os dados da nuvem serem carregados
 });
