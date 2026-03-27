@@ -28,6 +28,29 @@ async function inicializarSessao() {
       mostrarTelaLogin();
     }
   });
+
+  // Sincroniza automaticamente quando o app volta ao foco
+  document.addEventListener("visibilitychange", async () => {
+    if (document.visibilityState === "visible" && usuarioAtual) {
+      await carregarDadosNuvem();
+      if (typeof carregar === "function") carregar();
+      if (typeof renderizarTabelaHistorico === "function") renderizarTabelaHistorico();
+      if (typeof renderizarGraficoPainel === "function") renderizarGraficoPainel();
+      if (typeof renderizarGraficoNutricao === "function") renderizarGraficoNutricao();
+    }
+  });
+}
+
+async function sincronizarManual() {
+  if (!usuarioAtual) return;
+  const btn = document.querySelector(".btn-sync");
+  if (btn) { btn.style.opacity = "0.4"; btn.style.pointerEvents = "none"; }
+  await carregarDadosNuvem();
+  if (typeof carregar === "function") carregar();
+  if (typeof renderizarTabelaHistorico === "function") renderizarTabelaHistorico();
+  if (typeof renderizarGraficoPainel === "function") renderizarGraficoPainel();
+  if (typeof renderizarGraficoNutricao === "function") renderizarGraficoNutricao();
+  if (btn) { btn.style.opacity = "1"; btn.style.pointerEvents = "auto"; }
 }
 
 function mostrarApp() {

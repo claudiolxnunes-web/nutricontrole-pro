@@ -145,6 +145,19 @@ body {
   white-space: nowrap;
 }
 
+.btn-sync {
+  background: rgba(109,132,255,0.15);
+  color: #6d84ff;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 700;
+  transition: background 0.15s, transform 0.3s;
+}
+.btn-sync:hover { background: rgba(109,132,255,0.30); transform: rotate(180deg); }
+
 .btn-logout {
   background: rgba(239,68,68,0.15);
   color: #f87171;
