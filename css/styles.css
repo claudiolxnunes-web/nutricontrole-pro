@@ -886,8 +886,9 @@ strong {
 @media (max-width: 600px) {
   #tabelaHistorico th,
   #tabelaHistorico td {
-    padding: 11px 10px;
-    font-size: 13px;
+    padding: 8px 6px;
+    font-size: 11px;
+    white-space: nowrap;
   }
 }
 
