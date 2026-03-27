@@ -3,6 +3,12 @@ let graficoNutricao = null;
 let tipoGraficoAtual = "peso";
 let periodoGraficoAtual = 30;
 
+function formatarDataGrafico(dataISO) {
+  if (!dataISO) return "";
+  const [, mes, dia] = dataISO.split("-");
+  return `${dia}/${mes}`;
+}
+
 function obterHistoricoOrdenado() {
   const dados = JSON.parse(localStorage.getItem("dados") || "[]");
   return dados.slice().sort((a, b) => a.data.localeCompare(b.data));
@@ -37,7 +43,7 @@ function renderizarGraficoPainel() {
 
   const historicoCompleto = obterHistoricoOrdenado();
   const dados = filtrarHistoricoPorPeriodo(historicoCompleto, periodoGraficoAtual);
-  const labels = dados.map(d => d.data);
+  const labels = dados.map(d => formatarDataGrafico(d.data));
 
   let datasets = [];
 

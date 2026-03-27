@@ -2,6 +2,12 @@ function el(id) {
   return document.getElementById(id);
 }
 
+function formatarData(dataISO) {
+  if (!dataISO) return "-";
+  const [ano, mes, dia] = dataISO.split("-");
+  return `${dia}/${mes}/${ano}`;
+}
+
 function trocarTela(telaId, botao) {
   document.querySelectorAll(".tela").forEach(t => {
     t.style.display = "none";
@@ -165,7 +171,7 @@ function renderizarTabelaHistorico() {
     const pressao = item.ps && item.pd ? `${item.ps}/${item.pd}` : "-";
     const imc = item.imc ? Number(item.imc).toFixed(2) : "-";
     tr.innerHTML = `
-      <td>${item.data || "-"}</td>
+      <td>${formatarData(item.data)}</td>
       <td>${item.peso ? Number(item.peso).toFixed(1) + " kg" : "-"}</td>
       <td>${imc}</td>
       <td>${item.glicose ? item.glicose + " mg/dL" : "-"}</td>
