@@ -112,6 +112,8 @@ async function fazerCadastro() {
 async function fazerLogout() {
   await sb.auth.signOut();
   localStorage.clear();
+  usuarioAtual = null;
+  mostrarTelaLogin();
 }
 
 async function recuperarSenha() {
