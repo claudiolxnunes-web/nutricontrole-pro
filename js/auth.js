@@ -44,13 +44,16 @@ async function inicializarSessao() {
 async function sincronizarManual() {
   if (!usuarioAtual) return;
   const btn = document.querySelector(".btn-sync");
-  if (btn) { btn.style.opacity = "0.4"; btn.style.pointerEvents = "none"; }
+  if (btn) { btn.style.opacity = "0.4"; btn.style.pointerEvents = "none"; btn.textContent = "⏳"; }
   await carregarDadosNuvem();
   if (typeof carregar === "function") carregar();
   if (typeof renderizarTabelaHistorico === "function") renderizarTabelaHistorico();
   if (typeof renderizarGraficoPainel === "function") renderizarGraficoPainel();
   if (typeof renderizarGraficoNutricao === "function") renderizarGraficoNutricao();
-  if (btn) { btn.style.opacity = "1"; btn.style.pointerEvents = "auto"; }
+  if (typeof atualizarKPIs === "function") atualizarKPIs();
+  if (typeof renderizarRefeicaoAtual === "function") renderizarRefeicaoAtual();
+  if (btn) { btn.style.opacity = "1"; btn.style.pointerEvents = "auto"; btn.textContent = "✓"; }
+  setTimeout(() => { if (btn) btn.innerHTML = "&#x21bb;"; }, 2000);
 }
 
 function mostrarApp() {
@@ -169,7 +172,8 @@ async function carregarDadosNuvem() {
 
   try {
     // Perfil
-    const { data: perfil } = await sb.from("perfis").select("*").eq("id", uid).single();
+    const { data: perfil, error: ePerfil } = await sb.from("perfis").select("*").eq("id", uid).single();
+    if (ePerfil) console.warn("Perfil:", ePerfil.message);
     if (perfil) {
       const p = { altura: perfil.altura, idade: perfil.idade, sexo: perfil.sexo };
       localStorage.setItem("perfil", JSON.stringify(p));
@@ -177,9 +181,10 @@ async function carregarDadosNuvem() {
       if (perfil.objetivo)        localStorage.setItem("_objetivo", perfil.objetivo);
     }
 
-    // Registros diários
-    const { data: registros } = await sb.from("registros_diarios").select("*").eq("user_id", uid);
-    if (registros?.length) {
+    // Registros diários — sempre sobrescreve (mesmo vazio)
+    const { data: registros, error: eReg } = await sb.from("registros_diarios").select("*").eq("user_id", uid);
+    if (eReg) console.warn("Registros:", eReg.message);
+    if (registros) {
       const lista = registros.map(r => ({
         data: r.data, peso: r.peso, glicose: r.glicose,
         ps: r.ps, pd: r.pd, imc: r.imc,
@@ -188,9 +193,10 @@ async function carregarDadosNuvem() {
       localStorage.setItem("dados", JSON.stringify(lista));
     }
 
-    // Refeições
-    const { data: refeicoes } = await sb.from("refeicoes").select("*").eq("user_id", uid);
-    if (refeicoes?.length) {
+    // Refeições — sempre sobrescreve
+    const { data: refeicoes, error: eRef } = await sb.from("refeicoes").select("*").eq("user_id", uid);
+    if (eRef) console.warn("Refeições:", eRef.message);
+    if (refeicoes) {
       const banco = {};
       refeicoes.forEach(r => {
         if (!banco[r.data]) banco[r.data] = {};
@@ -199,9 +205,10 @@ async function carregarDadosNuvem() {
       localStorage.setItem("refeicoesPorData", JSON.stringify(banco));
     }
 
-    // Alimentos personalizados
-    const { data: alimentos } = await sb.from("alimentos_personalizados").select("*").eq("user_id", uid);
-    if (alimentos?.length) {
+    // Alimentos personalizados — sempre sobrescreve
+    const { data: alimentos, error: eAlim } = await sb.from("alimentos_personalizados").select("*").eq("user_id", uid);
+    if (eAlim) console.warn("Alimentos:", eAlim.message);
+    if (alimentos) {
       localStorage.setItem("alimentos", JSON.stringify(alimentos));
     }
 
