@@ -182,14 +182,13 @@ async function carregarDadosNuvem() {
     }
 
     // Registros diários — sempre sobrescreve (mesmo vazio)
-    if (registros) → if (registros?.length > 0)
-if (refeicoes) → if (refeicoes?.length > 0)
-if (alimentos) → if (alimentos?.length > 0)
+    
 
     const { data: registros, error: eReg } = await sb.from("registros_diarios").select("*").eq("user_id", uid);
     if (eReg) console.warn("Registros:", eReg.message);
     if (registros) {
       const lista = registros.map(r => ({
+       if (registros) { → if (registros?.length > 0) { para evitar criar um array vazio quando não houver registros
         data: r.data, peso: r.peso, glicose: r.glicose,
         ps: r.ps, pd: r.pd, imc: r.imc,
         nivelAtividade: r.nivel_atividade, objetivo: r.objetivo
@@ -201,6 +200,7 @@ if (alimentos) → if (alimentos?.length > 0)
     const { data: refeicoes, error: eRef } = await sb.from("refeicoes").select("*").eq("user_id", uid);
     if (eRef) console.warn("Refeições:", eRef.message);
     if (refeicoes) {
+    if (refeicoes) { → if (refeicoes?.length > 0) { para evitar criar um objeto vazio quando não houver refeições  
       const banco = {};
       refeicoes.forEach(r => {
         if (!banco[r.data]) banco[r.data] = {};
@@ -212,7 +212,8 @@ if (alimentos) → if (alimentos?.length > 0)
     // Alimentos personalizados — sempre sobrescreve
     const { data: alimentos, error: eAlim } = await sb.from("alimentos_personalizados").select("*").eq("user_id", uid);
     if (eAlim) console.warn("Alimentos:", eAlim.message);
-    if (alimentos) {
+    
+   if (alimentos) { → if (alimentos?.length > 0) {
       localStorage.setItem("alimentos", JSON.stringify(alimentos));
     }
 
