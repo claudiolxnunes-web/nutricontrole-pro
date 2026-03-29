@@ -57,8 +57,9 @@
       <span>Nutricontrole Pro 6.1</span>
     </div>
 
-    <div class="date-box">
-      <input type="date" id="dataRegistro">
+       <div class="date-box" onclick="document.getElementById('dataRegistro').showPicker()" style="cursor:pointer">
+      <span id="dataFormatada"></span>
+      <input type="date" id="dataRegistro" style="position:absolute;opacity:0;width:0;height:0;" onchange="atualizarSpanData(this.value); carregar();">
     </div>
     <div class="user-box">
       <span id="usuarioEmail" class="user-email"></span>

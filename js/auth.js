@@ -182,6 +182,10 @@ async function carregarDadosNuvem() {
     }
 
     // Registros diários — sempre sobrescreve (mesmo vazio)
+    if (registros) → if (registros?.length > 0)
+if (refeicoes) → if (refeicoes?.length > 0)
+if (alimentos) → if (alimentos?.length > 0)
+
     const { data: registros, error: eReg } = await sb.from("registros_diarios").select("*").eq("user_id", uid);
     if (eReg) console.warn("Registros:", eReg.message);
     if (registros) {

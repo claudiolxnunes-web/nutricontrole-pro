@@ -229,12 +229,17 @@ function salvar() {
   alert("Dados do dia salvos com sucesso.");
 }
 
+function atualizarSpanData(iso) {
+  const span = document.getElementById("dataFormatada");
+  if (span) span.textContent = formatarData(iso);
+}
 function carregar() {
   const campoData = el("dataRegistro");
   const hoje = new Date().toISOString().split("T")[0];
 
   if (campoData && !campoData.value) {
     campoData.value = hoje;
+     atualizarSpanData(campoData?.value || hoje); 
   }
 
   carregarPerfil();
