@@ -172,33 +172,34 @@ function renderizarTabelaHistorico() {
     return;
   }
 
-  dados.forEach(item => {
+  dados.forEach(function(item) {
     const tr = document.createElement("tr");
-    const pressao = item.ps && item.pd ? ${item.ps}/ : "-";
+    const pressao = item.ps && item.pd ? item.ps + "/" + item.pd : "-";
     const imc = item.imc ? Number(item.imc).toFixed(2) : "-";
 
-    // Energia e proteína: usa valor gravado no registro ou recalcula das refeições
+    // Energia e proteína: usa valor gravado ou recalcula das refeições do dia
     let kcalDia = item.energiaDia != null ? Number(item.energiaDia) : null;
     let protDia  = item.proteinaDia != null ? Number(item.proteinaDia) : null;
     if ((kcalDia === null || kcalDia === 0) && item.data) {
-      const banco = JSON.parse(localStorage.getItem("refeicoesPorData") || "{}")[item.data] || {};
-      let tk = 0, tp = 0;
-      Object.values(banco).forEach(lista => lista.forEach(it => {
-        tk += Number(it.calorias || 0);
-        tp += Number(it.proteina || 0);
-      }));
+      var banco = JSON.parse(localStorage.getItem("refeicoesPorData") || "{}")[item.data] || {};
+      var tk = 0, tp = 0;
+      Object.values(banco).forEach(function(lista) {
+        lista.forEach(function(it) {
+          tk += Number(it.calorias || 0);
+          tp += Number(it.proteina || 0);
+        });
+      });
       if (tk > 0) { kcalDia = tk; protDia = tp; }
     }
 
-    tr.innerHTML = 
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    ;
+    tr.innerHTML =
+      "<td>" + formatarData(item.data) + "</td>" +
+      "<td>" + (item.peso ? Number(item.peso).toFixed(1) + " kg" : "-") + "</td>" +
+      "<td>" + imc + "</td>" +
+      "<td>" + (item.glicose ? item.glicose + " mg/dL" : "-") + "</td>" +
+      "<td>" + pressao + "</td>" +
+      "<td>" + (kcalDia ? Math.round(kcalDia) + " kcal" : "-") + "</td>" +
+      "<td>" + (protDia  ? Number(protDia).toFixed(1) + " g" : "-") + "</td>";
     tbody.appendChild(tr);
   });
 }
