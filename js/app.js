@@ -172,23 +172,22 @@ function renderizarTabelaHistorico() {
     return;
   }
 
-  dados.forEach(function(item) {
+  dados.forEach(item => {
     const tr = document.createElement("tr");
-    const pressao = item.ps && item.pd ? item.ps + "/" + item.pd : "-";
+    // Number() sanitiza e elimina vetor XSS em campos numéricos
+    const pressao = item.ps && item.pd ? Number(item.ps) + "/" + Number(item.pd) : "-";
     const imc = item.imc ? Number(item.imc).toFixed(2) : "-";
 
     // Energia e proteína: usa valor gravado ou recalcula das refeições do dia
     let kcalDia = item.energiaDia != null ? Number(item.energiaDia) : null;
     let protDia  = item.proteinaDia != null ? Number(item.proteinaDia) : null;
     if ((kcalDia === null || kcalDia === 0) && item.data) {
-      var banco = JSON.parse(localStorage.getItem("refeicoesPorData") || "{}")[item.data] || {};
-      var tk = 0, tp = 0;
-      Object.values(banco).forEach(function(lista) {
-        lista.forEach(function(it) {
-          tk += Number(it.calorias || 0);
-          tp += Number(it.proteina || 0);
-        });
-      });
+      const banco = JSON.parse(localStorage.getItem("refeicoesPorData") || "{}")[item.data] || {};
+      let tk = 0, tp = 0;
+      Object.values(banco).forEach(lista => lista.forEach(it => {
+        tk += Number(it.calorias || 0);
+        tp += Number(it.proteina || 0);
+      }));
       if (tk > 0) { kcalDia = tk; protDia = tp; }
     }
 
@@ -196,10 +195,12 @@ function renderizarTabelaHistorico() {
       "<td>" + formatarData(item.data) + "</td>" +
       "<td>" + (item.peso ? Number(item.peso).toFixed(1) + " kg" : "-") + "</td>" +
       "<td>" + imc + "</td>" +
-      "<td>" + (item.glicose ? item.glicose + " mg/dL" : "-") + "</td>" +
+      // Number() em glicose sanitiza e elimina XSS
+      "<td>" + (item.glicose ? Number(item.glicose) + " mg/dL" : "-") + "</td>" +
       "<td>" + pressao + "</td>" +
-      "<td>" + (kcalDia ? Math.round(kcalDia) + " kcal" : "-") + "</td>" +
-      "<td>" + (protDia  ? Number(protDia).toFixed(1) + " g" : "-") + "</td>";
+      // !== null: exibe "0 kcal"/"0.0 g" corretamente em dias de jejum
+      "<td>" + (kcalDia !== null ? Math.round(kcalDia) + " kcal" : "-") + "</td>" +
+      "<td>" + (protDia  !== null ? Number(protDia).toFixed(1) + " g" : "-") + "</td>";
     tbody.appendChild(tr);
   });
 }
