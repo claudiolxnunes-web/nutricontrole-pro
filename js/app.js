@@ -1,4 +1,4 @@
-function el(id) {
+﻿function el(id) {
   return document.getElementById(id);
 }
 
@@ -188,7 +188,7 @@ function salvar() {
   let data = campoData?.value || "";
 
   if (!data) {
-    data = new Date().toISOString().split("T")[0];
+    data = hojeISO();
     if (campoData) campoData.value = data;
   }
 
@@ -202,7 +202,18 @@ function salvar() {
 
   const imc = calcularIMC(peso, altura);
 
-  const registro = { data, peso, altura, glicose, ps, pd, nivelAtividade, objetivo, imc };
+  // Calcula consumo de energia e proteína do dia a partir das refeições
+  const bancoDia = JSON.parse(localStorage.getItem("refeicoesPorData") || "{}")[data] || {};
+  let totalKcal = 0, totalProt = 0;
+  Object.values(bancoDia).forEach(lista => lista.forEach(item => {
+    const qtd = Number(item.quantidade || 100);
+    totalKcal += (Number(item.calorias || 0) * qtd) / 100;
+    totalProt  += (Number(item.proteina || 0) * qtd) / 100;
+  }));
+  const energiaDia = parseFloat(totalKcal.toFixed(1));
+  const proteinaDia = parseFloat(totalProt.toFixed(1));
+
+  const registro = { data, peso, altura, glicose, ps, pd, nivelAtividade, objetivo, imc, energiaDia, proteinaDia };
 
   const dados = JSON.parse(localStorage.getItem("dados") || "[]");
   const idx = dados.findIndex(item => item.data === data);
@@ -235,7 +246,7 @@ function atualizarSpanData(iso) {
 }
 function carregar() {
   const campoData = el("dataRegistro");
-  const hoje = new Date().toISOString().split("T")[0];
+  const hoje = hojeISO();
 
   if (campoData && !campoData.value) {
     campoData.value = hoje;
