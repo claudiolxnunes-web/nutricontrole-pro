@@ -1,4 +1,4 @@
-et graficoPainel = null;
+let graficoPainel = null;
 let graficoNutricao = null;
 let tipoGraficoAtual = "peso";
 let periodoGraficoAtual = Number(localStorage.getItem("periodoGrafico") || 7);

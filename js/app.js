@@ -208,8 +208,11 @@ function salvar() {
 
   const imc = calcularIMC(peso, altura);
 
-  // Calcula consumo de energia e proteína do dia a partir das refeições
-  // NOTA: calorias e proteina já estão ajustados pela quantidade em meals.js
+  // Calcula consumo de energia e proteína do dia a partir das refeições.
+  // INVARIANTE: em meals.js > confirmarAlimento(), os campos "calorias" e "proteina"
+  // são armazenados já multiplicados pela quantidade informada pelo usuário
+  // (valor_tabela * quantidade / 100). Portanto a soma abaixo NÃO divide novamente.
+  // Se meals.js mudar para armazenar valores brutos por 100 g, ajustar aqui.
   const bancoDia = JSON.parse(localStorage.getItem("refeicoesPorData") || "{}")[data] || {};
   let totalKcal = 0, totalProt = 0;
   Object.values(bancoDia).forEach(lista => lista.forEach(item => {
