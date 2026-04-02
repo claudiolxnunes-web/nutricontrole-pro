@@ -1,5 +1,11 @@
-﻿function el(id) {
+function el(id) {
   return document.getElementById(id);
+}
+
+// Retorna data de hoje no fuso de Brasilia (AAAA-MM-DD)
+// sv-SE produz formato ISO nativamente via Intl — sem ajuste manual de UTC
+function hojeISO() {
+  return new Date().toLocaleDateString("sv-SE", { timeZone: "America/Sao_Paulo" });
 }
 
 function formatarData(dataISO) {
@@ -203,12 +209,12 @@ function salvar() {
   const imc = calcularIMC(peso, altura);
 
   // Calcula consumo de energia e proteína do dia a partir das refeições
+  // NOTA: calorias e proteina já estão ajustados pela quantidade em meals.js
   const bancoDia = JSON.parse(localStorage.getItem("refeicoesPorData") || "{}")[data] || {};
   let totalKcal = 0, totalProt = 0;
   Object.values(bancoDia).forEach(lista => lista.forEach(item => {
-    const qtd = Number(item.quantidade || 100);
-    totalKcal += (Number(item.calorias || 0) * qtd) / 100;
-    totalProt  += (Number(item.proteina || 0) * qtd) / 100;
+    totalKcal += Number(item.calorias || 0);
+    totalProt  += Number(item.proteina || 0);
   }));
   const energiaDia = parseFloat(totalKcal.toFixed(1));
   const proteinaDia = parseFloat(totalProt.toFixed(1));

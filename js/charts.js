@@ -1,7 +1,7 @@
-﻿let graficoPainel = null;
+et graficoPainel = null;
 let graficoNutricao = null;
 let tipoGraficoAtual = "peso";
-let periodoGraficoAtual = 7;
+let periodoGraficoAtual = Number(localStorage.getItem("periodoGrafico") || 7);
 
 function formatarDataGrafico(dataISO) {
   if (!dataISO) return "";
@@ -85,7 +85,7 @@ function renderizarGraficoNutricao() {
   if (!canvas) return;
 
   // Consumo do dia
-  const data = (document.getElementById("dataRegistro")?.value) || (typeof hojeISO === "function" ? hojeISO() : new Date().toISOString().split("T")[0]);
+  const data = (document.getElementById("dataRegistro")?.value) || hojeISO();
   const banco = JSON.parse(localStorage.getItem("refeicoesPorData") || "{}");
   const refeicoesDia = banco[data] || {};
 

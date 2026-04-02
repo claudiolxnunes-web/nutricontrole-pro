@@ -1,4 +1,4 @@
-﻿// ============================================================
+/ ============================================================
 // auth.js — Autenticação e sincronização com Supabase
 // ============================================================
 
@@ -230,6 +230,8 @@ async function sincronizarRegistroDiario(registro) {
     imc:             registro.imc,
     nivel_atividade: registro.nivelAtividade,
     objetivo:        registro.objetivo,
+    energia_dia:     registro.energiaDia  ?? null,
+    proteina_dia:    registro.proteinaDia ?? null,
     updated_at:      new Date().toISOString()
   }, { onConflict: "user_id,data" });
 }
