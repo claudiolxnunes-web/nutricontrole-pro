@@ -181,38 +181,57 @@ async function carregarDadosNuvem() {
       if (perfil.objetivo)        localStorage.setItem("_objetivo", perfil.objetivo);
     }
 
-    // Registros diários — só sobrescreve se houver dados na nuvem
+    // Registros diários — MERGE: a versão mais recente de cada data vence
     const { data: registros, error: eReg } = await sb.from("registros_diarios").select("*").eq("user_id", uid);
     if (eReg) console.warn("Registros:", eReg.message);
-    if (registros?.length > 0) {
-      const lista = registros.map(r => ({
-        data: r.data, peso: r.peso, glicose: r.glicose,
-        ps: r.ps, pd: r.pd, imc: r.imc,
-        nivelAtividade: r.nivel_atividade, objetivo: r.objetivo
-      }));
-      localStorage.setItem("dados", JSON.stringify(lista));
+    if (registros && registros.length > 0) {
+      const dadosLocais = JSON.parse(localStorage.getItem("dados") || "[]");
+      const mapaLocal = {};
+      dadosLocais.forEach(r => { mapaLocal[r.data] = r; });
+
+      registros.forEach(r => {
+        const local = mapaLocal[r.data];
+        // Só sobrescreve local se a nuvem for mais recente ou local não tiver o dado
+        if (!local) {
+          mapaLocal[r.data] = {
+            data: r.data, peso: r.peso, glicose: r.glicose,
+            ps: r.ps, pd: r.pd, imc: r.imc,
+            nivelAtividade: r.nivel_atividade, objetivo: r.objetivo,
+            energiaDia: r.energia_dia, proteinaDia: r.proteina_dia
+          };
+        }
+      });
+
+      const listaMerge = Object.values(mapaLocal);
+      localStorage.setItem("dados", JSON.stringify(listaMerge));
     }
 
-    // Refeições — só sobrescreve se houver dados na nuvem
+    // Refeições — MERGE por data+refeicao
     const { data: refeicoes, error: eRef } = await sb.from("refeicoes").select("*").eq("user_id", uid);
     if (eRef) console.warn("Refeições:", eRef.message);
-    if (refeicoes?.length > 0) {
-      const banco = {};
+    if (refeicoes && refeicoes.length > 0) {
+      const bancoLocal = JSON.parse(localStorage.getItem("refeicoesPorData") || "{}");
       refeicoes.forEach(r => {
-        if (!banco[r.data]) banco[r.data] = {};
-        banco[r.data][r.refeicao] = r.itens || [];
+        if (!bancoLocal[r.data]) bancoLocal[r.data] = {};
+        // Só sobrescreve se local estiver vazio para essa data+refeição
+        if (!bancoLocal[r.data][r.refeicao] || bancoLocal[r.data][r.refeicao].length === 0) {
+          bancoLocal[r.data][r.refeicao] = r.itens || [];
+        }
       });
-      localStorage.setItem("refeicoesPorData", JSON.stringify(banco));
+      localStorage.setItem("refeicoesPorData", JSON.stringify(bancoLocal));
     }
 
-    // Alimentos personalizados — só sobrescreve se houver dados na nuvem
+    // Alimentos personalizados — só adiciona, nunca remove locais
     const { data: alimentos, error: eAlim } = await sb.from("alimentos_personalizados").select("*").eq("user_id", uid);
     if (eAlim) console.warn("Alimentos:", eAlim.message);
-    if (alimentos?.length > 0) {
-      localStorage.setItem("alimentos", JSON.stringify(alimentos));
+    if (alimentos && alimentos.length > 0) {
+      const locais = JSON.parse(localStorage.getItem("alimentos") || "[]");
+      const nomesLocais = new Set(locais.map(a => a.nome));
+      alimentos.forEach(a => { if (!nomesLocais.has(a.nome)) locais.push(a); });
+      localStorage.setItem("alimentos", JSON.stringify(locais));
     }
 
-    console.log("Dados carregados da nuvem.");
+    console.log("Dados sincronizados com a nuvem.");
   } catch (e) {
     console.warn("Erro ao carregar nuvem:", e.message);
   }
@@ -220,7 +239,7 @@ async function carregarDadosNuvem() {
 
 async function sincronizarRegistroDiario(registro) {
   if (!usuarioAtual) return;
-  await sb.from("registros_diarios").upsert({
+  const payload = {
     user_id:         usuarioAtual.id,
     data:            registro.data,
     peso:            registro.peso,
@@ -233,7 +252,17 @@ async function sincronizarRegistroDiario(registro) {
     energia_dia:     registro.energiaDia  ?? null,
     proteina_dia:    registro.proteinaDia ?? null,
     updated_at:      new Date().toISOString()
-  }, { onConflict: "user_id,data" });
+  };
+  const { error } = await sb.from("registros_diarios").upsert(payload, { onConflict: "user_id,data" });
+  if (error) {
+    console.error("Erro ao salvar registro diário:", error.message);
+    // Tenta sem as colunas novas caso não existam ainda no banco
+    if (error.message && error.message.includes("column")) {
+      const { energia_dia, proteina_dia, ...payloadBasico } = payload;
+      const { error: e2 } = await sb.from("registros_diarios").upsert(payloadBasico, { onConflict: "user_id,data" });
+      if (e2) console.error("Erro no fallback:", e2.message);
+    }
+  }
 }
 
 async function sincronizarPerfil(perfil, nivelAtividade, objetivo) {

@@ -362,3 +362,20 @@ document.addEventListener("DOMContentLoaded", function () {
   // carregar() e renderizações iniciais são chamados por mostrarApp() em auth.js
   // para garantir que os dados da nuvem já estejam no localStorage antes
 });
+
+// Auto-save ao sair da aba ou fechar
+window.addEventListener("beforeunload", function() {
+  if (typeof salvar === "function") {
+    const campoData = document.getElementById("dataRegistro");
+    const peso = document.getElementById("peso")?.value;
+    if (peso && campoData?.value) salvar();
+  }
+});
+
+document.addEventListener("visibilitychange", function() {
+  if (document.visibilityState === "hidden") {
+    const campoData = document.getElementById("dataRegistro");
+    const peso = document.getElementById("peso")?.value;
+    if (peso && campoData?.value && typeof salvar === "function") salvar();
+  }
+});

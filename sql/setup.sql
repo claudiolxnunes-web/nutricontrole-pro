@@ -61,3 +61,8 @@ create table if not exists alimentos_personalizados (
 );
 alter table alimentos_personalizados enable row level security;
 create policy "alimentos_own" on alimentos_personalizados for all using (auth.uid() = user_id);
+
+-- Colunas energia_dia e proteina_dia (adicionadas em v6.1)
+-- Execute no SQL Editor do Supabase caso a tabela já exista:
+alter table registros_diarios add column if not exists energia_dia numeric;
+alter table registros_diarios add column if not exists proteina_dia numeric;
