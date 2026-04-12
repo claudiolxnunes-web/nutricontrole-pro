@@ -965,3 +965,36 @@ strong {
 body {
   background: linear-gradient(180deg, #bbf7d0, #dcfce7);
 }
+
+/* ---- Alertas clínicos ---- */
+#alertasClinicos { margin: 8px 0; }
+
+.banner-alerta {
+  padding: 10px 14px;
+  border-radius: 8px;
+  margin: 6px 0;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+.banner-atencao {
+  background: #fef9c3;
+  color: #854d0e;
+  border-left: 4px solid #eab308;
+}
+.banner-critico {
+  background: #fee2e2;
+  color: #991b1b;
+  border-left: 4px solid #ef4444;
+}
+
+/* Células coloridas no histórico */
+.cel-atencao {
+  background: #fef9c3 !important;
+  color: #854d0e !important;
+  font-weight: 600;
+}
+.cel-alerta {
+  background: #fee2e2 !important;
+  color: #991b1b !important;
+  font-weight: 600;
+}

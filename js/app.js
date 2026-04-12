@@ -55,6 +55,36 @@ function classificarIMC(i) {
   return "Obesidade grau III";
 }
 
+function classificarGlicose(v) {
+  v = Number(v || 0);
+  if (!v || v <= 0) return null;
+  if (v < 100) return { cls: "normal",  msg: "✅ Glicose normal (" + v + " mg/dL)" };
+  if (v < 126) return { cls: "atencao", msg: "🟡 Atenção: Glicose " + v + " mg/dL — faixa de pré-diabetes (100–125 mg/dL)" };
+  return         { cls: "alerta",  msg: "🔴 Alerta: Glicose " + v + " mg/dL — elevada. Consulte seu médico." };
+}
+
+function classificarPressao(ps, pd) {
+  ps = Number(ps || 0); pd = Number(pd || 0);
+  if (!ps || ps <= 0) return null;
+  if (ps < 120 && pd < 80) return { cls: "normal",  msg: "✅ Pressão normal (" + ps + "/" + pd + " mmHg)" };
+  if (ps < 140 && pd < 90) return { cls: "atencao", msg: "🟡 Atenção: Pressão " + ps + "/" + pd + " mmHg — pré-hipertensão" };
+  return                    { cls: "alerta",  msg: "🔴 Alerta: Pressão " + ps + "/" + pd + " mmHg — hipertensão. Consulte seu médico." };
+}
+
+function exibirAlertasClinicos(glicose, ps, pd) {
+  let area = document.getElementById("alertasClinicos");
+  if (!area) return;
+  const alertas = [];
+  const cg = classificarGlicose(glicose);
+  const cp = classificarPressao(ps, pd);
+  if (cg && cg.cls !== "normal") alertas.push({ cls: cg.cls, msg: cg.msg });
+  if (cp && cp.cls !== "normal") alertas.push({ cls: cp.cls, msg: cp.msg });
+  if (!alertas.length) { area.innerHTML = ""; return; }
+  area.innerHTML = alertas.map(a =>
+    `<div class="banner-alerta ${a.cls === "alerta" ? "banner-critico" : "banner-atencao"}">${a.msg}</div>`
+  ).join("");
+}
+
 function atualizarResumo(imc) {
   const imcEl = el("imc");
   const classEl = el("classificacao");
@@ -196,8 +226,8 @@ function renderizarTabelaHistorico() {
       "<td>" + (item.peso ? Number(item.peso).toFixed(1) + " kg" : "-") + "</td>" +
       "<td>" + imc + "</td>" +
       // Number() em glicose sanitiza e elimina XSS
-      "<td>" + (item.glicose ? Number(item.glicose) + " mg/dL" : "-") + "</td>" +
-      "<td>" + pressao + "</td>" +
+      "<td class='" + (function(g){ const c=classificarGlicose(g); return c&&c.cls!=="normal"?(c.cls==="alerta"?"cel-alerta":"cel-atencao"):""; })(item.glicose) + "'>" + (item.glicose ? Number(item.glicose) + " mg/dL" : "-") + "</td>" +
+      "<td class='" + (function(ps,pd){ const c=classificarPressao(ps,pd); return c&&c.cls!=="normal"?(c.cls==="alerta"?"cel-alerta":"cel-atencao"):""; })(item.ps,item.pd) + "'>" + pressao + "</td>" +
       // !== null: exibe "0 kcal"/"0.0 g" corretamente em dias de jejum
       "<td>" + (kcalDia !== null ? Math.round(kcalDia) + " kcal" : "-") + "</td>" +
       "<td>" + (protDia  !== null ? Number(protDia).toFixed(1) + " g" : "-") + "</td>";
@@ -264,6 +294,7 @@ function salvar() {
 
   if (typeof renderizarGraficoPainel === "function") renderizarGraficoPainel();
 
+  exibirAlertasClinicos(glicose, ps, pd);
   alert("Dados do dia salvos com sucesso.");
 }
 
