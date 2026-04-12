@@ -9,6 +9,60 @@ const alimentosBase = [
   { nome: "Banana", proteina: 1, carbo: 23, gordura: 0.3, calorias: 96, fonte: "BASE" }
 ];
 
+const MEDIDAS_CASEIRAS = {
+  "Arroz cozido":        [{ l:"1 colher de sopa", g:25 }, { l:"1 escumadeira", g:80 }, { l:"1 xícara", g:160 }, { l:"1 prato raso", g:250 }],
+  "Arroz":               [{ l:"1 colher de sopa", g:25 }, { l:"1 escumadeira", g:80 }, { l:"1 xícara", g:160 }, { l:"1 prato raso", g:250 }],
+  "Feijão":              [{ l:"1 concha pequena", g:60 }, { l:"1 concha média", g:90 }, { l:"1 xícara", g:180 }],
+  "Macarrão":            [{ l:"1 colher de sopa", g:25 }, { l:"1 xícara", g:140 }, { l:"1 prato raso", g:220 }],
+  "Pão de forma":        [{ l:"1 fatia", g:25 }],
+  "Pão francês":         [{ l:"1 unidade pequena", g:50 }, { l:"1 unidade grande", g:80 }],
+  "Frango":              [{ l:"1 filé pequeno", g:80 }, { l:"1 filé médio", g:120 }, { l:"1 filé grande", g:180 }, { l:"1 colher de sopa desfiado", g:20 }],
+  "Carne bovina":        [{ l:"1 bife pequeno", g:80 }, { l:"1 bife médio", g:120 }, { l:"1 bife grande", g:180 }],
+  "Ovo":                 [{ l:"1 unidade pequeno", g:45 }, { l:"1 unidade médio", g:55 }, { l:"1 unidade grande", g:65 }],
+  "Atum":                [{ l:"1 lata escorrida", g:120 }, { l:"1 colher de sopa", g:20 }],
+  "Leite":               [{ l:"1 copo (200ml)", g:200 }, { l:"1 xícara (240ml)", g:240 }],
+  "Queijo minas":        [{ l:"1 fatia fina", g:25 }, { l:"1 fatia grossa", g:40 }],
+  "Iogurte":             [{ l:"1 pote pequeno", g:100 }, { l:"1 pote grande", g:170 }],
+  "Banana":              [{ l:"1 unidade pequena", g:80 }, { l:"1 unidade média", g:100 }, { l:"1 unidade grande", g:130 }],
+  "Maçã":                [{ l:"1 unidade pequena", g:100 }, { l:"1 unidade média", g:140 }],
+  "Mamão":               [{ l:"1 fatia média", g:150 }, { l:"1 xícara picado", g:145 }],
+  "Laranja":             [{ l:"1 unidade pequena", g:100 }, { l:"1 unidade média", g:140 }],
+  "Azeite":              [{ l:"1 colher de chá", g:5 }, { l:"1 colher de sopa", g:13 }],
+  "Óleo":                [{ l:"1 colher de chá", g:5 }, { l:"1 colher de sopa", g:13 }],
+  "Manteiga":            [{ l:"1 ponta de faca", g:5 }, { l:"1 colher de chá", g:8 }, { l:"1 colher de sopa", g:15 }],
+  "Batata":              [{ l:"1 unidade pequena", g:80 }, { l:"1 unidade média", g:130 }, { l:"1 colher de sopa amassada", g:30 }],
+  "Batata doce":         [{ l:"1 unidade pequena", g:80 }, { l:"1 unidade média", g:130 }, { l:"1 colher de sopa amassada", g:30 }],
+  "Aveia":               [{ l:"1 colher de sopa", g:15 }, { l:"4 colheres de sopa", g:60 }, { l:"1 xícara", g:90 }],
+  "Granola":             [{ l:"1 colher de sopa", g:15 }, { l:"4 colheres de sopa", g:60 }],
+  "Whey":                [{ l:"1 scoop (dose)", g:30 }],
+  "_default":            [{ l:"1 colher de chá", g:5 }, { l:"1 colher de sopa", g:15 }, { l:"1 colher de servir", g:30 }, { l:"1 xícara", g:100 }, { l:"1 unidade", g:100 }, { l:"1 porção (50g)", g:50 }, { l:"1 porção (100g)", g:100 }]
+};
+
+function obterMedidas(nomeAlimento) {
+  if (!nomeAlimento) return MEDIDAS_CASEIRAS["_default"];
+  const chave = Object.keys(MEDIDAS_CASEIRAS).find(k =>
+    k !== "_default" && nomeAlimento.toLowerCase().includes(k.toLowerCase())
+  );
+  return MEDIDAS_CASEIRAS[chave] || MEDIDAS_CASEIRAS["_default"];
+}
+
+function popularMedidas(nomeAlimento) {
+  const sel = document.getElementById("medidaCaseira");
+  const campo = document.getElementById("campaMedidaCaseira");
+  if (!sel || !campo) return;
+  const medidas = obterMedidas(nomeAlimento);
+  sel.innerHTML = '<option value="">— digitar em gramas —</option>' +
+    medidas.map(m => `<option value="${m.g}">${m.l} ≈ ${m.g}g</option>`).join("");
+  campo.style.display = "block";
+}
+
+function aplicarMedidaCaseira() {
+  const sel = document.getElementById("medidaCaseira");
+  const qtd = document.getElementById("quantidadeAlimento");
+  if (!sel || !qtd || !sel.value) return;
+  qtd.value = sel.value;
+}
+
 function obterDataAtualRegistro() {
   const campo = document.getElementById("dataRegistro");
   return campo && campo.value ? campo.value : new Date().toISOString().split("T")[0];
@@ -77,6 +131,11 @@ function renderizarRefeicaoAtual() {
       <div class="field">
         <label for="selectAlimento">Alimentos</label>
         <select id="selectAlimento" size="8"></select>
+      </div>
+
+      <div class="field" id="campaMedidaCaseira" style="display:none;">
+        <label for="medidaCaseira">Medida caseira</label>
+        <select id="medidaCaseira" onchange="aplicarMedidaCaseira()"></select>
       </div>
 
       <div class="field">
@@ -384,6 +443,14 @@ function atualizarListaAlimentos(lista = null) {
     option.text = `${semNutrientes ? "⚠ " : ""}${a.nome} | Prot ${Number(a.proteina || 0).toFixed(1)}g | Kcal ${Number(a.calorias || 0).toFixed(0)} | ${a.fonte || "PERSONALIZADO"}`;
     select.appendChild(option);
   });
+  if (!select._medidaListenerAdded) {
+    select.addEventListener("change", function() {
+      const nome = this.options[this.selectedIndex]?.text?.split(" | ")[0] || "";
+      popularMedidas(nome);
+      document.getElementById("medidaCaseira") && (document.getElementById("medidaCaseira").value = "");
+    });
+    select._medidaListenerAdded = true;
+  }
 }
 
 function filtrarAlimentos() {
