@@ -1190,3 +1190,4 @@ document.addEventListener("DOMContentLoaded", function () {
   refeicaoAtual = "cafe";
   // A inicialização dos alimentos é chamada por mostrarApp() em auth.js
   // após os dados da nuvem serem carregados
+});
