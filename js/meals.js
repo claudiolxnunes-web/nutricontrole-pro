@@ -9,36 +9,210 @@ const alimentosBase = [
   { nome: "Banana", proteina: 1, carbo: 23, gordura: 0.3, calorias: 96, fonte: "BASE" }
 ];
 
-const MEDIDAS_CASEIRAS = {
+const MEDIDAS_POR_TIPO = {
+  "cereal":    [{ l: "1 colher de sopa", g: 25 }, { l: "1 escumadeira", g: 80 }, { l: "1 xícara", g: 160 }, { l: "1 prato raso", g: 250 }],
+  "pao":       [{ l: "1 fatia", g: 25 }, { l: "1 unidade", g: 50 }],
+  "carne":     [{ l: "1 bife pequeno", g: 80 }, { l: "1 bife médio", g: 120 }, { l: "1 bife grande", g: 180 }],
+  "frango":    [{ l: "1 filé pequeno", g: 80 }, { l: "1 filé médio", g: 120 }, { l: "1 filé grande", g: 180 }, { l: "1 colher de sopa desfiado", g: 20 }],
+  "peixe":     [{ l: "1 filé pequeno", g: 100 }, { l: "1 filé médio", g: 150 }, { l: "1 filé grande", g: 200 }],
+  "embutido":  [{ l: "1 fatia fina", g: 15 }, { l: "1 fatia média", g: 25 }, { l: "1 fatia grossa", g: 40 }],
+  "ovo":       [{ l: "1 unidade pequeno", g: 45 }, { l: "1 unidade médio", g: 55 }, { l: "1 unidade grande", g: 65 }],
+  "leite":     [{ l: "1 copo (200ml)", g: 200 }, { l: "1 xícara (240ml)", g: 240 }],
+  "queijo":    [{ l: "1 fatia fina (1cm)", g: 25 }, { l: "1 fatia grossa (2cm)", g: 50 }],
+  "fruta":     [{ l: "1 unidade pequena", g: 80 }, { l: "1 unidade média", g: 100 }, { l: "1 unidade grande", g: 130 }],
+  "legume":    [{ l: "1 folha", g: 20 }, { l: "1 xícara picada", g: 50 }],
+  "tuberculo": [{ l: "1 unidade pequena", g: 80 }, { l: "1 unidade média", g: 130 }],
+  "oleo":      [{ l: "1 colher de chá", g: 5 }, { l: "1 colher de sopa", g: 13 }],
+  "suplemento": [{ l: "1 scoop padrão", g: 30 }],
+  "bebida":    [{ l: "1 copo (200ml)", g: 200 }, { l: "1 xícara", g: 240 }],
+  "doce":      [{ l: "1 porção", g: 50 }],
+  "tempero":   [{ l: "1 pitada", g: 1 }, { l: "1 colher de chá", g: 5 }],
+  "outro":     [{ l: "1 colher de chá", g: 5 }, { l: "1 colher de sopa", g: 15 }, { l: "1 xícara", g: 100 }, { l: "1 unidade", g: 100 }]
+};
+
+function obterMedidasPorTipo(tipo) {
+  return MEDIDAS_POR_TIPO[tipo] || MEDIDAS_POR_TIPO["outro"];
+}
+  // Cereais e grãos cozidos
   "Arroz cozido":        [{ l:"1 colher de sopa", g:25 }, { l:"1 escumadeira", g:80 }, { l:"1 xícara", g:160 }, { l:"1 prato raso", g:250 }],
   "Arroz":               [{ l:"1 colher de sopa", g:25 }, { l:"1 escumadeira", g:80 }, { l:"1 xícara", g:160 }, { l:"1 prato raso", g:250 }],
   "Feijão":              [{ l:"1 concha pequena", g:60 }, { l:"1 concha média", g:90 }, { l:"1 xícara", g:180 }],
   "Macarrão":            [{ l:"1 colher de sopa", g:25 }, { l:"1 xícara", g:140 }, { l:"1 prato raso", g:220 }],
+  
+  // Pães
   "Pão de forma":        [{ l:"1 fatia", g:25 }],
   "Pão francês":         [{ l:"1 unidade pequena", g:50 }, { l:"1 unidade grande", g:80 }],
+  "Pão":                 [{ l:"1 fatia", g:25 }, { l:"1 unidade", g:50 }],
+  "Torradas":            [{ l:"1 unidade", g:8 }],
+  "Cuscuz":              [{ l:"1 xícara", g:150 }, { l:"1 prato", g:200 }],
+  "Tapioca":             [{ l:"1 unidade pequena", g:40 }, { l:"1 unidade média", g:60 }, { l:"1 unidade grande", g:80 }],
+  "Crepioca":            [{ l:"1 unidade", g:60 }],
+  
+  // Carnes
   "Frango":              [{ l:"1 filé pequeno", g:80 }, { l:"1 filé médio", g:120 }, { l:"1 filé grande", g:180 }, { l:"1 colher de sopa desfiado", g:20 }],
+  "Peito de frango":     [{ l:"1 filé pequeno", g:100 }, { l:"1 filé médio", g:150 }, { l:"1 filé grande", g:200 }],
   "Carne bovina":        [{ l:"1 bife pequeno", g:80 }, { l:"1 bife médio", g:120 }, { l:"1 bife grande", g:180 }],
+  "Carne":               [{ l:"1 bife", g:120 }, { l:"1 porção", g:150 }],
+  "Almôndega":           [{ l:"1 unidade pequena", g:30 }, { l:"1 unidade média", g:50 }, { l:"1 unidade grande", g:80 }],
+  "Linguiça":            [{ l:"1 unidade fina", g:50 }, { l:"1 unidade grossa", g:80 }],
+  "Salsicha":            [{ l:"1 unidade", g:50 }],
+  "Bacon":               [{ l:"1 fatia fina", g:15 }, { l:"1 fatia grossa", g:25 }],
+  "Presunto":            [{ l:"1 fatia fina", g:15 }, { l:"1 fatia média", g:25 }, { l:"1 fatia grossa", g:40 }],
+  "Mortadela":           [{ l:"1 fatia fina", g:15 }, { l:"1 fatia média", g:25 }],
+  "Apresuntado":         [{ l:"1 fatia", g:20 }],
+  "Peito de peru":       [{ l:"1 fatia", g:20 }],
+  "Salame":              [{ l:"1 fatia fina", g:10 }, { l:"1 fatia grossa", g:20 }],
+  "Atum":                [{ l:"1 lata pequena (120g)", g:120 }, { l:"1 colher de sopa", g:20 }],
+  "Sardinha":            [{ l:"1 lata", g:150 }],
+  
+  // Peixes
+  "Salmão":              [{ l:"1 filé pequeno", g:100 }, { l:"1 filé médio", g:150 }, { l:"1 filé grande", g:200 }],
+  "Tilápia":             [{ l:"1 filé", g:120 }],
+  "Merluza":             [{ l:"1 filé", g:100 }],
+  "Bacalhau":            [{ l:"1 posta pequena", g:100 }, { l:"1 posta média", g:150 }],
+  "Camarão":             [{ l:"1 colher de sopa", g:25 }, { l:"1 porção", g:100 }],
+  
+  // Ovos
   "Ovo":                 [{ l:"1 unidade pequeno", g:45 }, { l:"1 unidade médio", g:55 }, { l:"1 unidade grande", g:65 }],
-  "Atum":                [{ l:"1 lata escorrida", g:120 }, { l:"1 colher de sopa", g:20 }],
+  "Clara de ovo":        [{ l:"1 unidade", g:35 }],
+  "Gema de ovo":         [{ l:"1 unidade", g:20 }],
+  
+  // Laticínios
   "Leite":               [{ l:"1 copo (200ml)", g:200 }, { l:"1 xícara (240ml)", g:240 }],
-  "Queijo minas":        [{ l:"1 fatia fina", g:25 }, { l:"1 fatia grossa", g:40 }],
+  "Queijo minas":        [{ l:"1 fatia fina (1cm)", g:25 }, { l:"1 fatia grossa (2cm)", g:50 }],
+  "Queijo":              [{ l:"1 fatia", g:30 }, { l:"1 porção (50g)", g:50 }],
+  "Queijo cottage":      [{ l:"1 colher de sopa", g:20 }, { l:"1 xícara", g:200 }],
+  "Queijo ricota":       [{ l:"1 colher de sopa", g:25 }, { l:"1 xícara", g:250 }],
+  "Queijo parmesão":     [{ l:"1 colher de sopa ralado", g:10 }, { l:"1 xícara ralado", g:100 }],
+  "Queijo mussarela":    [{ l:"1 fatia", g:20 }],
+  "Requeijão":           [{ l:"1 colher de sopa", g:20 }, { l:"1 colher de sobremesa", g:15 }],
   "Iogurte":             [{ l:"1 pote pequeno", g:100 }, { l:"1 pote grande", g:170 }],
+  "Coalhada":            [{ l:"1 colher de sopa", g:20 }],
+  
+  // Frutas
   "Banana":              [{ l:"1 unidade pequena", g:80 }, { l:"1 unidade média", g:100 }, { l:"1 unidade grande", g:130 }],
   "Maçã":                [{ l:"1 unidade pequena", g:100 }, { l:"1 unidade média", g:140 }],
   "Mamão":               [{ l:"1 fatia média", g:150 }, { l:"1 xícara picado", g:145 }],
   "Laranja":             [{ l:"1 unidade pequena", g:100 }, { l:"1 unidade média", g:140 }],
+  "Pera":                [{ l:"1 unidade", g:130 }],
+  "Melancia":            [{ l:"1 fatia média", g:300 }, { l:"1 xícara picada", g:150 }],
+  "Melão":               [{ l:"1 fatia", g:150 }],
+  "Uva":                 [{ l:"1 cacho pequeno", g:100 }, { l:"10 unidades", g:80 }],
+  "Morango":             [{ l:"1 unidade", g:12 }, { l:"1 xícara", g:150 }],
+  "Abacaxi":             [{ l:"1 fatia grossa", g:100 }],
+  "Kiwi":                [{ l:"1 unidade", g:75 }],
+  "Pêssego":             [{ l:"1 unidade", g:100 }],
+  "Ameixa":              [{ l:"1 unidade", g:30 }],
+  "Manga":               [{ l:"1 unidade pequena", g:200 }, { l:"1 unidade média", g:300 }],
+  "Maracujá":            [{ l:"1 unidade", g:50 }],
+  "Limão":               [{ l:"1 unidade", g:50 }],
+  "Abacate":             [{ l:"1/2 unidade", g:100 }, { l:"1 unidade", g:200 }],
+  
+  // Legumes e verduras
+  "Alface":              [{ l:"1 folha grande", g:15 }, { l:"1 xícara picada", g:50 }],
+  "Tomate":              [{ l:"1 unidade pequena", g:80 }, { l:"1 unidade média", g:120 }],
+  "Cenoura":             [{ l:"1 unidade pequena", g:50 }, { l:"1 unidade média", g:80 }],
+  "Beterraba":           [{ l:"1 unidade pequena", g:80 }],
+  "Brócolis":            [{ l:"1 florete", g:20 }, { l:"1 xícara", g:90 }],
+  "Couve-flor":          [{ l:"1 xícara", g:100 }],
+  "Espinafre":           [{ l:"1 xícara", g:30 }],
+  "Repolho":             [{ l:"1 xícara picado", g:70 }],
+  "Pepino":              [{ l:"1 unidade", g:150 }],
+  "Abobrinha":           [{ l:"1 unidade pequena", g:100 }],
+  "Berinjela":           [{ l:"1 unidade", g:200 }],
+  "Chuchu":              [{ l:"1 unidade", g:150 }],
+  "Vagem":               [{ l:"10 unidades", g:50 }],
+  "Milho":               [{ l:"1 espiga pequena", g:100 }, { l:"1 espiga média", g:150 }],
+  "Ervilha":             [{ l:"1 colher de sopa", g:20 }, { l:"1 xícara", g:160 }],
+  "Acelga":              [{ l:"1 folha", g:20 }],
+  "Rúcula":              [{ l:"1 xícara", g:20 }],
+  "Agrião":              [{ l:"1 xícara", g:30 }],
+  "Couve":               [{ l:"1 folha", g:25 }],
+  
+  // Tubérculos
+  "Batata":              [{ l:"1 unidade pequena", g:80 }, { l:"1 unidade média", g:130 }, { l:"1 colher de sopa amassada", g:30 }],
+  "Batata doce":         [{ l:"1 unidade pequena", g:80 }, { l:"1 unidade média", g:130 }],
+  "Mandioca":            [{ l:"1 pedaço", g:100 }],
+  "Inhame":              [{ l:"1 pedaço", g:100 }],
+  "Cará":                [{ l:"1 pedaço", g:80 }],
+  
+  // Óleos e gorduras
   "Azeite":              [{ l:"1 colher de chá", g:5 }, { l:"1 colher de sopa", g:13 }],
   "Óleo":                [{ l:"1 colher de chá", g:5 }, { l:"1 colher de sopa", g:13 }],
   "Manteiga":            [{ l:"1 ponta de faca", g:5 }, { l:"1 colher de chá", g:8 }, { l:"1 colher de sopa", g:15 }],
-  "Batata":              [{ l:"1 unidade pequena", g:80 }, { l:"1 unidade média", g:130 }, { l:"1 colher de sopa amassada", g:30 }],
-  "Batata doce":         [{ l:"1 unidade pequena", g:80 }, { l:"1 unidade média", g:130 }, { l:"1 colher de sopa amassada", g:30 }],
+  "Margarina":           [{ l:"1 colher de chá", g:5 }, { l:"1 colher de sopa", g:15 }],
+  "Creme de leite":      [{ l:"1 colher de sopa", g:20 }],
+  "Leite de coco":       [{ l:"1 colher de sopa", g:15 }],
+  
+  // Cereais e farinhas
   "Aveia":               [{ l:"1 colher de sopa", g:15 }, { l:"4 colheres de sopa", g:60 }, { l:"1 xícara", g:90 }],
   "Granola":             [{ l:"1 colher de sopa", g:15 }, { l:"4 colheres de sopa", g:60 }],
-  "Whey":                [{ l:"1 scoop (dose)", g:30 }],
+  "Farinha de trigo":    [{ l:"1 colher de sopa", g:10 }, { l:"1 xícara", g:120 }],
+  "Farinha de mandioca": [{ l:"1 colher de sopa", g:12 }, { l:"1 xícara", g:150 }],
+  "Fubá":                [{ l:"1 colher de sopa", g:15 }, { l:"1 xícara", g:150 }],
+  "Polenta":             [{ l:"1 colher de sopa", g:20 }],
+  
+  // Suplementos
+  "Whey":                [{ l:"1 scoop padrão", g:30 }],
+  "Caseína":             [{ l:"1 scoop", g:30 }],
+  "Albumina":            [{ l:"1 colher de sopa", g:10 }],
+  "BCAA":                [{ l:"1 scoop", g:10 }],
+  "Creatina":            [{ l:"1 colher de chá", g:5 }],
+  "Glutamina":           [{ l:"1 colher de chá", g:5 }],
+  
+  // Bebidas
+  "Café":                [{ l:"1 xícara (50ml)", g:50 }],
+  "Chá":                 [{ l:"1 xícara", g:200 }],
+  "Suco de laranja":     [{ l:"1 copo (200ml)", g:200 }],
+  "Refrigerante":        [{ l:"1 copo (200ml)", g:200 }, { l:"1 lata (350ml)", g:350 }],
+  "Cerveja":             [{ l:"1 lata (350ml)", g:350 }, { l:"1 garrafa (600ml)", g:600 }],
+  "Vinho":               [{ l:"1 taça (150ml)", g:150 }],
+  "Água de coco":        [{ l:"1 copo (200ml)", g:200 }],
+  
+  // Doces e sobremesas
+  "Açúcar":              [{ l:"1 colher de chá", g:5 }, { l:"1 colher de sopa", g:15 }],
+  "Mel":                 [{ l:"1 colher de chá", g:7 }, { l:"1 colher de sopa", g:20 }],
+  "Chocolate":           [{ l:"1 quadradinho", g:5 }, { l:"1 barra pequena", g:25 }],
+  "Gelatina":            [{ l:"1 xícara", g:200 }],
+  "Pudim":               [{ l:"1 fatia", g:100 }],
+  "Mousse":              [{ l:"1 porção", g:100 }],
+  "Bolo":                [{ l:"1 fatia fina", g:60 }, { l:"1 fatia média", g:100 }],
+  "Brigadeiro":          [{ l:"1 unidade", g:30 }],
+  "Beijinho":            [{ l:"1 unidade", g:30 }],
+  
+  // Miscelânea
+  "Mostarda":            [{ l:"1 colher de chá", g:5 }],
+  "Ketchup":             [{ l:"1 colher de sopa", g:15 }],
+  "Maionese":            [{ l:"1 colher de sopa", g:15 }],
+  "Molho de tomate":     [{ l:"1 colher de sopa", g:15 }],
+  "Molho shoyu":         [{ l:"1 colher de sopa", g:15 }],
+  "Vinagre":             [{ l:"1 colher de sopa", g:15 }],
+  "Sal":                 [{ l:"1 pitada", g:1 }, { l:"1 colher de chá", g:6 }],
+  "Pimenta":             [{ l:"1 pitada", g:1 }],
+  "Orégano":             [{ l:"1 colher de chá", g:2 }],
+  "Manjericão":          [{ l:"1 folha", g:1 }],
+  "Salsa":               [{ l:"1 colher de sopa picada", g:5 }],
+  "Cebolinha":           [{ l:"1 colher de sopa picada", g:5 }],
+  "Alho":                [{ l:"1 dente", g:3 }, { l:"1 colher de sopa picado", g:10 }],
+  "Cebola":              [{ l:"1 unidade pequena", g:80 }, { l:"1 colher de sopa picada", g:15 }],
+  "Tomate seco":         [{ l:"1 unidade", g:10 }],
+  "Azeitona":            [{ l:"1 unidade", g:5 }],
+  "Palmito":             [{ l:"1 unidade", g:30 }],
+  "Milho verde":         [{ l:"1 colher de sopa", g:20 }, { l:"1 xícara", g:160 }],
+  "Ervilha em conserva": [{ l:"1 colher de sopa", g:20 }],
+  "Seleta de legumes":   [{ l:"1 colher de sopa", g:20 }],
+  
+  // Padrão para alimentos não listados
   "_default":            [{ l:"1 colher de chá", g:5 }, { l:"1 colher de sopa", g:15 }, { l:"1 colher de servir", g:30 }, { l:"1 xícara", g:100 }, { l:"1 unidade", g:100 }, { l:"1 porção (50g)", g:50 }, { l:"1 porção (100g)", g:100 }]
 };
 
-function obterMedidas(nomeAlimento) {
+function obterMedidas(nomeAlimento, tipoAlimento) {
+  // Se tem tipo definido, usa as medidas do tipo
+  if (tipoAlimento && MEDIDAS_POR_TIPO[tipoAlimento]) {
+    return MEDIDAS_POR_TIPO[tipoAlimento];
+  }
+  
+  // Tenta encontrar pelo nome
   if (!nomeAlimento) return MEDIDAS_CASEIRAS["_default"];
   const chave = Object.keys(MEDIDAS_CASEIRAS).find(k =>
     k !== "_default" && nomeAlimento.toLowerCase().includes(k.toLowerCase())
@@ -50,7 +224,12 @@ function popularMedidas(nomeAlimento) {
   const sel = document.getElementById("medidaCaseira");
   const campo = document.getElementById("campaMedidaCaseira");
   if (!sel || !campo) return;
-  const medidas = obterMedidas(nomeAlimento);
+  
+  // Busca o alimento na lista para obter o tipo
+  const alimento = obterTodosAlimentos().find(a => a.nome === nomeAlimento);
+  const tipo = alimento?.tipo;
+  
+  const medidas = obterMedidas(nomeAlimento, tipo);
   sel.innerHTML = '<option value="">— digitar em gramas —</option>' +
     medidas.map(m => `<option value="${m.g}">${m.l} ≈ ${m.g}g</option>`).join("");
   campo.style.display = "block";
@@ -153,6 +332,30 @@ function renderizarRefeicaoAtual() {
         <h3 id="tituloCadastro">Novo alimento</h3>
         <input type="hidden" id="editandoNomeOriginal">
         <div class="field"><label>Nome</label><input id="novoNome" placeholder="Nome do alimento"></div>
+        <div class="field">
+          <label>Tipo de alimento</label>
+          <select id="novoTipo">
+            <option value="outro">Outro / Não sei</option>
+            <option value="cereal">Cereal ou Grão (arroz, feijão, macarrão)</option>
+            <option value="pao">Pão ou Massa</option>
+            <option value="carne">Carne Vermelha (bovina, suína)</option>
+            <option value="frango">Frango ou Ave</option>
+            <option value="peixe">Peixe ou Fruto do Mar</option>
+            <option value="embutido">Embutido (presunto, mortadela, salame)</option>
+            <option value="ovo">Ovo</option>
+            <option value="leite">Leite ou Iogurte</option>
+            <option value="queijo">Queijo</option>
+            <option value="fruta">Fruta</option>
+            <option value="legume">Legume ou Verdura</option>
+            <option value="tuberculo">Tubérculo (batata, mandioca)</option>
+            <option value="oleo">Óleo ou Gordura</option>
+            <option value="cereal">Cereal ou Aveia</option>
+            <option value="suplemento">Suplemento (whey, creatina)</option>
+            <option value="bebida">Bebida</option>
+            <option value="doce">Doce ou Sobremesa</option>
+            <option value="tempero">Tempero ou Condimento</option>
+          </select>
+        </div>
         <div class="field"><label>Proteína (g/100g)</label><input id="novoProt" type="number" inputmode="decimal" min="0" step="0.1" placeholder="0"></div>
         <div class="field"><label>Carboidrato (g/100g)</label><input id="novoCarb" type="number" inputmode="decimal" min="0" step="0.1" placeholder="0"></div>
         <div class="field"><label>Gordura (g/100g)</label><input id="novoGord" type="number" inputmode="decimal" min="0" step="0.1" placeholder="0"></div>
@@ -367,6 +570,7 @@ function salvarNovoAlimento() {
   const carbo    = parseFloat(document.getElementById("novoCarb")?.value || 0);
   const gordura  = parseFloat(document.getElementById("novoGord")?.value || 0);
   const calorias = parseFloat(document.getElementById("novoCal")?.value  || 0);
+  const tipo     = document.getElementById("novoTipo")?.value || "outro";
 
   if (!nome) {
     alert("Informe o nome do alimento.");
@@ -377,7 +581,7 @@ function salvarNovoAlimento() {
     if (!confirm("Todos os nutrientes estão zerados. Deseja salvar mesmo assim?")) return;
   }
 
-  const novo = { nome, proteina, carbo, gordura, calorias, fonte: "PERSONALIZADO" };
+  const novo = { nome, proteina, carbo, gordura, calorias, fonte: "PERSONALIZADO", tipo };
 
   const lista = JSON.parse(localStorage.getItem("alimentos") || "[]");
 
