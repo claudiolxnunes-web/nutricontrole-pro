@@ -71,6 +71,7 @@ function mostrarApp() {
   if (typeof renderizarGraficoNutricao === "function") renderizarGraficoNutricao();
   if (typeof renderizarTabelaHistorico === "function") renderizarTabelaHistorico();
   if (typeof inicializarAlimentos === "function") inicializarAlimentos();
+  if (typeof renderizarRefeicaoAtual === "function") renderizarRefeicaoAtual();
 }
 
 function mostrarTelaLogin() {
