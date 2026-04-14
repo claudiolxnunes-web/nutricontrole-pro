@@ -33,8 +33,6 @@ const MEDIDAS_POR_TIPO = {
 function obterMedidasPorTipo(tipo) {
   return MEDIDAS_POR_TIPO[tipo] || MEDIDAS_POR_TIPO["outro"];
 }
-
-const MEDIDAS_CASEIRAS = {
   // Cereais e grãos cozidos
   "Arroz cozido":        [{ l:"1 colher de sopa", g:25 }, { l:"1 escumadeira", g:80 }, { l:"1 xícara", g:160 }, { l:"1 prato raso", g:250 }],
   "Arroz":               [{ l:"1 colher de sopa", g:25 }, { l:"1 escumadeira", g:80 }, { l:"1 xícara", g:160 }, { l:"1 prato raso", g:250 }],
