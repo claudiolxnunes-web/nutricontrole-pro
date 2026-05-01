@@ -11,14 +11,17 @@ const alimentosBase = [
 
 const MEDIDAS_POR_TIPO = {
   cereal: [
-    { l: "1 colher de sopa", g: 25 },
-    { l: "1 escumadeira", g: 80 },
-    { l: "1 xícara", g: 160 },
+    { l: "1 colher de sopa", g: 20 },
+    { l: "1 escumadeira", g: 75 },
+    { l: "1 xícara", g: 165 },
     { l: "1 prato raso", g: 250 }
   ],
   pao: [
-    { l: "1 fatia", g: 25 },
-    { l: "1 unidade", g: 50 }
+    { l: "1 fatia fina", g: 22 },
+    { l: "1 fatia padrão", g: 25 },
+    { l: "1 fatia grossa", g: 35 },
+    { l: "1 unidade pequena", g: 50 },
+    { l: "1 unidade grande", g: 100 }
   ],
   carne: [
     { l: "1 bife pequeno", g: 80 },
@@ -48,16 +51,19 @@ const MEDIDAS_POR_TIPO = {
   ],
   leite: [
     { l: "1 copo (200ml)", g: 200 },
-    { l: "1 xícara (240ml)", g: 240 }
+    { l: "1 xícara (240ml)", g: 240 },
+    { l: "1 caneca (300ml)", g: 300 }
   ],
   queijo: [
     { l: "1 fatia fina (1cm)", g: 25 },
-    { l: "1 fatia grossa (2cm)", g: 50 }
+    { l: "1 fatia média (1,5cm)", g: 35 },
+    { l: "1 fatia grossa (2cm)", g: 50 },
+    { l: "1 colher de sopa ralado", g: 8 }
   ],
   fruta: [
     { l: "1 unidade pequena", g: 80 },
     { l: "1 unidade média", g: 100 },
-    { l: "1 unidade grande", g: 130 }
+    { l: "1 unidade grande", g: 150 }
   ],
   legume: [
     { l: "1 folha", g: 20 },
@@ -68,67 +74,84 @@ const MEDIDAS_POR_TIPO = {
     { l: "1 unidade média", g: 130 }
   ],
   oleo: [
-    { l: "1 colher de chá", g: 5 },
-    { l: "1 colher de sopa", g: 13 }
+    { l: "1 colher de chá", g: 4 },
+    { l: "1 colher de sopa", g: 12 }
   ],
   suplemento: [
-    { l: "1 scoop padrão", g: 30 }
+    { l: "1 scoop padrão (30g)", g: 30 },
+    { l: "1 scoop pequeno (20g)", g: 20 },
+    { l: "1 colher de sopa", g: 10 }
   ],
   bebida: [
     { l: "1 copo (200ml)", g: 200 },
-    { l: "1 xícara", g: 240 }
+    { l: "1 xícara (240ml)", g: 240 },
+    { l: "1 caneca (300ml)", g: 300 },
+    { l: "1 lata (350ml)", g: 350 }
   ],
   doce: [
-    { l: "1 porção", g: 50 }
+    { l: "1 colher de chá", g: 5 },
+    { l: "1 colher de sobremesa", g: 10 },
+    { l: "1 colher de sopa", g: 20 },
+    { l: "1 porção (50g)", g: 50 },
+    { l: "1 fatia", g: 80 }
   ],
   tempero: [
     { l: "1 pitada", g: 1 },
     { l: "1 colher de chá", g: 5 }
   ],
   outro: [
-    { l: "1 colher de chá", g: 5 },
-    { l: "1 colher de sopa", g: 15 },
+    { l: "1 colher de chá", g: 4 },
+    { l: "1 colher de sopa", g: 13 },
     { l: "1 xícara", g: 100 },
     { l: "1 unidade", g: 100 }
   ]
 };
 
 const MEDIDAS_CASEIRAS = {
-  // Cereais e grãos cozidos
+  // Cereais e grãos cozidos (baseado na Tabela TACO e literatura nutricional brasileira)
   "Arroz cozido": [
-    { l: "1 colher de sopa", g: 25 },
-    { l: "1 escumadeira", g: 80 },
-    { l: "1 xícara", g: 160 },
+    { l: "1 colher de sopa", g: 20 },
+    { l: "1 escumadeira", g: 75 },
+    { l: "1 xícara", g: 165 },
     { l: "1 prato raso", g: 250 }
   ],
   "Arroz": [
-    { l: "1 colher de sopa", g: 25 },
-    { l: "1 escumadeira", g: 80 },
-    { l: "1 xícara", g: 160 },
+    { l: "1 colher de sopa", g: 20 },
+    { l: "1 escumadeira", g: 75 },
+    { l: "1 xícara", g: 165 },
     { l: "1 prato raso", g: 250 }
   ],
   "Feijão": [
     { l: "1 concha pequena", g: 60 },
-    { l: "1 concha média", g: 90 },
-    { l: "1 xícara", g: 180 }
+    { l: "1 concha média", g: 85 },
+    { l: "1 xícara", g: 172 }
   ],
   "Macarrão": [
-    { l: "1 colher de sopa", g: 25 },
-    { l: "1 xícara", g: 140 },
+    { l: "1 colher de sopa", g: 20 },
+    { l: "1 xícara", g: 160 },
     { l: "1 prato raso", g: 220 }
   ],
 
   // Pães
-  "Pão de forma": [{ l: "1 fatia", g: 25 }],
+  "Pão de forma": [
+    { l: "1 fatia fina", g: 22 },
+    { l: "1 fatia padrão", g: 25 },
+    { l: "1 fatia grossa", g: 35 }
+  ],
   "Pão francês": [
     { l: "1 unidade pequena", g: 50 },
-    { l: "1 unidade grande", g: 80 }
+    { l: "1 unidade média", g: 70 },
+    { l: "1 unidade grande", g: 100 }
   ],
   "Pão": [
     { l: "1 fatia", g: 25 },
-    { l: "1 unidade", g: 50 }
+    { l: "1 unidade pequena", g: 50 },
+    { l: "1 unidade grande", g: 100 }
   ],
-  "Torradas": [{ l: "1 unidade", g: 8 }],
+  "Torradas": [
+    { l: "1 unidade", g: 8 },
+    { l: "1 pacotinho (2 torradas)", g: 16 }
+  ],
   "Cuscuz": [
     { l: "1 xícara", g: 150 },
     { l: "1 prato", g: 200 }
@@ -138,7 +161,11 @@ const MEDIDAS_CASEIRAS = {
     { l: "1 unidade média", g: 60 },
     { l: "1 unidade grande", g: 80 }
   ],
-  "Crepioca": [{ l: "1 unidade", g: 60 }],
+  "Crepioca": [
+    { l: "1 unidade pequena", g: 50 },
+    { l: "1 unidade média", g: 70 },
+    { l: "1 unidade grande", g: 90 }
+  ],
 
   // Carnes
   "Frango": [
@@ -158,7 +185,9 @@ const MEDIDAS_CASEIRAS = {
     { l: "1 bife grande", g: 180 }
   ],
   "Carne": [
-    { l: "1 bife", g: 120 },
+    { l: "1 bife pequeno", g: 80 },
+    { l: "1 bife médio", g: 120 },
+    { l: "1 bife grande", g: 180 },
     { l: "1 porção", g: 150 }
   ],
   "Almôndega": [
@@ -168,11 +197,17 @@ const MEDIDAS_CASEIRAS = {
   ],
   "Linguiça": [
     { l: "1 unidade fina", g: 50 },
-    { l: "1 unidade grossa", g: 80 }
+    { l: "1 unidade grossa", g: 80 },
+    { l: "1 gomo", g: 100 }
   ],
-  "Salsicha": [{ l: "1 unidade", g: 50 }],
+  "Salsicha": [
+    { l: "1 unidade fina", g: 40 },
+    { l: "1 unidade padrão", g: 50 },
+    { l: "1 unidade grossa", g: 65 }
+  ],
   "Bacon": [
     { l: "1 fatia fina", g: 15 },
+    { l: "1 fatia média", g: 20 },
     { l: "1 fatia grossa", g: 25 }
   ],
   "Presunto": [
@@ -182,19 +217,39 @@ const MEDIDAS_CASEIRAS = {
   ],
   "Mortadela": [
     { l: "1 fatia fina", g: 15 },
-    { l: "1 fatia média", g: 25 }
+    { l: "1 fatia média", g: 25 },
+    { l: "1 fatia grossa", g: 40 }
   ],
-  "Apresuntado": [{ l: "1 fatia", g: 20 }],
-  "Peito de peru": [{ l: "1 fatia", g: 20 }],
+  "Apresuntado": [
+    { l: "1 fatia fina", g: 15 },
+    { l: "1 fatia média", g: 20 },
+    { l: "1 fatia grossa", g: 30 }
+  ],
+  "Peito de peru": [
+    { l: "1 fatia fina", g: 15 },
+    { l: "1 fatia média", g: 20 },
+    { l: "1 fatia grossa", g: 30 }
+  ],
   "Salame": [
     { l: "1 fatia fina", g: 10 },
+    { l: "1 fatia média", g: 15 },
     { l: "1 fatia grossa", g: 20 }
   ],
-  "Atum": [
-    { l: "1 lata pequena (120g)", g: 120 },
-    { l: "1 colher de sopa", g: 20 }
+  "Salaminho italiano": [
+    { l: "1 fatia fina", g: 8 },
+    { l: "1 fatia média", g: 12 },
+    { l: "3 fatias finas", g: 25 }
   ],
-  "Sardinha": [{ l: "1 lata", g: 150 }],
+  "Atum": [
+    { l: "1 colher de sopa", g: 20 },
+    { l: "1/2 lata (60g)", g: 60 },
+    { l: "1 lata pequena (120g)", g: 120 }
+  ],
+  "Sardinha": [
+    { l: "1 unidade (filé)", g: 25 },
+    { l: "1 lata pequena", g: 90 },
+    { l: "1 lata grande", g: 125 }
+  ],
 
   // Peixes
   "Salmão": [
@@ -202,13 +257,23 @@ const MEDIDAS_CASEIRAS = {
     { l: "1 filé médio", g: 150 },
     { l: "1 filé grande", g: 200 }
   ],
-  "Tilápia": [{ l: "1 filé", g: 120 }],
-  "Merluza": [{ l: "1 filé", g: 100 }],
+  "Tilápia": [
+    { l: "1 filé pequeno", g: 90 },
+    { l: "1 filé médio", g: 120 },
+    { l: "1 filé grande", g: 160 }
+  ],
+  "Merluza": [
+    { l: "1 filé pequeno", g: 80 },
+    { l: "1 filé médio", g: 100 },
+    { l: "1 filé grande", g: 150 }
+  ],
   "Bacalhau": [
-    { l: "1 posta pequena", g: 100 },
-    { l: "1 posta média", g: 150 }
+    { l: "1 posta pequena", g: 80 },
+    { l: "1 posta média", g: 120 },
+    { l: "1 posta grande", g: 180 }
   ],
   "Camarão": [
+    { l: "5 unidades médias", g: 40 },
     { l: "1 colher de sopa", g: 25 },
     { l: "1 porção", g: 100 }
   ],
@@ -219,130 +284,252 @@ const MEDIDAS_CASEIRAS = {
     { l: "1 unidade médio", g: 55 },
     { l: "1 unidade grande", g: 65 }
   ],
-  "Clara de ovo": [{ l: "1 unidade", g: 35 }],
-  "Gema de ovo": [{ l: "1 unidade", g: 20 }],
+  "Clara de ovo": [
+    { l: "1 unidade (clara)", g: 30 },
+    { l: "2 unidades", g: 60 },
+    { l: "3 unidades", g: 90 }
+  ],
+  "Gema de ovo": [
+    { l: "1 unidade (gema)", g: 17 },
+    { l: "2 unidades", g: 34 },
+    { l: "3 unidades", g: 51 }
+  ],
 
   // Laticínios
   "Leite": [
     { l: "1 copo (200ml)", g: 200 },
-    { l: "1 xícara (240ml)", g: 240 }
+    { l: "1 xícara (240ml)", g: 240 },
+    { l: "1 caneca (300ml)", g: 300 }
   ],
   "Queijo minas": [
     { l: "1 fatia fina (1cm)", g: 25 },
+    { l: "1 fatia média (1,5cm)", g: 35 },
     { l: "1 fatia grossa (2cm)", g: 50 }
   ],
   "Queijo": [
-    { l: "1 fatia", g: 30 },
+    { l: "1 fatia fina", g: 20 },
+    { l: "1 fatia padrão", g: 30 },
     { l: "1 porção (50g)", g: 50 }
   ],
   "Queijo cottage": [
-    { l: "1 colher de sopa", g: 20 },
+    { l: "1 colher de sopa", g: 30 },
+    { l: "1/2 xícara", g: 100 },
     { l: "1 xícara", g: 200 }
   ],
   "Queijo ricota": [
     { l: "1 colher de sopa", g: 25 },
-    { l: "1 xícara", g: 250 }
+    { l: "1/2 xícara", g: 100 },
+    { l: "1 xícara", g: 200 }
   ],
   "Queijo parmesão": [
-    { l: "1 colher de sopa ralado", g: 10 },
-    { l: "1 xícara ralado", g: 100 }
+    { l: "1 colher de chá ralado", g: 3 },
+    { l: "1 colher de sopa ralado", g: 8 },
+    { l: "1 xícara ralado", g: 80 }
   ],
-  "Queijo mussarela": [{ l: "1 fatia", g: 20 }],
+  "Queijo mussarela": [
+    { l: "1 fatia fina", g: 15 },
+    { l: "1 fatia média", g: 20 },
+    { l: "1 fatia grossa", g: 30 }
+  ],
   "Requeijão": [
-    { l: "1 colher de sopa", g: 20 },
-    { l: "1 colher de sobremesa", g: 15 }
+    { l: "1 colher de chá", g: 10 },
+    { l: "1 colher de sobremesa", g: 15 },
+    { l: "1 colher de sopa", g: 30 }
   ],
   "Iogurte": [
-    { l: "1 pote pequeno", g: 100 },
-    { l: "1 pote grande", g: 170 }
+    { l: "1 colher de sopa", g: 30 },
+    { l: "1 pote pequeno (100g)", g: 100 },
+    { l: "1 pote grande (200g)", g: 200 }
   ],
-  "Coalhada": [{ l: "1 colher de sopa", g: 20 }],
+  "Coalhada": [
+    { l: "1 colher de sopa", g: 20 },
+    { l: "1/2 xícara", g: 100 },
+    { l: "1 pote (200g)", g: 200 }
+  ],
 
   // Frutas
   "Banana": [
     { l: "1 unidade pequena", g: 80 },
     { l: "1 unidade média", g: 100 },
-    { l: "1 unidade grande", g: 130 }
+    { l: "1 unidade grande", g: 150 }
   ],
   "Maçã": [
     { l: "1 unidade pequena", g: 100 },
-    { l: "1 unidade média", g: 140 }
+    { l: "1 unidade média", g: 130 },
+    { l: "1 unidade grande", g: 170 }
   ],
   "Mamão": [
+    { l: "1 fatia pequena", g: 100 },
     { l: "1 fatia média", g: 150 },
     { l: "1 xícara picado", g: 145 }
   ],
   "Laranja": [
     { l: "1 unidade pequena", g: 100 },
-    { l: "1 unidade média", g: 140 }
+    { l: "1 unidade média", g: 140 },
+    { l: "1 unidade grande", g: 180 }
   ],
-  "Pera": [{ l: "1 unidade", g: 130 }],
+  "Pera": [
+    { l: "1 unidade pequena", g: 100 },
+    { l: "1 unidade média", g: 130 },
+    { l: "1 unidade grande", g: 170 }
+  ],
   "Melancia": [
+    { l: "1 fatia pequena", g: 200 },
     { l: "1 fatia média", g: 300 },
     { l: "1 xícara picada", g: 150 }
   ],
-  "Melão": [{ l: "1 fatia", g: 150 }],
+  "Melão": [
+    { l: "1 fatia pequena", g: 100 },
+    { l: "1 fatia média", g: 150 },
+    { l: "1 xícara picado", g: 130 }
+  ],
   "Uva": [
+    { l: "10 unidades", g: 80 },
     { l: "1 cacho pequeno", g: 100 },
-    { l: "10 unidades", g: 80 }
+    { l: "1 xícara", g: 150 }
   ],
   "Morango": [
     { l: "1 unidade", g: 12 },
+    { l: "5 unidades", g: 60 },
     { l: "1 xícara", g: 150 }
   ],
-  "Abacaxi": [{ l: "1 fatia grossa", g: 100 }],
-  "Kiwi": [{ l: "1 unidade", g: 75 }],
-  "Pêssego": [{ l: "1 unidade", g: 100 }],
-  "Ameixa": [{ l: "1 unidade", g: 30 }],
+  "Abacaxi": [
+    { l: "1 fatia fina", g: 70 },
+    { l: "1 fatia grossa", g: 100 },
+    { l: "1 xícara picado", g: 130 }
+  ],
+  "Kiwi": [
+    { l: "1 unidade pequena", g: 65 },
+    { l: "1 unidade média", g: 80 },
+    { l: "1 unidade grande", g: 100 }
+  ],
+  "Pêssego": [
+    { l: "1 unidade pequena", g: 80 },
+    { l: "1 unidade média", g: 100 },
+    { l: "1 unidade grande", g: 130 }
+  ],
+  "Ameixa": [
+    { l: "1 unidade pequena", g: 25 },
+    { l: "1 unidade média", g: 35 },
+    { l: "3 unidades", g: 90 }
+  ],
   "Manga": [
     { l: "1 unidade pequena", g: 200 },
-    { l: "1 unidade média", g: 300 }
+    { l: "1 unidade média", g: 300 },
+    { l: "1 xícara picada", g: 165 }
   ],
-  "Maracujá": [{ l: "1 unidade", g: 50 }],
-  "Limão": [{ l: "1 unidade", g: 50 }],
+  "Maracujá": [
+    { l: "1 unidade pequena", g: 40 },
+    { l: "1 unidade média", g: 55 },
+    { l: "1 unidade grande", g: 70 }
+  ],
+  "Limão": [
+    { l: "1 unidade pequena", g: 40 },
+    { l: "1 unidade média", g: 55 },
+    { l: "1 colher de sopa suco", g: 15 }
+  ],
   "Abacate": [
+    { l: "1/4 unidade", g: 50 },
     { l: "1/2 unidade", g: 100 },
     { l: "1 unidade", g: 200 }
   ],
 
   // Legumes e verduras
   "Alface": [
+    { l: "1 folha pequena", g: 10 },
     { l: "1 folha grande", g: 15 },
     { l: "1 xícara picada", g: 50 }
   ],
   "Tomate": [
+    { l: "1 fatia", g: 30 },
     { l: "1 unidade pequena", g: 80 },
     { l: "1 unidade média", g: 120 }
   ],
   "Cenoura": [
+    { l: "1 colher de sopa ralada", g: 10 },
     { l: "1 unidade pequena", g: 50 },
     { l: "1 unidade média", g: 80 }
   ],
-  "Beterraba": [{ l: "1 unidade pequena", g: 80 }],
+  "Beterraba": [
+    { l: "1 unidade pequena", g: 60 },
+    { l: "1 unidade média", g: 90 },
+    { l: "1 fatia", g: 20 }
+  ],
   "Brócolis": [
+    { l: "1 florete pequeno", g: 15 },
     { l: "1 florete", g: 20 },
     { l: "1 xícara", g: 90 }
   ],
-  "Couve-flor": [{ l: "1 xícara", g: 100 }],
-  "Espinafre": [{ l: "1 xícara", g: 30 }],
-  "Repolho": [{ l: "1 xícara picado", g: 70 }],
-  "Pepino": [{ l: "1 unidade", g: 150 }],
-  "Abobrinha": [{ l: "1 unidade pequena", g: 100 }],
-  "Berinjela": [{ l: "1 unidade", g: 200 }],
-  "Chuchu": [{ l: "1 unidade", g: 150 }],
-  "Vagem": [{ l: "10 unidades", g: 50 }],
+  "Couve-flor": [
+    { l: "1 florete pequeno", g: 15 },
+    { l: "1 florete", g: 25 },
+    { l: "1 xícara", g: 100 }
+  ],
+  "Espinafre": [
+    { l: "1 colher de sopa cozido", g: 20 },
+    { l: "1 xícara folhas cruas", g: 30 },
+    { l: "1 xícara cozido", g: 90 }
+  ],
+  "Repolho": [
+    { l: "1 colher de sopa picado", g: 15 },
+    { l: "1 folha grande", g: 40 },
+    { l: "1 xícara picado", g: 70 }
+  ],
+  "Pepino": [
+    { l: "1/2 unidade", g: 75 },
+    { l: "1 unidade média", g: 150 },
+    { l: "1 xícara fatiado", g: 100 }
+  ],
+  "Abobrinha": [
+    { l: "1/2 unidade", g: 70 },
+    { l: "1 unidade pequena", g: 120 },
+    { l: "1 xícara fatiada", g: 100 }
+  ],
+  "Berinjela": [
+    { l: "1/2 unidade", g: 100 },
+    { l: "1 unidade pequena", g: 180 },
+    { l: "1 unidade média", g: 250 }
+  ],
+  "Chuchu": [
+    { l: "1/2 unidade", g: 75 },
+    { l: "1 unidade pequena", g: 120 },
+    { l: "1 unidade média", g: 180 }
+  ],
+  "Vagem": [
+    { l: "5 unidades", g: 25 },
+    { l: "10 unidades", g: 50 },
+    { l: "1 xícara", g: 100 }
+  ],
   "Milho": [
+    { l: "1 colher de sopa", g: 20 },
     { l: "1 espiga pequena", g: 100 },
     { l: "1 espiga média", g: 150 }
   ],
   "Ervilha": [
     { l: "1 colher de sopa", g: 20 },
+    { l: "1/2 xícara", g: 80 },
     { l: "1 xícara", g: 160 }
   ],
-  "Acelga": [{ l: "1 folha", g: 20 }],
-  "Rúcula": [{ l: "1 xícara", g: 20 }],
-  "Agrião": [{ l: "1 xícara", g: 30 }],
-  "Couve": [{ l: "1 folha", g: 25 }],
+  "Acelga": [
+    { l: "1 folha pequena", g: 15 },
+    { l: "1 folha", g: 20 },
+    { l: "1 xícara picada", g: 50 }
+  ],
+  "Rúcula": [
+    { l: "5 folhas", g: 10 },
+    { l: "1 xícara", g: 20 },
+    { l: "2 xícaras", g: 40 }
+  ],
+  "Agrião": [
+    { l: "5 ramos", g: 15 },
+    { l: "1 xícara", g: 30 },
+    { l: "2 xícaras", g: 60 }
+  ],
+  "Couve": [
+    { l: "1 colher de sopa picada", g: 10 },
+    { l: "1 folha", g: 25 },
+    { l: "3 folhas", g: 75 }
+  ],
 
   // Tubérculos
   "Batata": [
@@ -352,136 +539,303 @@ const MEDIDAS_CASEIRAS = {
   ],
   "Batata doce": [
     { l: "1 unidade pequena", g: 80 },
-    { l: "1 unidade média", g: 130 }
+    { l: "1 unidade média", g: 130 },
+    { l: "1 unidade grande", g: 200 }
   ],
-  "Mandioca": [{ l: "1 pedaço", g: 100 }],
-  "Inhame": [{ l: "1 pedaço", g: 100 }],
-  "Cará": [{ l: "1 pedaço", g: 80 }],
+  "Mandioca": [
+    { l: "1 pedaço pequeno", g: 80 },
+    { l: "1 pedaço médio", g: 120 },
+    { l: "1 xícara cozida", g: 150 }
+  ],
+  "Inhame": [
+    { l: "1 pedaço pequeno", g: 70 },
+    { l: "1 pedaço médio", g: 100 },
+    { l: "1 xícara cozido", g: 150 }
+  ],
+  "Cará": [
+    { l: "1 pedaço pequeno", g: 60 },
+    { l: "1 pedaço médio", g: 100 },
+    { l: "1 xícara cozido", g: 140 }
+  ],
 
-  // Óleos e gorduras
+  // Óleos e gorduras (valores corrigidos conforme densidade e literatura nutricional)
   "Azeite": [
-    { l: "1 colher de chá", g: 5 },
-    { l: "1 colher de sopa", g: 13 }
+    { l: "1 colher de chá", g: 4 },
+    { l: "1 colher de sobremesa", g: 8 },
+    { l: "1 colher de sopa", g: 12 }
   ],
   "Óleo": [
-    { l: "1 colher de chá", g: 5 },
-    { l: "1 colher de sopa", g: 13 }
+    { l: "1 colher de chá", g: 4 },
+    { l: "1 colher de sobremesa", g: 8 },
+    { l: "1 colher de sopa", g: 12 }
   ],
   "Manteiga": [
     { l: "1 ponta de faca", g: 5 },
-    { l: "1 colher de chá", g: 8 },
-    { l: "1 colher de sopa", g: 15 }
+    { l: "1 colher de chá", g: 7 },
+    { l: "1 colher de sopa", g: 13 }
   ],
   "Margarina": [
-    { l: "1 colher de chá", g: 5 },
-    { l: "1 colher de sopa", g: 15 }
+    { l: "1 ponta de faca", g: 4 },
+    { l: "1 colher de chá", g: 6 },
+    { l: "1 colher de sopa", g: 12 }
   ],
-  "Creme de leite": [{ l: "1 colher de sopa", g: 20 }],
-  "Leite de coco": [{ l: "1 colher de sopa", g: 15 }],
+  "Creme de leite": [
+    { l: "1 colher de sopa", g: 20 },
+    { l: "1/2 caixinha (100ml)", g: 100 },
+    { l: "1 caixinha (200ml)", g: 200 }
+  ],
+  "Leite de coco": [
+    { l: "1 colher de sopa", g: 15 },
+    { l: "1/2 xícara (100ml)", g: 100 },
+    { l: "1 xícara (200ml)", g: 200 }
+  ],
 
-  // Cereais e farinhas
+  // Cereais e farinhas (valores corrigidos conforme Tabela TACO)
   "Aveia": [
     { l: "1 colher de sopa", g: 15 },
-    { l: "4 colheres de sopa", g: 60 },
-    { l: "1 xícara", g: 90 }
+    { l: "4 colheres de sopa", g: 40 },
+    { l: "1 xícara", g: 80 }
   ],
   "Granola": [
-    { l: "1 colher de sopa", g: 15 },
-    { l: "4 colheres de sopa", g: 60 }
+    { l: "1 colher de sopa", g: 10 },
+    { l: "4 colheres de sopa", g: 40 },
+    { l: "1 xícara", g: 90 }
   ],
   "Farinha de trigo": [
-    { l: "1 colher de sopa", g: 10 },
+    { l: "1 colher de sopa", g: 8 },
+    { l: "4 colheres de sopa", g: 32 },
     { l: "1 xícara", g: 120 }
   ],
   "Farinha de mandioca": [
     { l: "1 colher de sopa", g: 12 },
+    { l: "4 colheres de sopa", g: 50 },
     { l: "1 xícara", g: 150 }
   ],
   "Fubá": [
-    { l: "1 colher de sopa", g: 15 },
+    { l: "1 colher de sopa", g: 12 },
+    { l: "4 colheres de sopa", g: 50 },
     { l: "1 xícara", g: 150 }
   ],
-  "Polenta": [{ l: "1 colher de sopa", g: 20 }],
+  "Polenta": [
+    { l: "1 colher de sopa", g: 20 },
+    { l: "1 xícara", g: 200 },
+    { l: "1 fatia", g: 80 }
+  ],
 
   // Suplementos
-  "Whey": [{ l: "1 scoop padrão", g: 30 }],
-  "Caseína": [{ l: "1 scoop", g: 30 }],
-  "Albumina": [{ l: "1 colher de sopa", g: 10 }],
-  "BCAA": [{ l: "1 scoop", g: 10 }],
-  "Creatina": [{ l: "1 colher de chá", g: 5 }],
-  "Glutamina": [{ l: "1 colher de chá", g: 5 }],
+  "Whey": [
+    { l: "1 scoop pequeno (20g)", g: 20 },
+    { l: "1 scoop padrão (30g)", g: 30 },
+    { l: "1 scoop grande (40g)", g: 40 }
+  ],
+  "Caseína": [
+    { l: "1 scoop pequeno (25g)", g: 25 },
+    { l: "1 scoop padrão (30g)", g: 30 },
+    { l: "1 scoop grande (40g)", g: 40 }
+  ],
+  "Albumina": [
+    { l: "1 colher de sopa", g: 10 },
+    { l: "2 colheres de sopa", g: 20 },
+    { l: "1 scoop padrão", g: 30 }
+  ],
+  "BCAA": [
+    { l: "1 colher de chá", g: 5 },
+    { l: "1 scoop", g: 10 },
+    { l: "1 colher de sopa", g: 15 }
+  ],
+  "Creatina": [
+    { l: "1 colher de café", g: 3 },
+    { l: "1 colher de chá", g: 5 },
+    { l: "1 scoop", g: 5 }
+  ],
+  "Glutamina": [
+    { l: "1 colher de café", g: 3 },
+    { l: "1 colher de chá", g: 5 },
+    { l: "1 colher de sobremesa", g: 8 }
+  ],
 
   // Bebidas
-  "Café": [{ l: "1 xícara (50ml)", g: 50 }],
-  "Chá": [{ l: "1 xícara", g: 200 }],
-  "Suco de laranja": [{ l: "1 copo (200ml)", g: 200 }],
+  "Café": [
+    { l: "1 xícara pequena (50ml)", g: 50 },
+    { l: "1 xícara (150ml)", g: 150 },
+    { l: "1 caneca (200ml)", g: 200 }
+  ],
+  "Chá": [
+    { l: "1 xícara (150ml)", g: 150 },
+    { l: "1 xícara grande (200ml)", g: 200 },
+    { l: "1 caneca (300ml)", g: 300 }
+  ],
+  "Suco de laranja": [
+    { l: "1 copo pequeno (150ml)", g: 150 },
+    { l: "1 copo (200ml)", g: 200 },
+    { l: "1 copo grande (300ml)", g: 300 }
+  ],
   "Refrigerante": [
     { l: "1 copo (200ml)", g: 200 },
-    { l: "1 lata (350ml)", g: 350 }
-  ],
-  "Cerveja": [
     { l: "1 lata (350ml)", g: 350 },
     { l: "1 garrafa (600ml)", g: 600 }
   ],
-  "Vinho": [{ l: "1 taça (150ml)", g: 150 }],
-  "Água de coco": [{ l: "1 copo (200ml)", g: 200 }],
+  "Cerveja": [
+    { l: "1 copo (300ml)", g: 300 },
+    { l: "1 lata (350ml)", g: 350 },
+    { l: "1 garrafa (600ml)", g: 600 }
+  ],
+  "Vinho": [
+    { l: "1 taça pequena (100ml)", g: 100 },
+    { l: "1 taça (150ml)", g: 150 },
+    { l: "1 taça grande (200ml)", g: 200 }
+  ],
+  "Água de coco": [
+    { l: "1 copo (200ml)", g: 200 },
+    { l: "1 caixinha (330ml)", g: 330 },
+    { l: "1 copo grande (500ml)", g: 500 }
+  ],
 
-  // Doces e sobremesas
+  // Doces e sobremesas (valores corrigidos conforme literatura nutricional)
   "Açúcar": [
-    { l: "1 colher de chá", g: 5 },
-    { l: "1 colher de sopa", g: 15 }
+    { l: "1 colher de chá", g: 4 },
+    { l: "1 colher de sopa", g: 12 }
   ],
   "Mel": [
     { l: "1 colher de chá", g: 7 },
-    { l: "1 colher de sopa", g: 20 }
+    { l: "1 colher de sopa", g: 21 }
   ],
   "Chocolate": [
-    { l: "1 quadradinho", g: 5 },
+    { l: "1 quadradinho (5g)", g: 5 },
+    { l: "4 quadradinhos", g: 20 },
     { l: "1 barra pequena", g: 25 }
   ],
-  "Gelatina": [{ l: "1 xícara", g: 200 }],
-  "Pudim": [{ l: "1 fatia", g: 100 }],
-  "Mousse": [{ l: "1 porção", g: 100 }],
+  "Gelatina": [
+    { l: "1/2 xícara", g: 100 },
+    { l: "1 xícara", g: 200 },
+    { l: "1 pote individual", g: 120 }
+  ],
+  "Pudim": [
+    { l: "1 fatia pequena", g: 70 },
+    { l: "1 fatia", g: 100 },
+    { l: "1 fatia grande", g: 130 }
+  ],
+  "Mousse": [
+    { l: "1 colher de sopa", g: 30 },
+    { l: "1 porção", g: 100 },
+    { l: "1 taça", g: 150 }
+  ],
   "Bolo": [
     { l: "1 fatia fina", g: 60 },
-    { l: "1 fatia média", g: 100 }
+    { l: "1 fatia média", g: 100 },
+    { l: "1 fatia grande", g: 140 }
   ],
-  "Brigadeiro": [{ l: "1 unidade", g: 30 }],
-  "Beijinho": [{ l: "1 unidade", g: 30 }],
+  "Brigadeiro": [
+    { l: "1 unidade pequena", g: 20 },
+    { l: "1 unidade", g: 30 },
+    { l: "2 unidades", g: 60 }
+  ],
+  "Beijinho": [
+    { l: "1 unidade pequena", g: 20 },
+    { l: "1 unidade", g: 30 },
+    { l: "2 unidades", g: 60 }
+  ],
 
   // Miscelânea
-  "Mostarda": [{ l: "1 colher de chá", g: 5 }],
-  "Ketchup": [{ l: "1 colher de sopa", g: 15 }],
-  "Maionese": [{ l: "1 colher de sopa", g: 15 }],
-  "Molho de tomate": [{ l: "1 colher de sopa", g: 15 }],
-  "Molho shoyu": [{ l: "1 colher de sopa", g: 15 }],
-  "Vinagre": [{ l: "1 colher de sopa", g: 15 }],
+  "Mostarda": [
+    { l: "1 colher de chá", g: 4 },
+    { l: "1 colher de sobremesa", g: 8 },
+    { l: "1 colher de sopa", g: 12 }
+  ],
+  "Ketchup": [
+    { l: "1 colher de chá", g: 6 },
+    { l: "1 colher de sopa", g: 12 },
+    { l: "2 colheres de sopa", g: 24 }
+  ],
+  "Maionese": [
+    { l: "1 colher de chá", g: 6 },
+    { l: "1 colher de sopa", g: 12 },
+    { l: "2 colheres de sopa", g: 24 }
+  ],
+  "Molho de tomate": [
+    { l: "1 colher de sopa", g: 20 },
+    { l: "1/2 xícara", g: 120 },
+    { l: "1 xícara", g: 240 }
+  ],
+  "Molho shoyu": [
+    { l: "1 colher de chá", g: 5 },
+    { l: "1 colher de sopa", g: 15 },
+    { l: "2 colheres de sopa", g: 30 }
+  ],
+  "Vinagre": [
+    { l: "1 colher de chá", g: 5 },
+    { l: "1 colher de sopa", g: 10 },
+    { l: "2 colheres de sopa", g: 20 }
+  ],
   "Sal": [
     { l: "1 pitada", g: 1 },
-    { l: "1 colher de chá", g: 6 }
+    { l: "1 colher de chá", g: 5 }
   ],
-  "Pimenta": [{ l: "1 pitada", g: 1 }],
-  "Orégano": [{ l: "1 colher de chá", g: 2 }],
-  "Manjericão": [{ l: "1 folha", g: 1 }],
-  "Salsa": [{ l: "1 colher de sopa picada", g: 5 }],
-  "Cebolinha": [{ l: "1 colher de sopa picada", g: 5 }],
+  "Pimenta": [
+    { l: "1 pitada", g: 1 },
+    { l: "1 colher de chá", g: 3 },
+    { l: "1 colher de sopa", g: 5 }
+  ],
+  "Orégano": [
+    { l: "1 pitada", g: 0.5 },
+    { l: "1 colher de chá", g: 1 },
+    { l: "1 colher de sopa", g: 3 }
+  ],
+  "Manjericão": [
+    { l: "1 folha", g: 1 },
+    { l: "1 colher de sopa picado", g: 3 },
+    { l: "1/4 xícara folhas", g: 5 }
+  ],
+  "Salsa": [
+    { l: "1 raminho", g: 3 },
+    { l: "1 colher de sopa picada", g: 5 },
+    { l: "1/4 xícara picada", g: 15 }
+  ],
+  "Cebolinha": [
+    { l: "1 colher de chá picada", g: 2 },
+    { l: "1 colher de sopa picada", g: 5 },
+    { l: "1/4 xícara picada", g: 15 }
+  ],
   "Alho": [
+    { l: "1 dente pequeno", g: 2 },
     { l: "1 dente", g: 3 },
     { l: "1 colher de sopa picado", g: 10 }
   ],
   "Cebola": [
-    { l: "1 unidade pequena", g: 80 },
-    { l: "1 colher de sopa picada", g: 15 }
+    { l: "1 colher de sopa picada", g: 15 },
+    { l: "1/4 unidade", g: 30 },
+    { l: "1 unidade pequena", g: 80 }
   ],
-  "Tomate seco": [{ l: "1 unidade", g: 10 }],
-  "Azeitona": [{ l: "1 unidade", g: 5 }],
-  "Palmito": [{ l: "1 unidade", g: 30 }],
+  "Tomate seco": [
+    { l: "1 unidade", g: 15 },
+    { l: "3 unidades", g: 45 },
+    { l: "1 colher de sopa", g: 12 }
+  ],
+  "Azeitona": [
+    { l: "1 unidade", g: 6 },
+    { l: "5 unidades", g: 30 },
+    { l: "10 unidades", g: 60 }
+  ],
+  "Palmito": [
+    { l: "1 unidade pequena", g: 15 },
+    { l: "1 unidade", g: 25 },
+    { l: "1 colher de sopa picado", g: 20 }
+  ],
   "Milho verde": [
     { l: "1 colher de sopa", g: 20 },
+    { l: "1/2 xícara", g: 80 },
     { l: "1 xícara", g: 160 }
   ],
-  "Ervilha em conserva": [{ l: "1 colher de sopa", g: 20 }],
-  "Seleta de legumes": [{ l: "1 colher de sopa", g: 20 }],
+  "Ervilha em conserva": [
+    { l: "1 colher de sopa", g: 15 },
+    { l: "1/2 xícara", g: 75 },
+    { l: "1 xícara", g: 150 }
+  ],
+  "Seleta de legumes": [
+    { l: "1 colher de sopa", g: 15 },
+    { l: "1/2 xícara", g: 75 },
+    { l: "1 xícara", g: 150 }
+  ],
 
   // Padrão para alimentos não listados
   _default: [

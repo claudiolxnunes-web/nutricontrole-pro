@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "jspdf": "^4.2.1",
+    "sharp": "^0.34.5"
+  },
+  "name": "nutricontrole-pro",
+  "version": "1.0.0",
+  "description": "",
+  "main": "sw.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/claudiolxnunes-web/nutricontrole-pro.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/claudiolxnunes-web/nutricontrole-pro/issues"
+  },
+  "homepage": "https://github.com/claudiolxnunes-web/nutricontrole-pro#readme"
+}
