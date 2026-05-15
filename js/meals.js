@@ -14,24 +14,33 @@ const MEDIDAS_POR_TIPO = {
     { l: "1 colher de sopa", g: 20 },
     { l: "1 escumadeira", g: 75 },
     { l: "1 xícara", g: 165 },
-    { l: "1 prato raso", g: 250 }
+    { l: "1 prato raso", g: 250 },
+    { l: "1 prato fundo", g: 300 }
   ],
   pao: [
     { l: "1 fatia fina", g: 22 },
     { l: "1 fatia padrão", g: 25 },
     { l: "1 fatia grossa", g: 35 },
     { l: "1 unidade pequena", g: 50 },
-    { l: "1 unidade grande", g: 100 }
+    { l: "1 unidade grande", g: 100 },
+    { l: "1 pão de hambúrguer", g: 50 },
+    { l: "1 pão sírio", g: 60 }
   ],
   carne: [
     { l: "1 bife pequeno", g: 80 },
     { l: "1 bife médio", g: 120 },
-    { l: "1 bife grande", g: 180 }
+    { l: "1 bife grande", g: 180 },
+    { l: "1 costela pequena", g: 100 },
+    { l: "1 costela média", g: 150 }
   ],
   frango: [
     { l: "1 filé pequeno", g: 80 },
     { l: "1 filé médio", g: 120 },
     { l: "1 filé grande", g: 180 },
+    { l: "1 coxa pequena", g: 80 },
+    { l: "1 coxa média", g: 120 },
+    { l: "1 sobrecoxa", g: 150 },
+    { l: "1 asa", g: 60 },
     { l: "1 colher de sopa desfiado", g: 20 }
   ],
   peixe: [
@@ -113,17 +122,20 @@ const MEDIDAS_CASEIRAS = {
     { l: "1 colher de sopa", g: 20 },
     { l: "1 escumadeira", g: 75 },
     { l: "1 xícara", g: 165 },
-    { l: "1 prato raso", g: 250 }
+    { l: "1 prato raso", g: 250 },
+    { l: "1 prato fundo", g: 300 }
   ],
   "Arroz": [
     { l: "1 colher de sopa", g: 20 },
     { l: "1 escumadeira", g: 75 },
     { l: "1 xícara", g: 165 },
-    { l: "1 prato raso", g: 250 }
+    { l: "1 prato raso", g: 250 },
+    { l: "1 prato fundo", g: 300 }
   ],
   "Feijão": [
     { l: "1 concha pequena", g: 60 },
     { l: "1 concha média", g: 85 },
+    { l: "1 concha grande", g: 120 },
     { l: "1 xícara", g: 172 }
   ],
   "Macarrão": [
@@ -141,7 +153,9 @@ const MEDIDAS_CASEIRAS = {
   "Pão francês": [
     { l: "1 unidade pequena", g: 50 },
     { l: "1 unidade média", g: 70 },
-    { l: "1 unidade grande", g: 100 }
+    { l: "1 unidade grande", g: 100 },
+    { l: "1 pão de hambúrguer", g: 50 },
+    { l: "1 pão sírio", g: 60 }
   ],
   "Pão": [
     { l: "1 fatia", g: 25 },
@@ -172,6 +186,10 @@ const MEDIDAS_CASEIRAS = {
     { l: "1 filé pequeno", g: 80 },
     { l: "1 filé médio", g: 120 },
     { l: "1 filé grande", g: 180 },
+    { l: "1 coxa pequena", g: 80 },
+    { l: "1 coxa média", g: 120 },
+    { l: "1 sobrecoxa", g: 150 },
+    { l: "1 asa", g: 60 },
     { l: "1 colher de sopa desfiado", g: 20 }
   ],
   "Peito de frango": [
@@ -182,12 +200,16 @@ const MEDIDAS_CASEIRAS = {
   "Carne bovina": [
     { l: "1 bife pequeno", g: 80 },
     { l: "1 bife médio", g: 120 },
-    { l: "1 bife grande", g: 180 }
+    { l: "1 bife grande", g: 180 },
+    { l: "1 costela pequena", g: 100 },
+    { l: "1 costela média", g: 150 }
   ],
   "Carne": [
     { l: "1 bife pequeno", g: 80 },
     { l: "1 bife médio", g: 120 },
     { l: "1 bife grande", g: 180 },
+    { l: "1 costela pequena", g: 100 },
+    { l: "1 costela média", g: 150 },
     { l: "1 porção", g: 150 }
   ],
   "Almôndega": [
